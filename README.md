@@ -23,8 +23,7 @@
 
 ## 2. 소개 영상
 
-<iframe width="640" height="360" src="https://www.youtube.com/watch?v=wvII17ksxE4&feature=youtu.be" frameborder="0" gesture="media" allowfullscreen=""></iframe>
-
+[![image](doc\이미지/youtubeMain.JPG)](https://www.youtube.com/watch?v=wvII17ksxE4&t=2s)
 ## 3. Abstract
 
 This project is to develop a system that provides diagnostic and prescription services for the expert system, in which patients or general users enter their own personal symptoms or conditions to systematically utilize oriental medicine based on information technology. It aims.
