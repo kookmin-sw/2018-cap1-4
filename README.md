@@ -4,9 +4,7 @@
 
 - 수정후 팀페이지 확인하여 점검.
 
-**팀페이지 주소** -> https://kookmin-sw.github.io/ `{{자신의 리파지토리 아이디}}`
-
-**예시)** 1조  https://kookmin-sw.github.io/2018-cap-1
+**팀페이지 주소** -> https://kookmin-sw.github.io/2018-cap1-4/
 
 # 1. 프로젝트 소개
 
@@ -39,7 +37,6 @@ This project is to develop a system that provides diagnostic and prescription se
 # 4. 팀 소개
 
 ### 장원용 (팀장)
-<img src="https://user-images.githubusercontent.com/26623547/37443780-1ccca1ee-2806-11e8-84ea-ed6bd7497f7f.jpg" width="40%"></img>
 ```
 # 학번 : 20125164
 # Phone : 010-8629-5674
@@ -55,16 +52,16 @@ This project is to develop a system that provides diagnostic and prescription se
 ```
 ### 류준영
 ```
-# 학번 : 
-# Phone : 
-# E-mail : 
+# 학번 : 20133388
+# Phone : 01074368807
+# E-mail : ghzldud@naver.com
 # 역할 : 데이터베이스 구축 및 Rule Data 생성
 ```
 ### 차은채
 ```
-# 학번 : 
-# Phone : 
-# E-mail : 
+# 학번 : 20153237
+# Phone : 01022300934
+# E-mail : jjcec@naver.com
 # 역할 : 유저 인터페이스 설계 및 구현, UI 디자인
 ```
 # 5. 사용법
