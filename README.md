@@ -6,7 +6,7 @@
 
 **팀페이지 주소** -> https://kookmin-sw.github.io/2018-cap1-4/
 
-# 1. 프로젝트 소개
+## 1. 프로젝트 소개
 
  **본 프로젝트는 한의학을 정보화 기술에 기반한 체계적인 활용을 위하여 환자 혹은 일반 사용자가 자신의 개인 증상이나 상태를 입력하여, 한의학 전문 지식을 함양하고 있는 전문가 시스템이 에 대한 진단과 처방 서비스를 제공하는 시스템 개발을 목표로 한다.**
 
@@ -25,16 +25,16 @@
  진단을 받을 수 있도록 한다.
  
 
-# 2. 소개 영상
+## 2. 소개 영상
 
 추가 예정
 
-# 3. Abstract
+## 3. Abstract
 
 This project is to develop a system that provides diagnostic and prescription services for the expert system, in which patients or general users enter their own personal symptoms or conditions to systematically utilize oriental medicine based on information technology. It aims.
 
 
-# 4. 팀 소개
+## 4. 팀 소개
 
 ### 장원용 (팀장)
 ```
@@ -64,7 +64,7 @@ This project is to develop a system that provides diagnostic and prescription se
 # E-mail : jjcec@naver.com
 # 역할 : 유저 인터페이스 설계 및 구현, UI 디자인
 ```
-# 5. 사용법
+## 5. 사용법
 
 ### 개발 언어
    - Java
