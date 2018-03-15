@@ -39,7 +39,7 @@ This project is to develop a system that provides diagnostic and prescription se
 # 4. 팀 소개
 
 ### 장원용 (팀장)
-<img src="https://user-images.githubusercontent.com/26623547/37443780-1ccca1ee-2806-11e8-84ea-ed6bd7497f7f.jpg" width="90%"></img>
+<img src="https://user-images.githubusercontent.com/26623547/37443780-1ccca1ee-2806-11e8-84ea-ed6bd7497f7f.jpg" width="40%"></img>
 ```
 # 학번 : 20125164
 # Phone : 010-8629-5674
