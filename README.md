@@ -25,6 +25,7 @@
 
  마지막으로 유저를 의사로 한정하지 않고 일반사람들도 웹을 통해서 설문을 작성하여 기본적인
  진단을 받을 수 있도록 한다.
+ 
 
 # 2. 소개 영상
 
@@ -38,28 +39,33 @@ This project is to develop a system that provides diagnostic and prescription se
 # 4. 팀 소개
 
 ### 장원용 (팀장)
+<img src="https://user-images.githubusercontent.com/26623547/37443780-1ccca1ee-2806-11e8-84ea-ed6bd7497f7f.jpg" width="90%"></img>
 ```
 # 학번 : 20125164
 # Phone : 010-8629-5674
 # E-mail : geikil@kookmin.ac.kr
+# 역할 : Drools 엔진분석, 서버구축 및 프레임워크 적용
 ```
 ### 김태우
 ```
 # 학번 : 
 # Phone : 
 # E-mail : 
+# 역할 : Rule 분석 및 서버구축, UI 기능 구현
 ```
 ### 류준영
 ```
 # 학번 : 
 # Phone : 
 # E-mail : 
+# 역할 : 데이터베이스 구축 및 Rule Data 생성
 ```
 ### 차은채
 ```
 # 학번 : 
 # Phone : 
 # E-mail : 
+# 역할 : 유저 인터페이스 설계 및 구현, UI 디자인
 ```
 # 5. 사용법
 
@@ -71,7 +77,7 @@ This project is to develop a system that provides diagnostic and prescription se
    - Spring MVC
    - Mybatis   	    
    - Ajax
-   - Bootstrap (반응형 웹을 만들기 위한 프레임워크)
+   - Bootstrap
 ### 라이브러리 관리
    - Maven 
    3-1) 주요 라이브러리
