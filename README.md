@@ -45,9 +45,9 @@ This project is to develop a system that provides diagnostic and prescription se
 ```
 ### 김태우
 ```
-# 학번 : 
-# Phone : 
-# E-mail : 
+# 학번 : 20133213
+# Phone : 010-5590-4085
+# E-mail : cow9404@gmail.com
 # 역할 : Rule 분석 및 서버구축, UI 기능 구현
 ```
 ### 류준영
