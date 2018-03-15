@@ -23,7 +23,7 @@
 
 ## 2. 소개 영상
 
-<iframe width="640" height="360" src="https://www.youtube.com/embed/6Az2cNU7gUw" frameborder="0" gesture="media" allowfullscreen=""></iframe>
+<iframe width="640" height="360" src="https://www.youtube.com/watch?v=wvII17ksxE4&feature=youtu.be" frameborder="0" gesture="media" allowfullscreen=""></iframe>
 
 ## 3. Abstract
 
