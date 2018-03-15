@@ -1,9 +1,5 @@
 # Oriental Medical Expert System
 
-- index.md 예시보고 수정.
-
-- 수정후 팀페이지 확인하여 점검.
-
 **팀페이지 주소** -> https://kookmin-sw.github.io/2018-cap1-4/
 
 ## 1. 프로젝트 소개
@@ -75,13 +71,11 @@ This project is to develop a system that provides diagnostic and prescription se
    - Mybatis   	    
    - Ajax
    - Bootstrap
-### 라이브러리 관리
-   - Maven 
-   3-1) 주요 라이브러리
-    - Drools 5.6.0 Final 
-    - Drools-Spring 
-    - Mysql-connector-java
-    - Jackson
+### 라이브러리 관리(Maven을 통해 관리)
+   - Drools 5.6.0 Final 
+   - Drools-Spring 
+   - Mysql-connector-java
+   - Jackson
 ### 서버 프로세스
   - Tomcat Server 8.5, Nginx 1.12.2
 ### 데이터베이스
