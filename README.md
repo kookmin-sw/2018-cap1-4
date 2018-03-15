@@ -1,10 +1,4 @@
-# Welcome to GitHub
-
-캡스톤 팀 생성을 축하합니다.
-
-## 팀소개 및 페이지를 꾸며주세요.
-
-- readme.md 수정.
+# Oriental Medical Expert System
 
 - index.md 예시보고 수정.
 
@@ -14,11 +8,9 @@
 
 **예시)** 1조  https://kookmin-sw.github.io/2018-cap-1
 
-## readme파일에 아래와 같은 내용들을 추가하세요.
-
 ### 1. 프로젝트 소개
 
- 본 프로젝트는 한의학을 정보화 기술에 기반한 체계적인 활용을 위하여 환자 혹은 일반 사용자가 자신의 개인 증상이나 상태를 입력하여, 한의학 전문 지식을 함양하고 있는 전문가 시스템이 에 대한 진단과 처방 서비스를 제공하는 시스템 개발을 목표로 한다. 
+ **본 프로젝트는 한의학을 정보화 기술에 기반한 체계적인 활용을 위하여 환자 혹은 일반 사용자가 자신의 개인 증상이나 상태를 입력하여, 한의학 전문 지식을 함양하고 있는 전문가 시스템이 에 대한 진단과 처방 서비스를 제공하는 시스템 개발을 목표로 한다.**
 
  이를 위한 세부적인 프로젝트의 내용은 다음과 같다.
  본 프로젝트는 환자의 증상 데이터를 설문지로 사전에 입력을 받고, 이 데이터 통해서
@@ -38,23 +30,59 @@
 
 추가 예정
 
-### 3. 팀 소개
+### 3. 사용법
 
-#장원용
-
-#김태우
-
-#류준영
-
-#차은채
-
-### 4. 사용법
+This project is to develop a system that provides diagnostic and prescription services for the expert system, in which patients or general users enter their own personal symptoms or conditions to systematically utilize oriental medicine based on information technology. It aims.
 
 
+### 4. 팀 소개
 
-### 5. 기타
+# 장원용 (팀장)
+```
+# 학번 : 20125164
+# Phone : 010-8629-5674
+# E-mail : geikil@kookmin.ac.kr
+```
+# 김태우
+```
+# 학번 : 
+# Phone : 
+# E-mail : 
+```
+# 류준영
+```
+# 학번 : 
+# Phone : 
+# E-mail : 
+```
+# 차은채
+```
+# 학번 : 
+# Phone : 
+# E-mail : 
+```
+### 5. 사용법
 
-
+# 개발 언어
+   - Java
+   - Html, CSS, Javascript 
+   - Jquery
+# 사용 프레임워크
+   - Spring MVC
+   - Mybatis   	    
+   - Ajax
+   - Bootstrap (반응형 웹을 만들기 위한 프레임워크)
+# 라이브러리 관리
+   - Maven 
+   3-1) 주요 라이브러리
+    - Drools 5.6.0 Final ( Drools 엔진을 이용하여 환자의 증상과 진단을 내리기 위함)
+    - Drools-Spring (Drools와 Spring MVC 연동)
+    - Mysql-connector-java
+    - Jackson
+# 서버 프로세스
+  - Tomcat Server 8.5, Nginx 
+# 데이터베이스
+  - Mysql
 
 
 ## Markdown을 사용하여 내용꾸미기
