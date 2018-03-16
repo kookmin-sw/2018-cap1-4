@@ -48,14 +48,14 @@ This project is to develop a system that provides diagnostic and prescription se
 ### 류준영
 ```
 # 학번 : 20133388
-# Phone : 01074368807
+# Phone : 010-7436-8807
 # E-mail : ghzldud@naver.com
 # 역할 : 데이터베이스 구축 및 Rule Data 생성
 ```
 ### 차은채
 ```
 # 학번 : 20153237
-# Phone : 01022300934
+# Phone : 010-2230-0934
 # E-mail : jjcec@naver.com
 # 역할 : 유저 인터페이스 설계 및 구현, UI 디자인
 ```
@@ -70,7 +70,7 @@ This project is to develop a system that provides diagnostic and prescription se
    - Mybatis   	    
    - Ajax
    - Bootstrap
-### 라이브러리 관리(Maven을 통해 관리)
+### 주요 라이브러리 (Maven을 통해 관리)
    - Drools 5.6.0 Final 
    - Drools-Spring 
    - Mysql-connector-java
