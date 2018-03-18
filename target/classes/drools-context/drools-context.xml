@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:drools="http://drools.org/schema/drools-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+  http://drools.org/schema/drools-spring http://drools.org/schema/drools-spring.xsd">
+
+	<drools:kbase id="medicalRuleBase">
+		<drools:resources>
+			<drools:resource type="DRL" source="classpath:rules/rules.drl" />
+		</drools:resources>
+	</drools:kbase>
+
+	<drools:ksession id="ksession" name="ksession"
+		type="stateful" kbase="medicalRuleBase" />
+</beans>
