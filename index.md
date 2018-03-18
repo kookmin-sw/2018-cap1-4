@@ -1,9 +1,5 @@
 # Oriental Medical Expert System
 
-- index.md 예시보고 수정.
-
-- 수정후 팀페이지 확인하여 점검.
-
 **팀페이지 주소** -> https://kookmin-sw.github.io/2018-cap1-4/
 
 ## 1. 프로젝트 소개
@@ -27,8 +23,7 @@
 
 ## 2. 소개 영상
 
-추가 예정
-
+[![image](doc/이미지/youtubeMain.PNG)](https://www.youtube.com/watch?v=wvII17ksxE4&t=2s)
 ## 3. Abstract
 
 This project is to develop a system that provides diagnostic and prescription services for the expert system, in which patients or general users enter their own personal symptoms or conditions to systematically utilize oriental medicine based on information technology. It aims.
@@ -45,22 +40,22 @@ This project is to develop a system that provides diagnostic and prescription se
 ```
 ### 김태우
 ```
-# 학번 : 
-# Phone : 
-# E-mail : 
+# 학번 : 20133213
+# Phone : 010-5590-4085
+# E-mail : cow9404@gmail.com
 # 역할 : Rule 분석 및 서버구축, UI 기능 구현
 ```
 ### 류준영
 ```
 # 학번 : 20133388
-# Phone : 01074368807
+# Phone : 010-7436-8807
 # E-mail : ghzldud@naver.com
 # 역할 : 데이터베이스 구축 및 Rule Data 생성
 ```
 ### 차은채
 ```
 # 학번 : 20153237
-# Phone : 01022300934
+# Phone : 010-2230-0934
 # E-mail : jjcec@naver.com
 # 역할 : 유저 인터페이스 설계 및 구현, UI 디자인
 ```
@@ -75,13 +70,11 @@ This project is to develop a system that provides diagnostic and prescription se
    - Mybatis   	    
    - Ajax
    - Bootstrap
-### 라이브러리 관리
-   - Maven 
-   3-1) 주요 라이브러리
-    - Drools 5.6.0 Final 
-    - Drools-Spring 
-    - Mysql-connector-java
-    - Jackson
+### 주요 라이브러리 (Maven을 통해 관리)
+   - Drools 5.6.0 Final 
+   - Drools-Spring 
+   - Mysql-connector-java
+   - Jackson
 ### 서버 프로세스
   - Tomcat Server 8.5, Nginx 1.12.2
 ### 데이터베이스
