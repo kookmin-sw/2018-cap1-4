@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration 
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+	<configuration>
+	
+		<!-- 클래스를 등록해두고 mapper.xml에서 그 클래스 사용할수 있다. -->
+		<typeAliases>
+			<package name="com.company.dto"/>
+		</typeAliases>
+		
+	</configuration>
+	

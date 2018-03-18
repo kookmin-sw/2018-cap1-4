@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+			<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- db configuration data file -->
+    <context:property-placeholder location="/WEB-INF/db.properties"/>
+	<!-- MySQL dataSource MySQL과 연결을 담당 , JDBC 커넥션을 처리하는 기능을 가지고 있기에 DB와 연동하는 작업이 반드시 필요-->
+	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
+		<property name="driverClassName" value="${jdbc.driver}"></property>
+		<property name="url" value="${jdbc.url}"></property>
+		<property name="username" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+	</bean>
+
+	<!-- mybatis SqlSessionFactoryBean -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="configLocation" value="/WEB-INF/mybatis/mybatis-config.xml"></property>
+	</bean>
+	
+		<!-- mybatis SqlSessionTemplate은 기본적인 트랜잭션 관리나 쓰레드 처리의 안전성을 보장하고,
+		DB의 연결과 종료를 관리하는 부분. 등록해 두면 개발자가 직접 	트랜잭션관리나 DB 연결, 종료를 해야하는 작업을 줄일 수 있음 
+		SqlSessionFactory 는 데이터베이스와의 연결 SQL 의 실행에 대한 모든 것을 가진 중요한 객체-->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate"
+		destroy-method="clearCache">
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
+	</bean>
+	
+	<!-- Mapper Scanner -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.company.mapper" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+   </bean>
+	<!-- bean 등록 -->
+	<context:component-scan base-package="com.company.service"></context:component-scan>
+</beans>
