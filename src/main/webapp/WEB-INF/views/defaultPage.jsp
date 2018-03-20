@@ -70,7 +70,7 @@
     </script>
 	<script type="text/javascript" src="js/diagnosis.js?ver=5"></script>
 	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
-	<script src="js/star.js"></script>
+	
 	
 	<script src="js/js/dist/util.js"></script>
 	<script src="js/js/dist/tab.js"></script>
