@@ -17,7 +17,7 @@ public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**
-	 * Ã³À½ defaultPage ·Î ÀÌµ¿
+	 * ì²˜ìŒ defaultPage ë¡œ ì´ë™
 	 */
 	@RequestMapping(value = "/")
 	public String home(Locale locale, Model model) throws Exception{
@@ -28,8 +28,7 @@ public class HomeController {
 	}
 	
 	/**
-	 * @param db¿¡¼­ ¹Ş¾Æ¿Â Æò°¡µÈ rule µ¥ÀÌÅÍ¸¦ memberList¶ó´Â ÀÌ¸§À¸·Î ¹Ş¾Æ¿Í¼­ model¿¡ Ãß°¡ÈÄ ¸®ÅÏ(evalTablePage.jsp ¿¡¼­ memberList
-	 * ¶ó´Â ÀÌ¸§À¸·Î »ç¿ë 
+	 * í‰ê°€ í˜ì´ì§€ë¡œ ì´ë™
 	 */
 	@RequestMapping(value="/evalTablePage")
 	public String evaluateRule(Model model) throws Exception
@@ -38,7 +37,25 @@ public class HomeController {
 		
 		return "evalTablePage";
 	}
-
-	
+	/**
+	 * ë¡œê·¸ì¸
+	 */
+	@RequestMapping(value="/login")
+	public String login(Model model) throws Exception
+	{
+		logger.info("Login");
+		
+		return "login";
+	}
+	/**
+	 * ì ‘ìˆ˜ í˜ì´ì§€ ì´ë™
+	 */
+	@RequestMapping(value="/receptionPage")
+	public String receptionPage(Model model) throws Exception
+	{
+		logger.info("receptionPage");
+		
+		return "receptionPage";
+	}
 	 
 }

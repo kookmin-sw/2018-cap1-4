@@ -2,14 +2,14 @@ package com.company.dto;
 
 /**
  * 
- * °¢°¢ ·ê¿¡ ÇØ´çÇÏ´Â Áõ»óµéÀ» °ü¸®ÇÏ´Â Å¬·¡½º (·ê¿¡ ÇØ´çÇÏ´Â Áõ»ó) => PatientSymptomVO ¿Í ºñ±³
+ * ê°ê° ë£°ì— í•´ë‹¹í•˜ëŠ” ì¦ìƒë“¤ì„ ê´€ë¦¬í•˜ëŠ” í´ë˜ìŠ¤ (ë£°ì— í•´ë‹¹í•˜ëŠ” ì¦ìƒ) => PatientSymptomVO ì™€ ë¹„êµ
  *
  */
 public class SymptomVO {
 	private String ruleID;
 	private String symptom;
-	private int flag; // flag == 1 (¹İµå½Ã Á¸Àç ÇØ¾ßÇÏ´Â Áõ»ó)   flag == 0 (or ¿¬»ê È®ÀÎÇÏ±â À§ÇÑ flag)
-	private String sRegion; // Áõ»ó¿¡ ´ëÇÑ ½ÅÃ¼ºÎÀ§
+	private int flag; // flag == 1 (ë°˜ë“œì‹œ ì¡´ì¬ í•´ì•¼í•˜ëŠ” ì¦ìƒ)   flag == 0 (or ì—°ì‚° í™•ì¸í•˜ê¸° ìœ„í•œ flag)
+	private String sRegion; // ì¦ìƒì— ëŒ€í•œ ì‹ ì²´ë¶€ìœ„
 	private int min;
 	private int max;
 	public SymptomVO() 

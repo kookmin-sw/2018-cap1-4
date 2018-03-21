@@ -1,9 +1,9 @@
 package com.company.dto;
 
 public class MedicineVO {
-	public String ruleID; // ruleID == Áø´Ü¸í
-	public String medicine;   // Ã³¹æ¾à
-	public int defaultValue; // ¾à ¿ë·® ±âº» °ª
+	public String ruleID; // ruleID == ì§„ë‹¨ëª…
+	public String medicine;   // ì²˜ë°©ì•½
+	public int defaultValue; // ì•½ ìš©ëŸ‰ ê¸°ë³¸ ê°’
 	public String getRuleID() {
 		return ruleID;
 	}

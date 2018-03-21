@@ -4,23 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PatientDiagnosisVO  implements Cloneable{
-	private String pNumber; // È¯ÀÚ ¹øÈ£¿Í ÀÌ¸§À»  ·êÆò°¡ Å×ÀÌºí¿¡ ³Ñ°ÜÁÖ±â À§ÇÑ Å¬·¡½º¸¦ ¸¸µé±â À§ÇØ ÇÑ¹ø ´õ ±â·Ï
+	private String pNumber; // í™˜ì ë²ˆí˜¸ì™€ ì´ë¦„ì„  ë£°í‰ê°€ í…Œì´ë¸”ì— ë„˜ê²¨ì£¼ê¸° ìœ„í•œ í´ë˜ìŠ¤ë¥¼ ë§Œë“¤ê¸° ìœ„í•´ í•œë²ˆ ë” ê¸°ë¡
 	private String pName; 
-	private String comment; // ÇØ´ç È¯ÀÚ°¡ ¹ŞÀº Áø´Ü¿¡ ´ëÇÑ ·ê Æò°¡
+	private String comment; // í•´ë‹¹ í™˜ìê°€ ë°›ì€ ì§„ë‹¨ì— ëŒ€í•œ ë£° í‰ê°€
 	private int score;
 	private String visitDate;
 	
-	public ArrayList<String> selectedGroup; // ÀÇ»ç°¡ ¼±ÅÃÇÑ Ã³¹æ±º ½ºÆ®¸µ
-	public List<PrescriptionGroupVO> selectedGroupList; // È¯ÀÚÀÇ Áõ»ó°ú Ã³¹æ±º°ú ºñ±³ÇØ¼­ ÀÏÄ¡ÇÏ´Â Ã³¹æ±º ¸®½ºÆ®
-	public ArrayList<String> simplePrescr; // È¯ÀÚ¿¡ Áõ»ó¿¡ ¸ÅÄª µÇ´Â ´Ü¼øÃ³¹æ
-	public ArrayList<String> complexPrescr; // È¯ÀÚ¿¡ Áõ»ó¿¡ ¸ÅÄª µÇ´Â º¹ÇÕÃ³¹æ
-	public ArrayList<String> diagnosisArr; // È¯ÀÚ°¡ ¹ŞÀº Áø´Ü¸í ¸®½ºÆ®
+	public ArrayList<String> selectedGroup; // ì˜ì‚¬ê°€ ì„ íƒí•œ ì²˜ë°©êµ° ìŠ¤íŠ¸ë§
+	public List<PrescriptionGroupVO> selectedGroupList; // í™˜ìì˜ ì¦ìƒê³¼ ì²˜ë°©êµ°ê³¼ ë¹„êµí•´ì„œ ì¼ì¹˜í•˜ëŠ” ì²˜ë°©êµ° ë¦¬ìŠ¤íŠ¸
+	public ArrayList<String> simplePrescr; // í™˜ìì— ì¦ìƒì— ë§¤ì¹­ ë˜ëŠ” ë‹¨ìˆœì²˜ë°©
+	public ArrayList<String> complexPrescr; // í™˜ìì— ì¦ìƒì— ë§¤ì¹­ ë˜ëŠ” ë³µí•©ì²˜ë°©
+	public ArrayList<String> diagnosisArr; // í™˜ìê°€ ë°›ì€ ì§„ë‹¨ëª… ë¦¬ìŠ¤íŠ¸
 	
-	public static final int NODIAGNOSISED   = 0; //Áø·á ¹ŞÀºÀû ¾ø´Ù.
-    public static final int DIAGNOSISED = 1; //Áø·á ¹ŞÀºÀû ÀÖ´Ù. 
+	public static final int NODIAGNOSISED   = 0;//ì§„ë£Œ ë°›ì€ì  ì—†ë‹¤.
+    public static final int DIAGNOSISED = 1; //ì§„ë£Œ ë°›ì€ì  ìˆë‹¤. 
     
     public int state;
-   // public int ruleCheckCnt; // ¸ğµç ·êÀ» ´Ù Ã¼Å©Çß´ÂÁö È®ÀÎÇÏ±â À§ÇÔ
+ // public int ruleCheckCnt; // ëª¨ë“  ë£°ì„ ë‹¤ ì²´í¬í–ˆëŠ”ì§€ í™•ì¸í•˜ê¸° ìœ„í•¨
   
 	public PatientDiagnosisVO(String visitDate) {
 		this.state = NODIAGNOSISED;
@@ -30,8 +30,8 @@ public class PatientDiagnosisVO  implements Cloneable{
 		diagnosisArr = new ArrayList<String>();
 		this.visitDate = visitDate;
 		
-		selectedGroup.add("°»³â±â"); ////////////////// ÀÇ»ç°¡ Ã¼Å©ÇßÀ»¶§ ¼±ÅÃÇÑ Ã³¹æ±º ÀÓ½Ã·Î ÀúÀå
-		selectedGroup.add("¼ö¸é½ÉÀå¾à");
+		selectedGroup.add("ê°±ë…„ê¸°"); ////////////////// ì˜ì‚¬ê°€ ì²´í¬í–ˆì„ë•Œ ì„ íƒí•œ ì²˜ë°©êµ° ì„ì‹œë¡œ ì €ì¥
+		selectedGroup.add("ìˆ˜ë©´ì‹¬ì¥ì•½");
 		
 		selectedGroupList = new ArrayList<PrescriptionGroupVO>();
 	}
@@ -44,14 +44,14 @@ public class PatientDiagnosisVO  implements Cloneable{
 		}
 	}
 	
-	public void setComplexPrescr(ArrayList<MedicineVO> medicines) // °á°ú°ª Ã³¹æ¾àµé ¼ÂÆÃ
+	public void setComplexPrescr(ArrayList<MedicineVO> medicines) // ê²°ê³¼ê°’ ì²˜ë°©ì•½ë“¤ ì…‹íŒ…
 	{
 		for(MedicineVO obj : medicines)
 		{
 			complexPrescr.add(obj.getMedicine()+" "+obj.getDefaultValue());
 		}
 	}
-	public void setSimplePrescr(ArrayList<MedicineVO> medicines) // °á°ú°ª Ã³¹æ¾à ¼ÂÆÃ ( ´Ü¼ø Ã³¹æÀÌ´Ï ¹è¿­Å©±â´Â 1)
+	public void setSimplePrescr(ArrayList<MedicineVO> medicines) // ê²°ê³¼ê°’ ì²˜ë°©ì•½ ì…‹íŒ… ( ë‹¨ìˆœ ì²˜ë°©ì´ë‹ˆ ë°°ì—´í¬ê¸°ëŠ” 1)
 	{
 		for(MedicineVO obj : medicines)
 		{

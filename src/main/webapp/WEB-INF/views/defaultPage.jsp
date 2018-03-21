@@ -28,12 +28,12 @@
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<div class="collapse navbar-collapse" id="navbarsExample09">
 			<ul class="navbar-nav nav nav-tabs mr-auto" role="tablist">
-				<li class="active"><a href="#tab1" data-toggle="tab"
-					class="nav-link active" role="tab" style="color: black;">진단</a></li>
-				<li><a href="evalTablePage" class="nav-link" role="tab"
-					style="color: black;">평가</a></li>
-				<li><a href="receptionPage" class="nav-link" role="tab"
-					style="color: black;">환자접수</a></li>
+				<li class="active"><a href="receptionPage"
+					class="nav-link active" role="tab" style="color: black;">접수</a></li>
+				<li><a href="/mybatis" class="nav-link" role="tab"
+					style="color: black;">진단</a></li>
+				<li class="active"><a href="evalTablePage"
+					class="nav-link active" role="tab" style="color: black;">평가</a></li>
 			</ul>
 			<form class="form-inline">
 				<form class="navbar-form pull-left">

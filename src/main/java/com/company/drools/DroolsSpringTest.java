@@ -12,20 +12,20 @@ public class DroolsSpringTest {
 	@Autowired
 	private ApplicationContext applicationContext;
 	/**
-	 * DomainRule À» map Å¸ÀÔÀ¸·Î ¼ÂÆÃ 
+	 * DomainRule ì„ map íƒ€ì…ìœ¼ë¡œ ì…‹íŒ…  
 	 */
 	
 	public static void main(String args[]) {
 	}
 	/**
-	 * È¯ÀÚ¸¦ ¼±ÅÃ ÈÄ °Ë»çÇÏ±â ¹öÆ°À» ´­·¶À» °æ¿ì¸¸ checkSymptom() ½ÇÇà
+	 * í™˜ìë¥¼ ì„ íƒ í›„ ê²€ì‚¬í•˜ê¸° ë²„íŠ¼ì„ ëˆŒë €ì„ ê²½ìš°ë§Œ checkSymptom() ì‹¤í–‰
 	 */
 	public void checkSymptom() {
 		try {
-			// °æ·Î ¼³Á¤
+			// ê²½ë¡œ ì„¤ì •
 			applicationContext = new ClassPathXmlApplicationContext(
 					"drools-context/applicationContext-drools.xml");
-			// stateful ¹æ½ÄÀÇ session À» getbean
+			// stateful ë°©ì‹ì˜ session ì„ getbean
 			StatefulKnowledgeSession ksession = (StatefulKnowledgeSession) applicationContext
 					.getBean("ksession");
 			ksession.fireAllRules();

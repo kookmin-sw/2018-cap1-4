@@ -2,13 +2,13 @@ package com.company.dto;
 
 /**
  * 
- * °¢ Ã³¹æ±º¿¡ ¼ÓÇÏ°í ÀÖ´Â Ã³¹æ¾àÀ» Å¬·¡½º·Î °ü¸®, Ã¸¾à³»¿¡ Ã³¹æ¾àµéÀ» °ü¸® <-> MedicineVO ¿Í ±¸ºĞ(´Ü¼øÃ³¹æ¾à Æ÷ÇÔÇÏ±â À§ÇØ »ı¼º)
+ * ê° ì²˜ë°©êµ°ì— ì†í•˜ê³  ìˆëŠ” ì²˜ë°©ì•½ì„ í´ë˜ìŠ¤ë¡œ ê´€ë¦¬, ì²©ì•½ë‚´ì— ì²˜ë°©ì•½ë“¤ì„ ê´€ë¦¬ <-> MedicineVO ì™€ êµ¬ë¶„(ë‹¨ìˆœì²˜ë°©ì•½ í¬í•¨í•˜ê¸° ìœ„í•´ ìƒì„±
  *
  */
 public class PrescriptionVO implements Cloneable {
-	public String prescrGroup; // Ã¸¾à ÀÌ¸§
-	public String medicine; // Ã³¹æ¾à
-	public int defaultValue; // ±âº» °ª
+	public String prescrGroup; // ì²©ì•½ ì´ë¦„
+	public String medicine;// ì²˜ë°©ì•½
+	public int defaultValue; // ê¸°ë³¸ ê°’
 	public Object clone() {
 		try {
 			PrescriptionVO obj = (PrescriptionVO)super.clone();

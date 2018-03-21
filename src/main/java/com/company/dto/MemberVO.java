@@ -1,13 +1,13 @@
 package com.company.dto;
 /**
- * Æò°¡ Å×ÀÌºíÀ» °ü¸®ÇÏ±â À§ÇÑ DTO
+ * í‰ê°€ í…Œì´ë¸”ì„ ê´€ë¦¬í•˜ê¸° ìœ„í•œ DTO
  * 
  *
  */
 public class MemberVO {
 
-	private String patientNum; // È¯ÀÚ ¹øÈ£
-	private String patientName; // È¯ÀÚ ÀÌ¸§
+	private String patientNum; // í™˜ì ë²ˆí˜¸
+	private String patientName; // í™˜ì ì´ë¦„
 	private String comment;
 	private String date;
 	private int score;
