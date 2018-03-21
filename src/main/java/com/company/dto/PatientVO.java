@@ -6,18 +6,18 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 public class PatientVO {
-	private String pNumber; // È¯ÀÚ ¹øÈ£
-	private String pName; // È¯ÀÚ ÀÌ¸§
-	private int age; // ¼¼ºÎ»çÇ× ´õ Ãß°¡ ¿¹Á¤
-	private String visitDate; // ¹æ¹®³¯Â¥
+	private String pNumber; // í™˜ì ë²ˆí˜¸
+	private String pName; // í™˜ì ì´ë¦„
+	private int age; // ì„¸ë¶€ì‚¬í•­ ë” ì¶”ê°€ ì˜ˆì •
+	private String visitDate; // ë°©ë¬¸ë‚ ì§œ
 	
-	public ArrayList<PatientSymptomVO> symptomArr; // Áõ»óµéÀ» drools ·Î Áø´ÜÇÏ±â À§ÇØ arraylist ·Î °ü¸®
+	public ArrayList<PatientSymptomVO> symptomArr; // ì¦ìƒë“¤ì„ drools ë¡œ ì§„ë‹¨í•˜ê¸° ìœ„í•´ arraylist ë¡œ ê´€ë¦¬
 	public PatientDiagnosisVO diagnosis;
 	public PatientVO()
 	{
 		Calendar cal= Calendar.getInstance();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd"); //"yyyy:MM:dd-HH:mm:ss"
-		visitDate = dateFormat.format(cal.getTime()); // ÇöÀç´Â ¿©±â¼­ Áø´Ü ³¯Â¥¸¦ ¸¸µé¾úÀ¸³ª ÃßÈÄ ´ë±â ¸í´Ü È¯ÀÚ¸¦ »ı¼ºÇÒ¶§ ³¯Â¥¸¦ ±â·ÏÇÏ°í ºÒ·¯¿Í¾ßÇÔ
+		visitDate = dateFormat.format(cal.getTime()); // í˜„ì¬ëŠ” ì—¬ê¸°ì„œ ì§„ë‹¨ ë‚ ì§œë¥¼ ë§Œë“¤ì—ˆìœ¼ë‚˜ ì¶”í›„ ëŒ€ê¸° ëª…ë‹¨ í™˜ìë¥¼ ìƒì„±í• ë•Œ ë‚ ì§œë¥¼ ê¸°ë¡í•˜ê³  ë¶ˆëŸ¬ì™€ì•¼í•¨
 		
 		symptomArr = new ArrayList<PatientSymptomVO>();
 		diagnosis = new PatientDiagnosisVO(visitDate);

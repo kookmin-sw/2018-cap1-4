@@ -3,7 +3,7 @@ package com.company.dto;
 import java.util.ArrayList;
 
 /**
- * Ã³¹æ ±º ( °¢°¢ Ã³¹æ¾à ¸®½ºÆ®°¡ Æ÷ÇÔµÇ¾î ÀÖÀ½)
+ * ì²˜ë°© êµ° ( ê°ê° ì²˜ë°©ì•½ ë¦¬ìŠ¤íŠ¸ê°€ í¬í•¨ë˜ì–´ ìˆìŒ)
  */
 public class PrescriptionGroupVO {
 	
