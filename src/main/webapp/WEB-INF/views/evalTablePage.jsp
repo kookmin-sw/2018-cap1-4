@@ -18,7 +18,7 @@
 
 
 <!-- Bootstrap core CSS -->
-<title>위담한방병원</title>
+<title>Oriental Medicine Expert System</title>
 
 </head>
 <body>
@@ -32,6 +32,8 @@
 					style="color: black;">진단</a></li>
 				<li class="active"><a href="evalTablePage"
 					class="nav-link active" role="tab" style="color: black;">평가</a></li>
+				<li><a href="receptionPage" class="nav-link" role="tab"
+					style="color: black;">환자접수</a></li>
 			</ul>
 			<form class="form-inline" id="evalRuleForm">
 				<form class="navbar-form pull-left">
