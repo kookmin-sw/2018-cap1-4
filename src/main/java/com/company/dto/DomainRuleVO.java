@@ -3,8 +3,8 @@ package com.company.dto;
 import java.util.ArrayList;
 
 public class DomainRuleVO {
-	public String ruleID; // ruleID 인 진단명
-	public int andSymptom; // and 조건의 symptom 검사
+	public String ruleID; 
+	public int andSymptom; 
 	public ArrayList<SymptomVO> symptoms; 
 	public ArrayList<MedicineVO> medicines;
 	public DomainRuleVO() {}
