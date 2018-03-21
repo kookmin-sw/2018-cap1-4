@@ -32,6 +32,8 @@
 					class="nav-link active" role="tab" style="color: black;">진단</a></li>
 				<li><a href="evalTablePage" class="nav-link" role="tab"
 					style="color: black;">평가</a></li>
+				<li><a href="receptionPage" class="nav-link" role="tab"
+					style="color: black;">환자접수</a></li>
 			</ul>
 			<form class="form-inline">
 				<form class="navbar-form pull-left">
