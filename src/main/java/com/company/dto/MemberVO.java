@@ -1,8 +1,6 @@
 package com.company.dto;
 /**
  * 평가 테이블을 관리하기 위한 DTO
- * 
- *
  */
 public class MemberVO {
 

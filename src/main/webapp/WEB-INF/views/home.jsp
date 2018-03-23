@@ -7,17 +7,15 @@
  <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 <title>Insert title here</title>
+
 </head>
 <body>
-	<h1>로그인</h1> 
-	<form method="post" action="loginCheck"> 
-		<p>ID</p> 
-		<p><input type="text" name="id" value="" /></p> 
-		<p>패스워드</p> 
-		<p><input type="password" name="pw" value="" /></p> 
-		<p><button type="submit">로그인 요청</button></p> 
-	</form> 
+	<form method="get" action="docPageButton">
+		<button type="submit" name="doctorUser">의사</button>
+	</form>
+	<form method="get">
+		<button type="submit" name="">일반 사용자</button>
+	</form>
 </body>
 </html>

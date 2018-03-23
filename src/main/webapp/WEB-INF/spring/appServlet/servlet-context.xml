@@ -32,12 +32,12 @@
 	</beans:bean>
 	<!-- classpath=/WEB-INF/Classes -->
 	<context:component-scan base-package="com.company.controller" />
-	<!--  
+	 
 	<interceptors>
 		<interceptor>
-			<mapping path="/**"/>
+			<mapping path="/doctorPage"/>
 			<beans:bean class = "com.company.interceptor.LoginInterceptor"/>
 		</interceptor>
 	</interceptors>
-	-->
+	
 </beans:beans>
