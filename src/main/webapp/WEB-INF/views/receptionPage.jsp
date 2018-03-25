@@ -22,7 +22,7 @@
 			<ul class="navbar-nav nav nav-tabs mr-auto" role="tablist">
 				<li class="active"><a href="receptionPage"
 					class="nav-link active" role="tab" style="color: black;">접수</a></li>
-				<li><a href="/mybatis" class="nav-link" role="tab"
+				<li><a href="defaultPage" class="nav-link" role="tab"
 					style="color: black;">진단</a></li>
 				<li class="active"><a href="evalTablePage"
 					class="nav-link active" role="tab" style="color: black;">평가</a></li>
