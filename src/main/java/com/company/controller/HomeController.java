@@ -104,13 +104,14 @@ public class HomeController {
 		return "defaultPage";
 	}
 	/**
-	 * 평가 페이지로 이동
+	 * GeneralPage
 	 */
-	@RequestMapping(value="/evalTablePage")
+	@RequestMapping(value="/generalSurvey")
 	public String evaluateRule(Model model) throws Exception
 	{
-		logger.info("evalTablePage");
+		logger.info("generalSurvey");
 		
-		return "evalTablePage";
+		return "generalSurvey";
 	}
+	
 }
