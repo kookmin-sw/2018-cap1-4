@@ -99,195 +99,222 @@
 								| 010-5199-**** | 경기도 남양주시 화도읍 명품하우스</h5>
 							
 						</div>
-		<header>
-        <h1>Oriental Medicine Expert System</h1>
-        </header>
-		<section class="content">
-        <nav>
-          <img src="설진.png" height="100" alt="설진">
-          <input type="text" name="comment" value="">
-          <input type="submit" value="show list">
-          <input type="submit" value="확인"><br />
-          <img src="복진.png" height="100" alt="복진">
-          <input type="text" name="comment" value="">
-          <input type="submit" value="show list">
-          <input type="submit" value="확인"><br />
-          <img src="오장육부.png" height="100" width="90"alt="오장육부">
-          <input type="text" name="comment" value="">
-          <input type="submit" value="show list">
-          <input type="submit" value="확인"><br />
-        </nav>
-        <table border="1">
-              <thead>
-                  <tr>
-                      <th>설문결과</th>
-                  </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                      <td>소화불량</td>
-                  </tr>
-                  <tr>
-                      <td>명치답답</td>
-                  </tr>
-                  <tr>
-                      <td>명치부위 압통</td>
-                  </tr>
-                  <tr>
-                      <td>담적 상복부</td>
-                  </tr>
-                  <tr>
-                      <td>담적 하복부</td>
-                  </tr>
-                  <tr>
-                      <td>명치통증</td>
-                  </tr>
-                  <tr>
-                      <td>불안함</td>
-                  </tr>
-                  <tr>
-                      <td>추위 탐</td>
-                  </tr>
-                  <tr>
-                      <td>건망증</td>
-                  </tr>
-              </tbody>
-          </table>
-          <table border="1">
-                <thead>
-                    <tr>
-                        <th>증상</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>소화불량</td>
-                    </tr>
-                    <tr>
-                        <td>명치답답</td>
-                    </tr>
-                    <tr>
-                        <td>명치부위 압통</td>
-                    </tr>
-                    <tr>
-                        <td>담적 상복부</td>
-                    </tr>
-                    <tr>
-                        <td>담적 하복부</td>
-                    </tr>
-                    <tr>
-                        <td>명치통증</td>
-                    </tr>
-                    <tr>
-                        <td>불안함</td>
-                    </tr>
-                    <tr>
-                        <td>추위 탐</td>
-                    </tr>
-                    <tr>
-                        <td>건망증</td>
-                    </tr>
-                    <tr>
-                      <td>
-                      <input type="text" value="">
-                      <input type="submit" value="Add"><br />
-                      <input type="submit" value="Del">
-                    </td>
-                </tbody>
-            </table>
-            <table border="1">
-                  <thead>
-                      <tr>
-                          <th>증상 선택 리스트</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td>카테고리</td>
-                      </tr>
-                      <tr>
-                          <td>머리</td>
-                      </tr>
-                      <tr>
-                          <td>내장기관</td>
-                      </tr>
-                      <tr>
-                          <td>간</td>
-                      </tr>
-                      <tr>
-                          <td>심장</td>
-                      </tr>
-                      <tr>
-                          <td>갱년기</td>
-                      </tr>
-                      <tr>
-                          <td>기타</td>
-                      </tr>
-                      <tr>
-                          <td>소화불량</td>
-                      </tr>
-                      <tr>
-                          <td>명치답답</td>
-                      </tr>
-                      <tr>
-                        <td>
-                        <input type="submit" value="Add to left"><br />
-                        <input type="submit" value="확인">
-                      </td>
-                      </tr>
-                  </tbody>
-              </table>
-        <main>
+            <div class="row">
+             <div class="span3">
+               <div class="col">
+                 <div class="span3">
+                   <img src="설진.png" height="150" width="120"alt="설진">
+                   <textarea rows="4"></textarea>
+                   <input type="submit" value="show list">
+                   <input type="submit" value="확인"><br />
+                 </div>
+                 <div class="span3">
+                   <img src="복진.png" height="150" alt="복진">
+                   <textarea rows="4"></textarea>
+                   <input type="submit" value="show list">
+                   <input type="submit" value="확인"><br />
+                 </div>
+                 <div class="span3">
+                   <img src="오장육부.png" height="300" width="180"alt="오장육부">
+                   <textarea rows="4"></textarea>
+                   <input type="submit" value="show list">
+                   <input type="submit" value="확인"><br />
+                 </div>
+               </div>
+            </div>
 
-        </main>
-        <aside>
-          <table border="1">
-                <thead>
-                    <tr>
-                        <th>진단</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Number 17 rule : 옻</td>
-                    </tr>
-                    <tr>
-                        <td>Number 15 rule : 어지럼</td>
-                    </tr>
-                    <tr>
-                        <td>Number 12 rule : 총명</td>
-                    </tr>
-                    <tr>
-                        <td>Number 7 rule : 심혈</td>
-                    </tr>
-                    <tr>
-                        <td>Number 5 rule : 체기</td>
-                    </tr>
-                    <tr>
-                        <td>Number 3 rule : 심열</td>
-                    </tr>
-                </tbody>
-            </table>
-            <table border="1">
-                  <thead>
-                      <tr>
-                          <th>처방적합성</th>
-                      </tr>
-                      <tr>
-                          <th>추가사항들</th>
-                      </tr>
-                  </thead>
-                  <tbody>
-                      <tr>
-                          <td>Rule 14번의 용량 외에는 적합</td>
-                      </tr>
-                  </tbody>
-              </table>
-        </aside>
-      </section>
-      <footer>
-           수지침, 체질
-      </footer>
+             <div class="span9">
+              <div class="col">
+                <div class="span12">
+                  <div class="row">
+                    <div class="span4">
+                      <table class="table table-striped">
+                          <thead>
+                              <tr>
+                                  <th>설문결과</th>
+                              </tr>
+                          </thead>
+                          <tbody>
+                              <tr>
+                                  <td>소화불량</td>
+                              </tr>
+                              <tr>
+                                  <td>명치답답</td>
+                              </tr>
+                              <tr>
+                                  <td>명치부위 압통</td>
+                              </tr>
+                              <tr>
+                                  <td>담적 상복부</td>
+                              </tr>
+                              <tr>
+                                  <td>담적 하복부</td>
+                              </tr>
+                              <tr>
+                                  <td>명치통증</td>
+                              </tr>
+                              <tr>
+                                  <td>불안함</td>
+                              </tr>
+                              <tr>
+                                  <td>추위 탐</td>
+                              </tr>
+                              <tr>
+                                  <td>건망증</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                    </div>
+                    <div class="span4">
+                      <table class="table table-striped">
+                           <thead>
+                               <tr>
+                                   <th>증상</th>
+                               </tr>
+                           </thead>
+                           <tbody>
+                               <tr>
+                                   <td>소화불량</td>
+                               </tr>
+                               <tr>
+                                   <td>명치답답</td>
+                               </tr>
+                               <tr>
+                                   <td>명치부위 압통</td>
+                               </tr>
+                               <tr>
+                                   <td>담적 상복부</td>
+                               </tr>
+                               <tr>
+                                   <td>담적 하복부</td>
+                               </tr>
+                               <tr>
+                                   <td>명치통증</td>
+                               </tr>
+                               <tr>
+                                   <td>불안함</td>
+                               </tr>
+                               <tr>
+                                   <td>추위 탐</td>
+                               </tr>
+                               <tr>
+                                   <td>건망증</td>
+                               </tr>
+                           </tbody>
+                       </table>
+                       <div class="input-append">
+                         <input class="input-medium" id="appendedInputButtons" type="text">
+                         <button class="btn" type="button">Add</button>
+                         <button class="btn" type="button">Del</button><br />
+                        <!-- <button type="submit" class="btn btn-primary">변경사항 저장</button> -->
+                       </div>
+                       <button type="submit" class="btn btn-primary">변경사항 저장</button>
+                       <!-- <input type="text" value="">
+                       <input type="submit" value="Add"><br />
+                       <input type="submit" value="Del"> -->
+                       <!-- <input type="submit" value="확인"> -->
+                    </div>
+                    <div class="span4">
+                      <table class="table table-striped">
+                           <thead>
+                               <tr>
+                                   <th>증상 선택 리스트</th>
+                               </tr>
+                           </thead>
+                           <tbody>
+                               <tr>
+                                   <td>카테고리</td>
+                               </tr>
+                               <tr>
+                                   <td>머리</td>
+                               </tr>
+                               <tr>
+                                   <td>내장기관</td>
+                               </tr>
+                               <tr>
+                                   <td>간</td>
+                               </tr>
+                               <tr>
+                                   <td>심장</td>
+                               </tr>
+                               <tr>
+                                   <td>갱년기</td>
+                               </tr>
+                               <tr>
+                                   <td>기타</td>
+                               </tr>
+                               <tr>
+                                   <td>소화불량</td>
+                               </tr>
+                               <tr>
+                                   <td>명치답답</td>
+                               </tr>
+                               <!-- <tr>
+                                 <td>
+                                 <input type="submit" value="Add to left"><br />
+                                 <input type="submit" value="확인">
+                               </td>
+                               </tr> -->
+                           </tbody>
+                       </table>
+                       <input type="submit" class="btn" value="Add to left"><br />
+                    </div>
+                  </div>
+                </div>
+                <div class="span12">
+                  <div class="col">
+                    <div class="span6">
+                      <table class="table table-striped">
+                           <thead>
+                               <tr>
+                                   <th>진단</th>
+                               </tr>
+                           </thead>
+                           <tbody>
+                               <tr>
+                                   <td>Number 17 rule : 옻</td>
+                               </tr>
+                               <tr>
+                                   <td>Number 15 rule : 어지럼</td>
+                               </tr>
+                               <tr>
+                                   <td>Number 12 rule : 총명</td>
+                               </tr>
+                               <tr>
+                                   <td>Number 7 rule : 심혈</td>
+                               </tr>
+                               <tr>
+                                   <td>Number 5 rule : 체기</td>
+                               </tr>
+                               <tr>
+                                   <td>Number 3 rule : 심열</td>
+                               </tr>
+                           </tbody>
+                       </table>
+                    </div>
+                    <div class="span6">
+                      <table class="table table-striped">
+                           <thead>
+                               <tr>
+                                   <th>처방적합성</th>
+                               </tr>
+                               <tr>
+                                   <th>추가사항들</th>
+                               </tr>
+                           </thead>
+                           <tbody>
+                               <tr>
+                                   <td>Rule 14번의 용량 외에는 적합</td>
+                               </tr>
+                           </tbody>
+                       </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
 						
 					</div>
 				</div>
