@@ -37,6 +37,138 @@
 			</form>
 		</div>
 		</nav>
+		<div class="col-md-12 mx-auto">
+            <div class="row">
+              <!-- 전체 왼쪽 -->
+              <div class="col-md-6 mx-auto">
+                <h5><strong>환자정보</strong></h5>
+                    <div style="width:105%; height:416px; overflow:auto;background-color:white">
+                    <table class="table table-striped" style='line-height:90%'>
+                    <tbody>
+                        <tr>
+                            <td>이름</td>
+                            <td><input class="form-control" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>주소</td>
+                            <td><input class="form-control" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>신장</td>
+                            <td><input class="form-control" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>몸무게</td>
+                            <td><input class="form-control" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>과거 질병</td>
+                            <td><input class="form-control" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>현재 질병</td>
+                            <td><input class="form-control" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>빈칸1</td>
+                            <td><input class="form-control" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>빈칸2</td>
+                            <td><input class="form-control" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>빈칸3</td>
+                            <td><input class="form-control" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>빈칸4</td>
+                            <td><input class="form-control" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>빈칸5</td>
+                            <td><input class="form-control" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>빈칸6</td>
+                            <td><input class="form-control" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>빈칸7</td>
+                            <td><input class="form-control" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>빈칸8</td>
+                            <td><input class="form-control" type="text"></td>
+                        </tr>
+                    </tbody>
+                    </table>
+                    </div>
+                    <div style="float:right;">
+                    <form class="form-inline">
+                      <button type="button" >추가</button>
+                      <button type="button" >저장</button>
+                      <button type="submit" >새로고침</button>
+                    </form>
+                  </div>
+               </div>
+
+               <!-- 전체 오른쪽 -->
+               <div class="col-md-6 mx-auto">
+                 <script>
+                    function nwindow(){
+                        var url="test.html";
+                        window.open(url,"","width=400,height=400,left=600");
+                    }
+                </script>
+
+                 <h5><strong>환자 대기자 명단</strong></h5>
+                    <div style="width:105%; height:418px; overflow:auto; background-color:white">
+                      <table class="table table-striped" style='line-height:90%'>
+                        <tbody>
+                            <tr>
+                                <td>장원용</td>
+                                <td><div style="float:right;"><input type="button" value="팝업창"  onclick="nwindow()"/></div></td>
+                            </tr>
+                            <tr>
+                                <td>김태우</td>
+                                <td><div style="float:right;"><input type="button"  value="팝업창"  onclick="nwindow()"/></div></td>
+                            </tr>
+                            <tr>
+                                <td>류준영</td>
+                                <td><div style="float:right;"><input type="button"  value="팝업창"  onclick="nwindow()"/></div></td>
+                            </tr>
+                            <tr>
+                                <td>차은채</td>
+                                <td><div style="float:right;"><input type="button"  value="팝업창"  onclick="nwindow()"/></div></td>
+                            </tr>
+                            <tr>
+                                <td>환자1</td>
+                                <td><div style="float:right;"><input type="button"  value="팝업창"  onclick="nwindow()"/></div></td>
+                            </tr>
+                            <tr>
+                                <td>환자2</td>
+                                <td><div style="float:right;"><input type="button"  value="팝업창"  onclick="nwindow()"/></div></td>
+                            </tr>
+                            <tr>
+                                <td>환자3</td>
+                                <td><div style="float:right;"><input type="button" value="팝업창"  onclick="nwindow()"/></div></td>
+                            </tr>
+                            <tr>
+                                <td>환자4</td>
+                                <td><div style="float:right;"><input type="button"  value="팝업창"  onclick="nwindow()"/></div></td>
+                            </tr>
+                            <tr>
+                                <td>환자5</td>
+                                <td><div style="float:right;"><input type="button"  value="팝업창"  onclick="nwindow()"/></div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+               </div>
+             </div>
+           </div>
+		
 	</div>
 </body>
 </html>
