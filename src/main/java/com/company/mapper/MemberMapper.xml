@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.company.mapper.MemberMapper">
+
+	<!-- 
+		Mybatis SqlSessionFactoryBean 에서는 Mybatis 설정 기능을 활용할수 있도록 설정 파일을 읽어오는 부분(mybatis-config.xml)과 
+		SQL 문을 작성해둘 mapper.xml 로 구성 , 보통 테이블 1개당 mapper.xml 을 작성
+		mybatis-config.xml의 typeAlias에 등록해두지 않았다면 
+		
+		<select id="selectMember" resultType="com.example.dto.MemberVO" >
+			SELECT ID, PW ,NAME FROM TEST
+		</select>
+		
+		이렇게 해야 한다.
+		
+		여기서 id는 DAO에서 사용하기 위함, resultType은 쿼리 실행 후 데이터를 memberVO에 담아서 전달
+	-->
+	
+	<!-- 환자 이름으로 환자 검색 -->
+	<select id="getSearchPatient" parameterType="PatientVO" resultType="PatientVO">
+		SELECT pNumber, pName, age FROM patient WHERE 1=1
+			<if test="pName != null">
+				AND pName LIKE CONCAT('%',#{pName},'%')
+			</if>
+	</select>
+	
+</mapper>
