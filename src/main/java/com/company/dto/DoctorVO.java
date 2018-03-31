@@ -1,19 +1,26 @@
 package com.company.dto;
 
 public class DoctorVO {
-	private String id;
-	private String pw;
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	public String getPw() {
-		return pw;
-	}
-	public void setPw(String pw) {
-		this.pw = pw;
-	}
+	private String userId;
+	private String userPw;
 	
+	private boolean useCookie;
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
+	public String getUserPw() {
+		return userPw;
+	}
+	public void setUserPw(String userPw) {
+		this.userPw = userPw;
+	}
+	public boolean isUseCookie() {
+        return useCookie;
+    }
+    public void setUseCookie(boolean useCookie) {
+        this.useCookie = useCookie;
+    }
 }

@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 import com.company.dto.DoctorVO;
+import com.company.service.LoginService;
 
 /**
  * Handles requests for the application home page.
@@ -24,10 +26,13 @@ import com.company.dto.DoctorVO;
 @Controller
 public class HomeController {
 	
+	@Inject
+	private LoginService loginService;
+	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**
-	 * 처음 defaultPage 로 이동
+	 * 처음 home page 로 이동
 	 */
 	@RequestMapping(value = "/")
 	public String home(Locale locale, Model model) throws Exception{
@@ -55,7 +60,7 @@ public class HomeController {
 		return "generalSurvey";
 	}
 	/**
-	 * 로그인
+	 * 로그인화면으로 이동
 	 */
 	@RequestMapping(value="/login")
 	public String login(Model model) throws Exception
@@ -73,14 +78,33 @@ public class HomeController {
 	{
 		logger.info("LoginCheck");
 		String returnURL ="";
+		if(session.getAttribute("login") != null )
+		{
+	        // 기존에 login이란 세션 값이 존재한다면
+			session.removeAttribute("login"); // 기존값을 제거해 준다
+		}
+		DoctorVO vo = loginService.login(doctor);
+		if( vo != null) // 로그인 성공 
+		{
+			session.setAttribute("login", vo); // 세션에 login이란 이름으로 DoctorVO 객체를 저장해 놈
+			returnURL = "/defaultPage"; // 로그인 성공시 다음페이지 이동
+			
+			// 1. 로그인 성공하면, 그 다음으로는 로그인 폼에서 쿠키가 체크된 상태로 로그인 요청이 왔는지를 확인한다.
+		}
+		else { // 로그인 실패한 경우
+			returnURL = "login";
+		}
+		/*
 		try {
 				// UserVO vo = userService.login(dto); // 디비 연동후 등록된 사용자 // 검색 추후 구현 예정
-				if("admin".equals(doctor.getId()) && "123".equals(doctor.getPw()))
+				if("admin".equals(doctor.getUserId()) && "123".equals(doctor.getUserPw()))
 				{
-					Map map = new HashMap();
-					map.put("admin_id", "admin"); //세션 추후 수정예정
+					//Map map = new HashMap();
+					//map.put("admin_id", "admin"); //세션 추후 수정예정
 					System.out.println("아이디 비번 일치!");
-					request.getSession().setAttribute("LOGIN", map); // 세션에 admin 정보 셋팅
+					//request.getSession().setAttribute("LOGIN", map); // 세션에 admin 정보 셋팅
+					session = request.getSession(true);
+					session.setAttribute("userVO", doctor);
 					returnURL = "/defaultPage";
 				}
 				else {
@@ -90,6 +114,7 @@ public class HomeController {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
+		*/
 		return returnURL;
 	}
 	/**
