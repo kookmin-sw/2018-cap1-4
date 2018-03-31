@@ -14,7 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 import com.company.dto.DoctorVO;
 
@@ -44,6 +44,15 @@ public class HomeController {
 
 		logger.info("docPage Button clicked");
 		return "login";
+	}
+	/**
+	 * Home 에서 일반사용자 버튼 클릭시 페이지 이동
+	 */
+	@RequestMapping(value = "generalUserButton",  method = RequestMethod.GET)
+	public String generalUserButton() throws Exception{
+
+		logger.info("generalSurvey Button clicked");
+		return "generalSurvey";
 	}
 	/**
 	 * 로그인
