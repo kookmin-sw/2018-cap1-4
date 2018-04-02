@@ -1,5 +1,8 @@
 package com.company.service.impl;
 
+import java.sql.Date;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,5 +21,19 @@ public class LoginServiceImpl implements LoginService{
 		// TODO Auto-generated method stub
 		return mapper.login(dto);
 	}
+
+	@Override
+	public void keepLogin(Map map) {
+		// TODO Auto-generated method stub
+		mapper.keepLogin(map);
+	}
+
+	@Override
+	public DoctorVO checkUserWithSessionKey(String sessionId) {
+		// TODO Auto-generated method stub
+		return mapper.checkUserWithSessionKey(sessionId);
+	}
+
+
 
 }

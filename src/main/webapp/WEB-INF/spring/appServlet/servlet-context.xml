@@ -35,7 +35,7 @@
 	 
 	<interceptors>
 		<interceptor>
-			<mapping path="/defaultPage"/>
+			<mapping path="/doctorPagePage"/>
 			<beans:bean class = "com.company.interceptor.LoginInterceptor"/>
 		</interceptor>
 	</interceptors>

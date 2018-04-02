@@ -17,6 +17,7 @@
 		<p><input type="text" name="userId" value="" /></p> 
 		<p>패스워드</p> 
 		<p><input type="password" name="userPw" value="" /></p> 
+		<p>ID 를 기억하시겠습니까? <input type="checkbox" name="useCookie" ></p>
 		<p><button type="submit">로그인 요청</button></p> 
 	</form> 
 </body>
