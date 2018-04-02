@@ -14,9 +14,9 @@
 	<h1>로그인</h1> 
 	<form method="post" action="loginCheck"> 
 		<p>ID</p> 
-		<p><input type="text" name="id" value="" /></p> 
+		<p><input type="text" name="userId" value="" /></p> 
 		<p>패스워드</p> 
-		<p><input type="password" name="pw" value="" /></p> 
+		<p><input type="password" name="userPw" value="" /></p> 
 		<p><button type="submit">로그인 요청</button></p> 
 	</form> 
 </body>

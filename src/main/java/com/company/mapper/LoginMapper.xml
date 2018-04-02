@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.company.mapper.LoginMapper">
+	 <!-- 
+        login에 대한 DB 작업을 정의한다. id와 pw가 일치하면 사용자 정보를 담고 있는 객체를 반환한다.
+     -->
+    <select id="login" resultType="DoctorVO">
+        select * from login where userId = #{userId} and userPw = #{userPw}
+    </select>
+</mapper>

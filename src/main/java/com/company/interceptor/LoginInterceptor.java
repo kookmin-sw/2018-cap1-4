@@ -15,36 +15,30 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
 	private static final Logger logger = LoggerFactory.getLogger(LoginInterceptor.class);
 	
 	// 인터셉터가 요청을 가로 채어 preHandle을 처리하고 작업을 완료한 후에는 postHandle로 넘어간다.
-	
+	// 컨트롤러 보다 먼저 수행
 	@Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		
-		HttpSession session = request.getSession();
 		logger.info("preHandle");
-        if(session.getAttribute("LOGIN")!= null) 
+		HttpSession session = request.getSession(); // 세션 객체를 가져옴
+        Object obj = session.getAttribute("login"); // login 처리를 담당하는 사용자 정보를 담고있는 객체를 가져옴
+        
+        if(obj == null) // 로그인이 안되어 있는 상태이므로 로그인 폼으로 이동
         {
-        	logger.info("clear login!");
-        	session.removeAttribute("LOGIN");
+        	response.sendRedirect("/login");
+        	return false; // 더이상 컨트롤러 요청으로 가지 않도록 false 반환
         }
+        // preHandle의 return 은 컨트롤러 요청 uri로 가도 되는지를 확인
+        // 따라서 true로 하면 컨트롤러 uri로 가게 됨
         return true;
     }
+	
+	// 컨트롤러 수행되고 화면이 보여지기 직전에 수행되는 메서드
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, 
     		ModelAndView modelAndView) throws Exception {
     	logger.info("postHandle");
-    	HttpSession session = request.getSession();
-    	
-    	ModelMap modelMap = modelAndView.getModelMap();
-    	Object userVO = modelMap.get("userVO");
-    	
-    	System.out.println("userVO : "+userVO);
-    	if(userVO != null) {
-    		logger.info("new Login");
-    		session.setAttribute("LOGIN", userVO);
-    		response.sendRedirect("/");
-    	} else {
-    		response.sendRedirect("/home/login");
-    	}
+    	super.postHandle(request, response, handler, modelAndView);
     }
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
