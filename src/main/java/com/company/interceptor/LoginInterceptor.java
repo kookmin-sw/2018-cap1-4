@@ -1,5 +1,7 @@
 package com.company.interceptor;
 
+import javax.inject.Inject;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -9,8 +11,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
+import org.springframework.web.util.WebUtils;
+
+import com.company.dto.DoctorVO;
+import com.company.service.LoginService;
 
 public class LoginInterceptor extends HandlerInterceptorAdapter{
+	
+	@Inject
+	LoginService loginService;
 	
 	private static final Logger logger = LoggerFactory.getLogger(LoginInterceptor.class);
 	
@@ -25,7 +34,23 @@ public class LoginInterceptor extends HandlerInterceptorAdapter{
         
         if(obj == null) // 로그인이 안되어 있는 상태이므로 로그인 폼으로 이동
         {
-        	response.sendRedirect("/login");
+        	// 만들어 놓은 쿠키를 꺼내온다.
+        	Cookie loginCookie = WebUtils.getCookie(request, "loginCookie");
+        	if(loginCookie != null) { // 쿠키가 존재하는 경우 (이전에 로그인때 생성된 쿠키가 존재한다는 것)
+        		// loginCookie 의 값을 꺼내오고 -> 즉, 저장해논 세션 Id를 꺼내오고,
+        		String sessionId = loginCookie.getValue();
+        		// 세션 id를 checkUserWithSessionKey에 전달해서 이전에 로그인 한적이 있는지 체크하고
+        		// 유효시간이 지나지 않았고 sessionId 정보를 가지고 있는 사용자
+        		DoctorVO vo = loginService.checkUserWithSessionKey(sessionId);
+        		
+        		if( vo != null ) { // 조건에 만족하는 사용자 정보가 있다면
+        			session.setAttribute("login", vo);
+        			return true;
+        		}
+        	}
+        	
+        	// 로그인도 안되어 있고 쿠키도 존재하지 않는 경우 
+        	response.sendRedirect("login");
         	return false; // 더이상 컨트롤러 요청으로 가지 않도록 false 반환
         }
         // preHandle의 return 은 컨트롤러 요청 uri로 가도 되는지를 확인

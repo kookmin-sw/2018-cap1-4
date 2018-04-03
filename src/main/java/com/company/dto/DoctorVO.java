@@ -4,7 +4,7 @@ public class DoctorVO {
 	private String userId;
 	private String userPw;
 	
-	private boolean useCookie;
+	private boolean useCookie; // ID 기억 체크박스를 체크했을때
 	public String getUserId() {
 		return userId;
 	}
