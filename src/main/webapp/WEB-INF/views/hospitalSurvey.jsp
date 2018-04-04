@@ -979,5 +979,7 @@
             <td><input type=radio name="instant_fre"></td>
         </tr>
     </table>
+    
+    <button type="button" class="btn btn-warning" id="H_SurveySaveButton">저장</button>
 </body>
 </html>
