@@ -32,3 +32,36 @@ $(document).ready(function() {
 	}
 });
 });
+
+function callbackPatient(getPatientNum){ // 환자 번호로 증상과 환자 정보들을 불러오는 함수
+	var sendPatientNum = getPatientNum;
+	$.ajax({
+		type:"GET",
+		dataType: "json",
+		url: "getPatientSymptoms",
+		data : {"pNumber" : sendPatientNum},
+		success:function(resultData){
+			
+			var symptomList ="";
+			var patientInfo ="";
+			patientInfo += "<h5 style='background-color:#EBEBEB; border: solid 5px #EBEBEB'>"+
+							resultData.visitDate +"| "+resultData.pName+"("+resultData.pNumber+") 500211-20*****(F. 67세 0개월 24일) | [국민공단] | 010-5199-**** | 경기도 남양주시 화도읍 명품하우스</h5>";
+			
+			$.each(resultData.symptomArr ,function(index,item){
+				symptomList += "<tr><td>"+item.symptom+"</td><td><button onclick='deleteLine(this);' style='float: right;'>삭제</button></td></tr>";
+			});
+			$("#showPsymptoms > tbody").empty();
+			$("#showPsymptoms").append(symptomList);
+			$("#patientInfoView").empty();
+			$("#patientInfoView").append(patientInfo);
+		}
+	});
+}
+
+//Default Page 검색란에 입력하고 엔터눌렀을때 똑같이 검색되는 기능
+$("#searchPatient").keypress(function(event){
+    if ( event.which == 13 ) {
+        $("#searchButton").click();
+        return false;
+    }
+});
