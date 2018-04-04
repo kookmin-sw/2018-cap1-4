@@ -122,18 +122,7 @@
     					<div class="tab-pane active" id="home" role="tabpanel">
     						<div class="row">
     							<div class="col-md-4 mx-auto">
-    								<div class="row">
-                      <div class="col-md-6 mx-auto">
-          										<img src="img/수지침.png" style="width:100%; height:100%"alt="설진">
-          									</div>
-          									<div class="col-md-6 mx-auto">
-                              <textarea style="width:100%; height:80%" class="noresize"></textarea>
-                              <div style="float:right;">
-                              <input type="submit" value="show list">
-                              <input type="submit" value="확인"><br />
-                              </div>
-          									</div>
-    								</div>
+          										<img src="img/수지침반.png" style="width:100%; height:100%"alt="설진">
     							</div>
                   <div class="col-md-8 mx-auto">
     								<div class="row">
@@ -314,20 +303,16 @@
     						<div class="row">
     							<div class="col-md-4 mx-auto">
     								<div class="row">
-                      <div class="col-md-6 mx-auto">
-          										<img src="img/사상체질.png" style="width:100%; height:120%" alt="복진">
-          									</div>
-          									<div class="col-md-6 mx-auto">
-          										<textarea style="width:100%; height:110%" class="noresize"></textarea>
+          					<textarea style="width:100%; height:210px" class="noresize"></textarea>
                               <div style="float:right;">
           										<input type="submit" value="show list">
           										<input type="submit" value="확인"><br />
                               </div>
-          									</div>
+          									
     								</div>
     							</div>
     							<div class="col-md-8 mx-auto">
-                    <h5><strong>진단</strong></h5>
+                    <h5><strong>사상체질 의견</strong></h5>
                     <div style="width:100%; height:200px; overflow:auto">
     								<table class="table table-striped" style='line-height:90%'>
                          <!-- <thead>
@@ -337,23 +322,33 @@
                          </thead> -->
                          <tbody>
                              <tr>
-                                 <td>Number 17 rule : 옻</td>
-                             </tr>
-                             <tr>
-                                 <td>Number 15 rule : 어지럼</td>
-                             </tr>
-                             <tr>
-                                 <td>Number 12 rule : 총명</td>
-                             </tr>
-                             <tr>
-                                 <td>Number 7 rule : 심혈</td>
-                             </tr>
-                             <tr>
-                                 <td>Number 5 rule : 체기</td>
-                             </tr>
-                             <tr>
-                                 <td>Number 3 rule : 심열</td>
-                             </tr>
+                                   <th>사상체질</th>
+                                   <th>의견</th>
+                                 </tr>
+                                   <tr>
+                                       <td>소음인</td>
+                                       <td>신이 실하고 비가 약하다/ 찹쌀, 현미, 감자, 닭고기, 꿀</td>
+                                   </tr>
+                                   <tr>
+                                       <td>소양인</td>
+                                       <td>에어로빅처럼 활동적인 운동이 필요하다/ 보리, 오리, 새우, 오이, 바나나</td>
+                                   </tr>
+                                   <tr>
+                                       <td>태음인</td>
+                                       <td>허리가 굵고 목덜미가 가늘다/ 밀, 콩, 당근, 배, 자두</td>
+                                   </tr>
+                                   <tr>
+                                       <td>태양인</td>
+                                       <td>폐가 실하고 간이 약하다/ 메밀, 모과, 솔잎, 알로에</td>
+                                   </tr>
+                                   <tr>
+                                       <td>소음인</td>
+                                       <td>골반이 크고 가슴이 빈약하다/ 인삼, 생강, 대추, 당귀</td>
+                                   </tr>
+                                   <tr>
+                                       <td>태양인</td>
+                                       <td>목덜미가 굵고 허리가 가늘다/ 조개류(굴, 홍합, 전복), 모밀</td>
+                                   </tr>
                          </tbody>
                      </table>
                    </div>
