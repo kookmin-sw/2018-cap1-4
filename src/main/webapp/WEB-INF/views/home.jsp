@@ -18,8 +18,6 @@
 		<button type="submit" name="">일반 사용자</button>
 	</form>
 	
-	<script type="text/javascript" src="js/diagnosis.js?ver=5"></script>
-	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
-	<script type="text/javascript" src="js/search.js?ver=2"></script>
+	
 </body>
 </html>

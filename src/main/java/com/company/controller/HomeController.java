@@ -160,6 +160,15 @@ public class HomeController {
 		
 		return "generalSurvey";
 	}
-	
+	/**
+	 * HospitalSurveyPage
+	 */
+	@RequestMapping(value="/hospitalSurvey")
+	public String hospitalSurvey(Model model) throws Exception
+	{
+		logger.info("hospitalSurvey");
+		
+		return "hospitalSurvey";
+	}
 	
 }
