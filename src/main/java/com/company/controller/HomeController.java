@@ -1,9 +1,12 @@
 package com.company.controller;
 
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
+import javax.inject.Inject;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -14,9 +17,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 import com.company.dto.DoctorVO;
+import com.company.service.LoginService;
 
 /**
  * Handles requests for the application home page.
@@ -24,10 +28,13 @@ import com.company.dto.DoctorVO;
 @Controller
 public class HomeController {
 	
+	@Inject
+	private LoginService loginService;
+	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**
-	 * 처음 defaultPage 로 이동
+	 * 처음 home page 로 이동
 	 */
 	@RequestMapping(value = "/")
 	public String home(Locale locale, Model model) throws Exception{
@@ -46,7 +53,16 @@ public class HomeController {
 		return "login";
 	}
 	/**
-	 * 로그인
+	 * Home 에서 일반사용자 버튼 클릭시 페이지 이동
+	 */
+	@RequestMapping(value = "generalUserButton",  method = RequestMethod.GET)
+	public String generalUserButton() throws Exception{
+
+		logger.info("generalSurvey Button clicked");
+		return "generalSurvey";
+	}
+	/**
+	 * 로그인화면으로 이동
 	 */
 	@RequestMapping(value="/login")
 	public String login(Model model) throws Exception
@@ -59,28 +75,49 @@ public class HomeController {
 	 * 로그인 체크(사용자가 의사일경우 확인) 
 	 */
 	@RequestMapping(value="loginCheck", method = RequestMethod.POST)
-	public String loginCheck(DoctorVO doctor, HttpSession session , Model model ,
-			HttpServletRequest request, HttpServletResponse reponse) throws Exception
+	public String loginCheck(DoctorVO doctor, HttpSession session ,
+			HttpServletRequest request, HttpServletResponse response) throws Exception
 	{
 		logger.info("LoginCheck");
 		String returnURL ="";
-		try {
-				// UserVO vo = userService.login(dto); // 디비 연동후 등록된 사용자 // 검색 추후 구현 예정
-				if("admin".equals(doctor.getId()) && "123".equals(doctor.getPw()))
-				{
-					Map map = new HashMap();
-					map.put("admin_id", "admin"); //세션 추후 수정예정
-					System.out.println("아이디 비번 일치!");
-					request.getSession().setAttribute("LOGIN", map); // 세션에 admin 정보 셋팅
-					returnURL = "/defaultPage";
-				}
-				else {
-					returnURL = "login";
-				}
-				
-		} catch(Exception e) {
-			e.printStackTrace();
+		
+		if(session.getAttribute("login") != null )
+		{
+	        // 기존에 login이란 세션 값이 존재한다면
+			session.removeAttribute("login"); // 기존값을 제거해 준다
 		}
+		DoctorVO vo = loginService.login(doctor);
+		if( vo != null) // 로그인 성공 
+		{
+			session.setAttribute("login", vo); // 세션에 login이란 이름으로 DoctorVO 객체를 저장해 놈
+			returnURL = "/defaultPage"; // 로그인 성공시 다음페이지 이동
+			
+			// 1. 로그인 성공하면, 그 다음으로는 로그인 폼에서 쿠키가 체크된 상태로 로그인 요청이 왔는지를 확인한다.
+			if(doctor.isUseCookie()) { // 로그인 폼에서 쿠키 사용여부 확인했을때 체크박를 체크했다면 쿠키 생성
+				// 현재 로그인 되어 있을때 생성되었던 세션 id를 쿠키에 저장
+				Cookie cookie = new Cookie("loginCookie", session.getId());
+				// 경로 "/" 설정 함으로써 contextPath 이하의 모든 요청에 대해서 쿠키 전송할수 있도록 설정
+				cookie.setPath("/");
+				int amount = 60*60*24*1; // 단위는 초 임으로 1일정도 유효시킴
+				cookie.setMaxAge(amount); 
+				//쿠키 적용
+				response.addCookie(cookie);
+				
+				// currentTimeMills()가 1/1000 초 단위임으로 1000곱해서 더해야함
+				Date sessionLimit = new Date(System.currentTimeMillis()+ (1000*amount));
+				// 현재 세션 id 와 유효시간을 사용자 테이블에 저장한다.
+				Map<String, Object> map  = new HashMap<String, Object>();
+				map.put("userId", vo.getUserId());
+				map.put("sessionId", session.getId());
+				map.put("next", sessionLimit);
+				loginService.keepLogin(map);
+				//loginService.keepLogin(vo.getUserId(), session.getId(), sessionLimit);
+			}
+		}
+		else { // 로그인 실패한 경우
+			returnURL = "login";
+		}
+		
 		return returnURL;
 	}
 	/**
@@ -122,6 +159,16 @@ public class HomeController {
 		logger.info("generalSurvey");
 		
 		return "generalSurvey";
+	}
+	/**
+	 * HospitalSurveyPage
+	 */
+	@RequestMapping(value="/hospitalSurvey")
+	public String hospitalSurvey(Model model) throws Exception
+	{
+		logger.info("hospitalSurvey");
+		
+		return "hospitalSurvey";
 	}
 	
 }

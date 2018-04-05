@@ -14,8 +14,10 @@
 	<form method="get" action="docPageButton">
 		<button type="submit" name="doctorUser">의사</button>
 	</form>
-	<form method="get">
+	<form method="get" action="generalUserButton">
 		<button type="submit" name="">일반 사용자</button>
 	</form>
+	
+	
 </body>
 </html>

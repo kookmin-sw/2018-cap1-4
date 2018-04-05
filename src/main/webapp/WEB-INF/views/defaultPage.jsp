@@ -100,7 +100,7 @@
 					<input class="form-control" type="text" name="pName"
 						id="searchPatient" placeholder="환자이름"
 						aria-label="환자이름">
-					<button type="button" class="btn btn-primary">검색</button>
+					<button type="button" class="btn btn-primary" id="searchButton">검색</button>
 					<button type="button" class="btn btn-danger">LogOut</button>
 				</form>
 			</form>
@@ -170,41 +170,30 @@
     								<div class="col-md-4 mx-auto">
                       <h5><strong>증상</strong></h5>
                       <div style="width:100%; height:200px; overflow:auto">
-    										 <table class="table table-striped" style='line-height:90%'>
-    											 <!-- <thead>
-    													 <tr>
-    															 <th>증상</th>
-    													 </tr>
-    											 </thead> -->
-    											 <tbody>
-    													 <tr>
-    															 <td>소화불량</td>
-    													 </tr>
-    													 <tr>
-    															 <td>명치답답</td>
-    													 </tr>
-    													 <tr>
-    															 <td>명치부위 압통</td>
-    													 </tr>
-    													 <tr>
-    															 <td>담적 상복부</td>
-    													 </tr>
-    													 <tr>
-    															 <td>담적 하복부</td>
-    													 </tr>
-    													 <tr>
-    															 <td>명치통증</td>
-    													 </tr>
-    													 <tr>
-    															 <td>불안함</td>
-    													 </tr>
-    													 <tr>
-    															 <td>추위 탐</td>
-    													 </tr>
-    													 <tr>
-    															 <td>건망증</td>
-    													 </tr>
-    											 </tbody>
+    									<table class="table table-striped" style='line-height:90%' id="showPsymptoms">
+    										<tbody>
+    											<tr>
+													<td></td>
+												</tr>
+												<tr>
+													<td></td>
+												</tr>
+												<tr>
+													<td></td>
+												</tr>
+												<tr>
+													<td></td>
+												</tr>
+												<tr>
+													<td></td>
+												</tr>
+												<tr>
+													<td></td>
+												</tr>
+												<tr>
+													<td></td>
+												</tr>		
+    										</tbody>
     									 </table>
                      </div>
                      <div style="float:right;">
@@ -486,7 +475,7 @@
     </script>
 	<script type="text/javascript" src="js/diagnosis.js?ver=5"></script>
 	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
-	
+	<script type="text/javascript" src="js/search.js?ver=2.1221"></script>
 	
 	<script src="js/js/dist/util.js"></script>
 	<script src="js/js/dist/tab.js"></script>

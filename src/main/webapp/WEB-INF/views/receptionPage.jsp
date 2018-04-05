@@ -29,8 +29,8 @@
 			</ul>
 			<form class="form-inline" id="evalRuleForm">
 				<form class="navbar-form pull-left">
-					<input class="form-control" type="text" name="patientName"
-						id="search" placeholder="환자이름" aria-label="환자이름" />
+					<input class="form-control" type="text" name="pName"
+						id="searchPatient" placeholder="환자이름" aria-label="환자이름" />
 					<button type="submit" class="btn btn-primary">검색</button>
 					<button type="submit" class="btn btn-danger">LogOut</button>
 				</form>
@@ -170,5 +170,9 @@
            </div>
 		
 	</div>
+	
+	<script type="text/javascript" src="js/diagnosis.js?ver=5"></script>
+	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
+	<script type="text/javascript" src="js/search.js?ver=2"></script>
 </body>
 </html>

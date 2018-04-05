@@ -52,5 +52,8 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
+	
+	<!-- web.xml WAS Session Clustering -->
+	<distributable/>
+	
 </web-app>

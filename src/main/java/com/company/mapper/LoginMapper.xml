@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.company.mapper.LoginMapper">
+	 <!-- 
+        login에 대한 DB 작업을 정의한다. id와 pw가 일치하면 사용자 정보를 담고 있는 객체를 반환한다.
+     -->
+    <select id="login" resultType="DoctorVO">
+        select * from login where userId = #{userId} and userPw = #{userPw}
+    </select>
+    
+    <!-- 
+		로그인된 경우 해당 세션id와 유효시간을 사용자 테이블에 세팅한다.
+     -->
+    <update id="keepLogin" parameterType="java.util.Map">
+        update login set sessionKey = #{sessionId}, sessionLimit = #{next} where userId=#{userId}
+    </update>
+    
+    <!-- 
+		유효기간이 남아 있으면서 해당 sessionId를 가지는 사용자 정보를 꺼내오는 부분
+     -->
+    <select id="checkUserWithSessionKey" resultType="DoctorVO">
+        select * from login where sessionKey = #{sessionId} and sessionLimit > now()
+    </select>
+
+</mapper>
