@@ -38,5 +38,17 @@
 				AND sName LIKE CONCAT('%',#{symptom},'%')
 			</if>
 	</select>
+	
+	<!--문진 과정에서 증상 삭제  -->
+	<delete id="deleteSymptom" parameterType="PatientSymptomVO">
+		DELETE FROM updateSymptom 
+		WHERE symptom = #{symptom} AND pNum = #{pNum} AND date = #{visitDate} 
+	</delete>
+	
+	<!-- 문진 과정에서 증상 추가 -->
+	<insert id="addSymptom" parameterType="PatientSymptomVO">
+		INSERT INTO updateSymptom(date, pNum, symptom, degree) 
+		VALUES(#{visitDate},#{pNum}, #{symptom}, #{degree})
+	</insert>
 
 </mapper>

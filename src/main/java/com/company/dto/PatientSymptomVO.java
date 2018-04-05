@@ -2,7 +2,7 @@ package com.company.dto;
 
 /**
  * 
- * È¯ÀÚ°¡ ¹ŞÀº Áõ»óÀ» °ü¸®ÇÏ´Â Å¬·¡½º
+ * í™˜ì ì¦ìƒë“¤ì„ ê°ì²´ë¡œ ê´€ë¦¬
  *
  */
 public class PatientSymptomVO {

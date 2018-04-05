@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.company.dto.PatientSymptomVO;
 import com.company.dto.PatientVO;
 import com.company.dto.SymptomVO;
 import com.company.mapper.RuleMapper;
@@ -26,5 +27,17 @@ public class RuleServiceImpl implements RuleService{
 	public List<SymptomVO> getSearchSymptom(SymptomVO symptom) throws Exception {
 		// TODO Auto-generated method stub
 		return mapper.getSearchSymptom(symptom);
+	}
+
+	@Override
+	public void deleteSymptom(PatientSymptomVO symptomVO) throws Exception {
+		// TODO Auto-generated method stub
+		mapper.deleteSymptom(symptomVO);
+	}
+
+	@Override
+	public void addSymptom(PatientSymptomVO symptom) throws Exception {
+		// TODO Auto-generated method stub
+		mapper.addSymptom(symptom);
 	}
 }

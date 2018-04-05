@@ -2,6 +2,7 @@ package com.company.service;
 
 import java.util.List;
 
+import com.company.dto.PatientSymptomVO;
 import com.company.dto.PatientVO;
 import com.company.dto.SymptomVO;
 
@@ -12,4 +13,10 @@ public interface RuleService {
 	
 	// DB에서 증상 검색하여 자동완성기능 제공
 	public List<SymptomVO> getSearchSymptom(SymptomVO symptom) throws Exception;
+	
+	// 증상 삭제
+	public void deleteSymptom(PatientSymptomVO symptomVO) throws Exception;
+			
+	// 증상 추가
+	public void addSymptom(PatientSymptomVO symptom) throws Exception;
 }
