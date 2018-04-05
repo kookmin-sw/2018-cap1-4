@@ -165,6 +165,7 @@ input {
 		<input type="text" name="id" value="" class="signUpInput" placeholder="Type your username" autofocus required>
 		<h3>비밀번호</h3>
 		<input type="password" name="pw" value="" class="signUpInput" placeholder="Choose a password" required> 
+		<p>ID 를 기억하시겠습니까? <input type="checkbox" name="useCookie" ></p>
 		<input type="submit" value="로그인" class="signUpButton"> 
 	</form> 
 </body>
