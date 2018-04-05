@@ -117,7 +117,7 @@
                <div class="col-md-6 mx-auto">
                  <script>
                     function nwindow(){
-                        var url="test.html";
+                        var url="hospitalSurvey";
                         window.open(url,"","width=400,height=400,left=600");
                     }
                 </script>
@@ -128,7 +128,7 @@
                         <tbody>
                             <tr>
                                 <td>장원용</td>
-                                <td><div style="float:right;"><input type="button" value="팝업창"  onclick="nwindow()"/></div></td>
+                                <td><div style="float:right;"><input type="button" value="팝업창"  onclick="nwindow()" /></div></td>
                             </tr>
                             <tr>
                                 <td>김태우</td>
