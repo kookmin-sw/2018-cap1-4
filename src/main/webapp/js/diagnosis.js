@@ -32,3 +32,47 @@ $("#inputSymptom").keypress(function(event){
         return false;
     }
 });
+
+//증상 추가
+$(document).ready(function() {
+	$("#addSymptom").click(function() {
+		
+		var inputData = $("#inputSymptom").val();
+		$.ajax({
+			method:"POST",	
+			url:"addPatientSymptom",
+			dataType: "json",
+			data : {"symptom":inputData},
+			success:function(resultData) {
+				var diagnosis = JSON.stringify(resultData);
+				console.log(resultData);
+				
+				var show ="";
+				show += "<tr><td>"+resultData.symptom+"</td><td><button onclick='deleteLine(this);' style='float: right;'>삭제</button></td></tr>";
+				$("#showPsymptoms").append(show);
+				$("#inputSymptom").val("");
+			}
+		});
+	});
+});
+
+//증상 삭제
+function deleteLine(obj) {
+    var tr = $(obj).parent().parent();
+    var symptom =  tr.children().text().slice(0,-2);
+  
+    $.ajax({
+    	type:"POST",
+		dataType: "json",
+		url: "deleteSelectedSymptom",
+		data : {"symptom" : symptom},
+		success:function(result)
+		{
+			//var patientNum = result;
+			//callbackPatient(patientNum);
+			//라인 삭제
+		    tr.remove();
+		   
+		}
+    });
+}

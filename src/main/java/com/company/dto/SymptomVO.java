@@ -5,6 +5,7 @@ package com.company.dto;
  * 각각 룰에 해당하는 증상들을 관리하는 클래스 (룰에 해당하는 증상) => PatientSymptomVO 와 비교
  *
  */
+
 public class SymptomVO {
 	private String ruleID;
 	private String symptom;

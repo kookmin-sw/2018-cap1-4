@@ -30,15 +30,18 @@ public class RuleController {
 	@Inject
 	private MemberService service;
 	
-	private DroolsSpringTest drools;
-	
 	private PatientVO patient;
 	private PatientSymptomVO symptomVO;
+	
+	private DroolsSpringTest drools;
 	
 	@PostConstruct // 생성자 annotation
 	public void initialize(){ 
 		
-		patient = new PatientVO();
+		patient = new PatientVO(); // 추후 빈객체로 사용할 예정
+		symptomVO = new PatientSymptomVO();
+		
+		logger.info("setRuleDomain complete!");
 	}
 	
 	/**
@@ -69,4 +72,43 @@ public class RuleController {
 		List<SymptomVO> list = ruleService.getSearchSymptom(symptom);
 		return list;
 	}
+	
+	/**
+	 *  선택된 증상 삭제
+	 * @throws Exception
+	 */
+	 @RequestMapping(value ="/deleteSelectedSymptom", method = RequestMethod.POST)
+	 public @ResponseBody PatientVO deleteSelectedSymptom(@RequestParam("symptom") String symptom) throws Exception
+	 {
+		System.out.println(symptom);
+		symptomVO.setSymptom(symptom);
+		symptomVO.setpNum(patient.getpNumber());
+		symptomVO.setVisitDate(patient.diagnosis.getVisitDate());
+		ruleService.deleteSymptom(symptomVO);
+		for(PatientSymptomVO vo : patient.symptomArr) {
+			if( vo.getSymptom().equals(symptom)) {
+				patient.symptomArr.remove(vo);
+				break;
+			}
+		}
+		return patient;
+	 }
+	 
+	 /**
+	 * 검색한 증상 추가
+	 * @throws Exception
+	 */
+	 @RequestMapping(value ="/addPatientSymptom", method = RequestMethod.POST)
+	 public @ResponseBody PatientSymptomVO addPatientSymptom(@RequestParam("symptom") String symptom) throws Exception
+	 {
+		System.out.println(symptom);
+		PatientSymptomVO vo = new PatientSymptomVO();
+		vo.setSymptom(symptom); // 증상 추가
+		vo.setVisitDate(patient.diagnosis.getVisitDate()); // 환자 방문날짜 기록
+		vo.setpNum(patient.getpNumber()); // 환자 번호 기록
+		vo.setDegree(6); // 증상 강도 default 6
+		patient.symptomArr.add(vo); // DTO 객체 추가
+		ruleService.addSymptom(vo);
+		return vo;
+	 }
 }
