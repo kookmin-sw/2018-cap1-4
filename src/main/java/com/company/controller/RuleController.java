@@ -1,5 +1,7 @@
 package com.company.controller;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.company.drools.DroolsSpringTest;
 import com.company.dto.PatientSymptomVO;
 import com.company.dto.PatientVO;
+import com.company.dto.SymptomVO;
 import com.company.service.MemberService;
 import com.company.service.RuleService;
 
@@ -39,7 +42,7 @@ public class RuleController {
 	}
 	
 	/**
-	 * 환자 번호를 통해서 설문의 결과인 증상들을 검색
+	 * 환자 번호를 통해서 설문의 결과인 증상들을 검색 또한 환자 세부사항도 같이 refresh
 	 * @throws Exception 
 	 */
 	 @RequestMapping(value ="/getPatientSymptoms", method = RequestMethod.GET)
@@ -55,4 +58,15 @@ public class RuleController {
 		}
 		return patient;
 	 }
+	 
+	 /**
+	  * DB에서 증상이름으로 증상명 검색 
+	  * @throws Exception 
+	  */
+	@RequestMapping(value ="/searchSymptom", method = RequestMethod.GET)
+	public @ResponseBody List<SymptomVO> searchSymptom(SymptomVO symptom) throws Exception
+	{
+		List<SymptomVO> list = ruleService.getSearchSymptom(symptom);
+		return list;
+	}
 }

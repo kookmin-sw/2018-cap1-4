@@ -198,7 +198,7 @@
                      </div>
                      <div style="float:right;">
     									 <div class="input-append">
-    										 <input class="input-medium" id="appendedInputButtons" type="text">
+    										 <input class="input-medium" type="text" id="inputSymptom" name="symptom">
     										 <button type="button">Add</button>
     										 <button type="button">Del</button><br />
     										<!-- <button type="submit" class="btn btn-primary">변경사항 저장</button> -->
@@ -473,7 +473,7 @@
    
  	
     </script>
-	<script type="text/javascript" src="js/diagnosis.js?ver=5"></script>
+	<script type="text/javascript" src="js/diagnosis.js?ver=1.5"></script>
 	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
 	<script type="text/javascript" src="js/search.js?ver=2.1221"></script>
 	

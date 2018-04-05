@@ -22,5 +22,21 @@
 		SELECT pNum, symptom, degree FROM updateSymptom 
 		WHERE pNum = #{pNum} 	
 	</select>
+	
+	
+	<!-- 증상 이름으로 증상 검색 -->
+	<resultMap id="symptomResult" type="SymptomVO">
+       <result property="symptom" column="sName"/>
+       <result property="sRegion" column="sRegion"/>
+       <result property="min" column="min"/>
+       <result property="max" column="max"/>
+    </resultMap>
+
+	<select id="getSearchSymptom" parameterType="SymptomVO" resultMap="symptomResult">
+		SELECT sName, sRegion, min, max FROM symptom WHERE 1=1
+			<if test="symptom != null">
+				AND sName LIKE CONCAT('%',#{symptom},'%')
+			</if>
+	</select>
 
 </mapper>
