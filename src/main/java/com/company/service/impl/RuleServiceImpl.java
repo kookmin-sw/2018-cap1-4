@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.company.dto.DomainRuleVO;
 import com.company.dto.PatientSymptomVO;
 import com.company.dto.PatientVO;
 import com.company.dto.SymptomVO;
@@ -39,5 +40,11 @@ public class RuleServiceImpl implements RuleService{
 	public void addSymptom(PatientSymptomVO symptom) throws Exception {
 		// TODO Auto-generated method stub
 		mapper.addSymptom(symptom);
+	}
+
+	@Override
+	public List<DomainRuleVO> selectDomain() throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.selectDomain();
 	}
 }

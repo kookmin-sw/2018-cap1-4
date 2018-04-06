@@ -50,5 +50,43 @@
 		INSERT INTO updateSymptom(date, pNum, symptom, degree) 
 		VALUES(#{visitDate},#{pNum}, #{symptom}, #{degree})
 	</insert>
+	
+	
+	<!-- 
+		mybatis-config.xml의 typeAlias에 등록해두지 않았다면 
+		
+		<select id="selectMember" resultType="com.example.dto.MemberVO" >
+			SELECT ID, PW ,NAME FROM TEST
+		</select>
+		
+		이렇게 해야 한다.
+		
+		여기서 id는 DAO에서 사용하기 위함, resultType은 쿼리 실행 후 데이터를 memberVO에 담아서 전달
+		
+		아래 쿼리는 id="selectDomain"를 이용하여 dto 객체에 담는데 resultMap 형태로 담아오겠다는 뜻이고
+		그 아이디를 보면 type은 DomainRuleVO 클래스에 담는데 여기서 attribute는 ruleID 와 증상 배열을 가지고 온다.
+		여기서 증상배열은 select="selectSymptoms" 쿼리를 이용해서 가져오는데 같은 ruleID를 가져오면서 오름차순으로 정렬해서 가져온다.
+	-->
+	<resultMap id="domainResult" type="DomainRuleVO">
+		<result property="ruleID" column="ruleID"/>
+		<collection property="symptoms" column="ruleID" javaType="java.util.ArrayList" ofType="SymptomVO" select="selectRuleSymptoms"/>
+		<collection property="medicines" column="ruleID" javaType="java.util.ArrayList" ofType="MedicineVO" select="selectMedicines"/>
+	</resultMap>
+	
+	<select id="selectDomain" resultMap="domainResult">
+		SELECT DISTINCT ruleID FROM rule
+	</select>
+	
+	<select id="selectRuleSymptoms" resultType="SymptomVO">
+		SELECT ruleID, symptom, flag
+		FROM rule
+		WHERE ruleID = #{ruleID} ORDER BY symptom ASC
+	</select>
+	
+	<select id="selectMedicines" resultType="MedicineVO">
+		SELECT ruleID, medicine, defaultValue
+		FROM prescription
+		WHERE ruleID = #{ruleID} ORDER BY medicine ASC
+	</select>
 
 </mapper>

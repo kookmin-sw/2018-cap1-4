@@ -1,6 +1,8 @@
 package com.company.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.company.drools.DroolsSpringTest;
+import com.company.dto.DomainRuleVO;
 import com.company.dto.PatientSymptomVO;
 import com.company.dto.PatientVO;
 import com.company.dto.SymptomVO;
@@ -40,6 +43,25 @@ public class RuleController {
 		
 		patient = new PatientVO(); // 추후 빈객체로 사용할 예정
 		symptomVO = new PatientSymptomVO();
+		
+		List<DomainRuleVO> ruleList = null; // rules
+		
+		try {
+			ruleList = ruleService.selectDomain();
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Map<String,Object>ruleMap = new HashMap<String,Object>();
+		for(DomainRuleVO obj : ruleList) // hashmap 
+		{
+			ruleMap.put(obj.getRuleID(), obj);
+			obj.countAndSymptom(); //
+		}
+		
+		drools = new DroolsSpringTest();
+		drools.setRuleMap(ruleMap); // drools hash map setting
 		
 		logger.info("setRuleDomain complete!");
 	}
