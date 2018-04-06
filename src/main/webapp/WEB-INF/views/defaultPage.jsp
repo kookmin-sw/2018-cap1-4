@@ -201,10 +201,10 @@
     										 <input class="input-medium" type="text" id="inputSymptom" name="symptom">
     										 <button type="button" id="addSymptom">Add</button>
     										 <button type="button">Del</button><br />
-    										<!-- <button type="submit" class="btn btn-primary">변경사항 저장</button> -->
+    										
     									 </div>
                        <div style="float:right;">
-    									 <button type="submit" class="btn btn-primary">변경사항 저장</button>
+    									 <button type="submit" class="btn btn-primary">진단하기</button>
                      </div>
                      </div>
     								</div>

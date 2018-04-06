@@ -2,6 +2,7 @@ package com.company.mapper;
 
 import java.util.List;
 
+import com.company.dto.DomainRuleVO;
 import com.company.dto.PatientSymptomVO;
 import com.company.dto.PatientVO;
 import com.company.dto.SymptomVO;
@@ -19,4 +20,7 @@ public interface RuleMapper {
 		
 	// 증상 추가
 	public void addSymptom(PatientSymptomVO symptom) throws Exception;
+	
+	// DB에서 모든 Rule을 불러와서 검사할 준비
+	public List<DomainRuleVO> selectDomain() throws Exception;
 }
