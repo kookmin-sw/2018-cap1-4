@@ -118,7 +118,7 @@
                  <script>
                     function nwindow(){
                         var url="hospitalSurvey";
-                        window.open(url,"","width=400,height=400,left=600");
+                        window.open(url,"","width=600,height=700,left=600");
                     }
                 </script>
 
