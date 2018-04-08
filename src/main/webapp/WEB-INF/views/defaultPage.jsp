@@ -204,7 +204,7 @@
     										
     									 </div>
                        <div style="float:right;">
-    									 <button type="submit" class="btn btn-primary">진단하기</button>
+    									 <button type="button" class="btn btn-primary" id="chkSymptom">진단하기</button>
                      </div>
                      </div>
     								</div>
@@ -303,7 +303,7 @@
     							<div class="col-md-8 mx-auto">
                     <h5><strong>사상체질 의견</strong></h5>
                     <div style="width:100%; height:200px; overflow:auto">
-    								<table class="table table-striped" style='line-height:90%'>
+    								<table class="table table-striped" style='line-height:90%' id="diagnosisTable">
                          <!-- <thead>
                              <tr>
                                  <th>진단</th>
@@ -473,7 +473,7 @@
    
  	
     </script>
-	<script type="text/javascript" src="js/diagnosis.js?ver=1.51"></script>
+	<script type="text/javascript" src="js/diagnosis.js?ver=1.512"></script>
 	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
 	<script type="text/javascript" src="js/search.js?ver=2.12221"></script>
 	

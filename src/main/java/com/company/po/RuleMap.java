@@ -35,7 +35,7 @@ public class RuleMap {
 		for(int target = 0; target < pLen; target++)
 		{
 			int middle=0, startIndex=0, endIndex = dLen-1;
-			do // ���� �˻�
+			do // 이진검색
 			{
 				if(startIndex > endIndex) break;
 				
@@ -48,7 +48,6 @@ public class RuleMap {
 					}
 					else andCount++;
 					break;
-					
 				}
 				else if(domain.symptoms.get(middle).getSymptom().compareTo(patient.symptomArr.get(target).getSymptom()) < 0) 
 				{
