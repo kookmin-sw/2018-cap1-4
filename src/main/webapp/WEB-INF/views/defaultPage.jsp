@@ -112,8 +112,8 @@
 					<div class="row-fluid">
 						<div class="span1" id ="patientInfoView">
 							<h5 style="background-color:#EBEBEB; border: solid 5px #EBEBEB">2017-03-06
-								10:52:17 | 안영이(17-01268)500211-20*****(F. 67세 0개월 24일) | [국민공단]
-								| 010-5199-**** | 경기도 남양주시 화도읍 명품하우스</h5>
+								10:52:17 | 장원용(17-01268)500111-20*****(F. 20세 0개월 24일) | [국민공단]
+								| 010-1111-**** | 서울특별시 성북구 화도읍 명품하우스</h5>
 							
 						</div>
           <div class="container-fluid">
@@ -475,7 +475,7 @@
     </script>
 	<script type="text/javascript" src="js/diagnosis.js?ver=1.512"></script>
 	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
-	<script type="text/javascript" src="js/search.js?ver=2.12221"></script>
+	<script type="text/javascript" src="js/search.js?ver=2.112221"></script>
 	
 	<script src="js/js/dist/util.js"></script>
 	<script src="js/js/dist/tab.js"></script>
