@@ -2,6 +2,7 @@ package com.company.controller;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import javax.annotation.PostConstruct;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.company.drools.DroolsSpringTest;
 import com.company.dto.DomainRuleVO;
+import com.company.dto.PatientDiagnosisVO;
 import com.company.dto.PatientSymptomVO;
 import com.company.dto.PatientVO;
 import com.company.dto.SymptomVO;
@@ -132,5 +134,27 @@ public class RuleController {
 		patient.symptomArr.add(vo); // DTO 객체 추가
 		ruleService.addSymptom(vo);
 		return vo;
+	 }
+	 /**
+	  * 
+	  * 검사하기 버튼을 클릭했을 경우
+	  */
+	 @RequestMapping(value ="/checkSymptom", method = RequestMethod.GET)
+	 public @ResponseBody PatientDiagnosisVO viewDiagnosis(Locale locale) 
+	 {
+		logger.info("checkSymptom");
+		
+		patient.diagnosis.complexPrescr.clear();
+		patient.diagnosis.simplePrescr.clear();
+		patient.diagnosis.diagnosisArr.clear();
+		drools.setPatient(patient); // 검사할 환자 object 셋팅
+		
+		patient = drools.checkSymptom(); // drools 엔진에게 환자 object send
+		
+		System.out.println("-------------------------------------------------------------------------");
+		System.out.println("단순증상 : "+patient.diagnosis.simplePrescr);
+		System.out.println("복합증상 : "+patient.diagnosis.complexPrescr);
+		
+	    return patient.diagnosis;
 	 }
 }

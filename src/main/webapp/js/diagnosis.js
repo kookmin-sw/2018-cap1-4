@@ -4,14 +4,10 @@
  */
 $(document).ready(function() {
 	$("#chkSymptom").click(function() {
-				
 		$.ajax({
-			method:"GET",
-					
-			url:"checkSymptom",
-					
+			method:"GET",	
+			url:"checkSymptom",	
 			success:function(data) {
-						
 				var show ="";
 				$.each(data.diagnosisArr ,function(index,item){
 	                  show += "<tr><td>"+item+"</td></tr>";
