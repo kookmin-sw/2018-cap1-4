@@ -76,7 +76,7 @@ public class RuleController {
 		System.out.println("/////////////////////"+pNumber);
 		patient = ruleService.getPatientSymptoms(pNumber); // 환자 번호로 증상 검색
 		
-		logger.info("환자 검색확인: "+ patient.getpName()+ " "+patient.symptomArr.size());
+		logger.info("환자 검색확인: "+ patient.getpName()+" "+patient.getAge()+" "+patient.symptomArr.size());
 		for(int i=0; i< patient.symptomArr.size(); i++) {
 			
 			System.out.println(patient.symptomArr.get(i).getSymptom());

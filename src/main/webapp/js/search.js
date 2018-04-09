@@ -50,14 +50,23 @@ function callbackPatient(getPatientNum){ // 환자 번호로 증상과 환자 �
 			$.each(resultData.symptomArr ,function(index,item){
 				symptomList += "<tr><td>"+item.symptom+"</td><td><button onclick='deleteLine(this);' style='float: right;'>삭제</button></td></tr>";
 			});
+			
+			var patientTable ="";
+			patientTable += "<tr><td>환자번호</td><td><input class=\"form-control\" type=\"text\" value="+resultData.pNumber+"></td></tr>"+
+							"<tr><td>이름</td><td><input class=\"form-control\" type=\"text\" value="+resultData.pName+"></td></tr>"
+							"<tr><td>나이</td><td><input class=\"form-control\" type=\"text\" value="+resultData.Age+"></td></tr>";
+			
 			$("#showPsymptoms > tbody").empty();
 			$("#showPsymptoms").append(symptomList);
 			$("#patientInfoView").empty();
 			$("#patientInfoView").append(patientInfo);
+			$("#showPatient > tbody").empty();
+			$("#showPatient").append(patientTable);
+			
+			
 		}
 	});
 }
-
 //Default Page 검색란에 입력하고 엔터눌렀을때 똑같이 검색되는 기능
 $("#searchPatient").keypress(function(event){
     if ( event.which == 13 ) {
