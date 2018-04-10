@@ -12,14 +12,6 @@
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 
-<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
-  	<script type="text/javascript" src="table/jquery.tablesorter.min.js"></script>
-    <link rel="stylesheet" href="js/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/bootstrap2.css">
-    <link rel="stylesheet" href="css/_variables.scss">
-    <link rel="stylesheet" href="css/_bootswatch.scss">
-
 <link rel="stylesheet" href="table/blue_style.css" type="text/css">
 <link rel="stylesheet" href="table/green_style.css" type="text/css">
 <link rel="stylesheet" href="css/bootstrap.min2.css">
@@ -27,35 +19,6 @@
 <!-- Bootstrap core CSS -->
 <title>Oriental Medicine Expert System</title>
 <style>
-   h4 {
-        margin: 40px 0 10px;
-      }
-
-      .noresize {
-        resize: none;
-        background-color: #EBEBEB;
-      }
-
-      .star-input>.input,
-      /* .star-input>.input>label:hover, */
-      /* .star-input>.input>input:focus+label, */
-      .star-input>.input>input:checked+label{display: inline-block;vertical-align:middle;background:url('img/grade_img.png')no-repeat;}
-      .star-input{display:inline-block; white-space:nowrap;width:225px;height:40px;padding:25px;line-height:30px;}
-      .star-input>.input{display:inline-block;width:150px;background-size:150px;height:28px;white-space:nowrap;overflow:hidden;position: relative;}
-      .star-input>.input>input{position:absolute;width:1px;height:1px;opacity:0;}
-      star-input>.input.focus{outline:1px dotted #ddd;}
-      .star-input>.input>label{width:30px;height:0;padding:28px 0 0 0;overflow: hidden;float:left;cursor: pointer;position: absolute;top: 0;left: 0;}
-      /* .star-input>.input>label:hover, */
-      /* .star-input>.input>input:focus+label, */
-      .star-input>.input>input:checked+label{background-size: 150px;background-position: 0 bottom;}
-      .star-input>.input>label:label{background-image: none;}
-      .star-input>.input>label[for="p1"]{width:30px;z-index:5;}
-      .star-input>.input>label[for="p2"]{width:60px;z-index:4;}
-      .star-input>.input>label[for="p3"]{width:90px;z-index:3;}
-      .star-input>.input>label[for="p4"]{width:120px;z-index:2;}
-      .star-input>.input>label[for="p5"]{width:150px;z-index:1;}
-      .star-input>output{display:inline-block;width:60px; font-size:18px;text-align:right; vertical-align:middle;}
-
       .label
       {
         width: 290px;
@@ -73,30 +36,51 @@
         border: 1px solid #ffffff;
         width: 280px;
       }
-      #tablesorter-demo{
-        text-align: left;
-        font-size:2rem;
-        margin-left: auto;
-        margin-right: auto;
+          body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
-      #search{
+      .container{
+        display: flex;
+        flex-direction: column;
+        width: 800px;
+        border: 1px solid gray;
+      }
+      header{
+        border-bottom:1px  solid gray;
+        padding-left: 20px;
+      }
+      footer{
+        border-top:1px solid gray;
+        padding: 20px;
         text-align: center;
       }
-      h5{
-        width:105%;
-        border: 10px solid #ACE26D;
-        background: #ACE26D
+      .content{
+        display: flex;
       }
-      .span1{
-        background-color: #EBEBEB;
+      .content nav{
+        border-right: 1px solid gray;
       }
-      body{
-        color: black;
-        background-color: #FAFAFA;
+      .content aside{
+        border-left: 1px solid gray;
       }
-      .verticalLine {
-      border-left: thick solid #ff0000;
+      nav, aside{
+        flex-basis: 150px;
+        flex-shrink: 0;
       }
+      main{
+        padding: 10px;
+      }
+      nav{
+        order: -1;
+      }
+      /* main{
+        order: 1;
+      }
+      aside{
+        order: 2;
+      } */
 </style>
 </head>
 <body>
@@ -127,332 +111,199 @@
 				<div class="container-fluid">
 					<div class="row-fluid">
 						<div class="span1" id ="patientInfoView">
-							<h5 style="background-color:#EBEBEB; border: solid 5px #EBEBEB">2017-03-06
-								10:52:17 | 홍길동(17-01234)500419-20*****(F. 67세 0개월 24일) | [국민공단]
+							<h5 style="background-color:#EBEBEB; border: solid 5px #EBEBEB">2018-04-13
+								10:52:17 | 홍길동(17-01268)500428-20*****(F. 67세 0개월 24일) | [국민공단]
 								| 010-1234-5678 | 경기도 남양주시 화도읍 국민아파트</h5>
 							
 						</div>
-              <div class="span11">
-              <div class="col-md-12 mx-auto">
-            <div class="row">
-              <!-- 전체 왼쪽 -->
-              <div class="col-md-6 mx-auto">
-                 <div class="row">
-
-                   <div class="col-md-8 mx-auto">
-                     <h5 style="width:100%;"><strong>대기명단</strong></h5>
-                     <div style="width:100%; height:400px; overflow:auto">
-                      <table class="table table-striped" style='line-height:90%'>
-                         <!-- <thead>
-                             <tr>
-                                 <th>설문결과</th>
-                             </tr>
-                         </thead> -->
-                         <tbody>
-                           <tr>
-                             <th>번호</th>
-                             <th>이름</th>
-                             <th>나이</th>
-                             <th>성별</th>
-                           </tr>
-                             <tr>
-                                 <td>123</td>
-                                 <td>장원용</td>
-                                 <td>28</td>
-                                 <td>남자</td>
-                             </tr>
-                             <tr>
-                                 <td>234</td>
-                                 <td>김태우</td>
-                                 <td>25</td>
-                                 <td>남자</td>
-                             </tr>
-                             <tr>
-                                 <td>345</td>
-                                 <td>류준영</td>
-                                 <td>25</td>
-                                 <td>남자</td>
-                             </tr>
-                             <tr>
-                                 <td>456</td>
-                                 <td>차은채</td>
-                                 <td>23</td>
-                                 <td>여자</td>
-                             </tr>
-                             <tr>
-                               <td>567</td>
-                               <td>홍길동</td>
-                               <td>29</td>
-                               <td>남자</td>
-                             </tr>
-                             <tr>
-                               <td>678</td>
-                               <td>사람1</td>
-                               <td>26</td>
-                               <td>여자</td>
-                             </tr>
-                             <tr>
-                               <td>890</td>
-                               <td>사람2</td>
-                               <td>21</td>
-                               <td>여자</td>
-                             </tr>
-                             <tr>
-                               <td>012</td>
-                               <td>사람3</td>
-                               <td>30</td>
-                               <td>남자</td>
-                             </tr>
-                             <tr>
-                               <td>987</td>
-                               <td>사람4</td>
-                               <td>35</td>
-                               <td>여자</td>
-                             </tr>
-                             <tr>
-                               <td>987</td>
-                               <td>사람4</td>
-                               <td>35</td>
-                               <td>여자</td>
-                             </tr>
-                             <tr>
-                               <td>987</td>
-                               <td>사람4</td>
-                               <td>35</td>
-                               <td>여자</td>
-                             </tr>
-                         </tbody>
-                     </table>
-                     </div>
-                     <div style="width:10%; float:right;">
-                     <button type="button" class="btn btn-success">추가</button><br />
-                     </div>
-
-     							</div>
-
-
-                   <div class="col-md-4 mx-auto">
-                     <!-- <div style="height: auto; width: 100%; border:3px solid #B2AFAF;"> -->
-                     <h5><strong>설문결과</strong></h5>
-                     <div style="width:105%; height:400px; overflow:auto;background-color:white">
-                      <table class="table table-striped" style='line-height:90%'>
-                         <tbody>
-                             <tr>
-                                 <td>소화불량</td>
-                             </tr>
-                             <tr>
-                                 <td>명치답답</td>
-                             </tr>
-                             <tr>
-                                 <td>명치부위 압통</td>
-                             </tr>
-                             <tr>
-                                 <td>담적 상복부</td>
-                             </tr>
-                             <tr>
-                                 <td>담적 하복부</td>
-                             </tr>
-                             <tr>
-                                 <td>명치통증</td>
-                             </tr>
-                             <tr>
-                                 <td>불안함</td>
-                             </tr>
-                             <tr>
-                                 <td>추위 탐</td>
-                             </tr>
-                             <tr>
-                                 <td>건망증</td>
-                             </tr>
-                             <tr>
-                                 <td>설진1</td>
-                             </tr>
-                             <tr>
-                                 <td>설진2</td>
-                             </tr>
-                             <tr>
-                                 <td>복진3</td>
-                             </tr>
-                             <tr>
-                                 <td>맥진2</td>
-                             </tr>
-                             <tr>
-                                 <td>맥진5</td>
-                             </tr>
-                         </tbody>
-                     </table>
-                   </div>
-                   <!-- </div> -->
-                 </div>
-                </div>
-                 <div class="row">
-                   <div class="col-md-6 mx-auto">
-                   <img src="img/수지침반.png" style="width:105%; height:110%; "alt="오장육부">
-                   </div>
-
-                   <div class="col-md-6 mx-auto">
-      <textarea style="width:100%; height:130%" class="noresize"></textarea>
-                   </div>
-                 </div>
-
-               </div>
-
-               <!-- 전체 오른쪽 -->
-               <div class="col-md-6 mx-auto">
-                 <div class="row">
-                   <div class="col-md-4 mx-auto">
-                     <h5 style="border: 10px solid #F49A50; background-color:#F49A50;"><strong>증상</strong></h5>
-                     <div style="width:105%; height:418px; overflow:auto; background-color:white">
-                        <table class="table table-striped" style='line-height:90%'>
-                          <tbody>
-                              <tr>
-                                  <td>소화불량</td>
-                                  <td><button onclick="deleteLine(this);" style="float:right;">삭제</button></td>
-                              </tr>
-                              <tr>
-                                  <td>명치답답</td>
-                                  <td><button onclick="deleteLine(this);" style="float:right;">삭제</button></td>
-                              </tr>
-                              <tr>
-                                  <td>명치부위 압통</td>
-                                  <td><button onclick="deleteLine(this);" style="float:right;">삭제</button></td>
-                              </tr>
-                              <tr>
-                                  <td>담적 상복부</td>
-                                  <td><button onclick="deleteLine(this);" style="float:right;">삭제</button></td>
-                              </tr>
-                              <tr>
-                                  <td>담적 하복부</td>
-                                  <td><button onclick="deleteLine(this);" style="float:right;">삭제</button></td>
-                              </tr>
-                              <tr>
-                                  <td>명치통증</td>
-                                  <td><button onclick="deleteLine(this);" style="float:right;">삭제</button></td>
-                              </tr>
-                              <tr>
-                                  <td>불안함</td>
-                                  <td><button onclick="deleteLine(this);" style="float:right;">삭제</button></td>
-                              </tr>
-                              <tr>
-                                  <td>추위 탐</td>
-                                  <td><button onclick="deleteLine(this);" style="float:right;">삭제</button></td>
-                              </tr>
-                              <tr>
-                                  <td>건망증</td>
-                                  <td><button onclick="deleteLine(this);" style="float:right;">삭제</button></td>
-                              </tr>
-                          </tbody>
-                      </table>
+          <div class="container-fluid">
+    			<div class="col-md-12 mx-auto">
+    				<div class="tab-content" role="tablist">
+    					<div class="tab-pane active" id="home" role="tabpanel">
+    						<div class="row">
+    							<div class="col-md-4 mx-auto">
+          										<img src="img/수지침반.png" style="width:100%; height:100%"alt="설진">
+    							</div>
+                  <div class="col-md-8 mx-auto">
+    								<div class="row">
+    								<div class="col-md-4 mx-auto">
+                      <h5><strong>설문결과</strong></h5>
+                      <div style="width:100%; height:200px; overflow:auto">
+    									 <table class="table table-striped" style='line-height:90%'>
+    											<!-- <thead>
+    													<tr>
+    															<th>설문결과</th>
+    													</tr>
+    											</thead> -->
+    											<tbody>
+    													<tr>
+    															<td>소화불량</td>
+    													</tr>
+    													<tr>
+    															<td>명치답답</td>
+    													</tr>
+    													<tr>
+    															<td>명치부위 압통</td>
+    													</tr>
+    													<tr>
+    															<td>담적 상복부</td>
+    													</tr>
+    													<tr>
+    															<td>담적 하복부</td>
+    													</tr>
+    													<tr>
+    															<td>명치통증</td>
+    													</tr>
+    													<tr>
+    															<td>불안함</td>
+    													</tr>
+    													<tr>
+    															<td>추위 탐</td>
+    													</tr>
+    													<tr>
+    															<td>건망증</td>
+    													</tr>
+    											</tbody>
+    									</table>
                     </div>
-                    <!-- <div style="float:right;">
-                      <div class="input-append">
-                        <form class="form-inline">
-                        <input class="form-control" type="text">
-                        <input class="input-medium" id="appendedInputButtons" type="text">
-                        <button type="button" class="btn btn-success">Add</button>
-                      </form>
-                        <button type="button">Del</button><br />
-                       <button type="submit" class="btn btn-primary">변경사항 저장</button>
-                      </div>
-                      <div style="width:26%; float:right;">
-                      <button type="submit" class="btn btn-primary">진단하기</button>
-                    </div>
-                    </div> -->
-                    <div style="float:right;">
-                    <form class="form-inline">
-                      <input class="form-control" type="text">
-                      <button type="button" class="btn btn-warning">Add</button>
-                      <button type="submit" class="btn btn-primary">진단하기</button>
-                    </form>
-                  </div>
-                   </div>
-
-                   <div class="col-md-4 mx-auto">
-                     <h5 style="border: 10px solid #F2C46A; background-color:#F2C46A;"><strong>증상 선택 리스트</strong></h5>
-                     <div style="width:105%; height:417px; overflow:auto; background-color:white">
-                         <table class="table table-striped" style='line-height:90%'>
-                           <form>
-                              <div>
-                                <div id="section1" class="label" style="width:100%">
-                                  <p>카테고리</p>
-                                </div>
-                                <div id="section1b" class="elements">
-                                <div>
-                                  <div id="section1" class="label">
-                                    <p>머리</p>
-                                  </div>
-                                  <div id="section1b" class="elements">
-                                    <input type="checkbox" name="box1" /> - 왼쪽<br />
-                                    <input type="checkbox" name="box1" /> - 오른쪽<br />
-                                    <input type="checkbox" name="box1" /> - 앞<br />
-                                    <input type="checkbox" name="box1" /> - 뒤<br />
-                                    <input type="checkbox" name="box1" /> - 전체<br />
-                                   </div>
+    								</div>
+    								<div class="col-md-4 mx-auto">
+                      <h5><strong>증상</strong></h5>
+                      <div style="width:100%; height:200px; overflow:auto">
+    									<table class="table table-striped" style='line-height:90%' id="showPsymptoms">
+    										<tbody>
+    											<tr>
+													<td></td>
+												</tr>
+												<tr>
+													<td></td>
+												</tr>
+												<tr>
+													<td></td>
+												</tr>
+												<tr>
+													<td></td>
+												</tr>
+												<tr>
+													<td></td>
+												</tr>
+												<tr>
+													<td></td>
+												</tr>
+												<tr>
+													<td></td>
+												</tr>		
+    										</tbody>
+    									 </table>
+                     </div>
+                     <div style="float:right;">
+    									 <div class="input-append">
+    										 <input class="input-medium" type="text" id="inputSymptom" name="symptom">
+    										 <button type="button" id="addSymptom">Add</button>
+    										 <button type="button">Del</button><br />
+    										
+    									 </div>
+                       <div style="float:right;">
+    									 <button type="button" class="btn btn-primary" id="chkSymptom">진단하기</button>
+                     </div>
+                     </div>
+    								</div>
+    								<div class="col-md-4 mx-auto">
+                      <h5><strong>증상 선택 리스트</strong></h5>
+                      <div style="width:100%; height:200px; overflow:auto">
+    											<table class="table table-striped" style='line-height:90%'>
+                            <form>
+                               <div>
+                                 <div id="section1" class="label" style="width:100%">
+                                   <p>카테고리</p>
                                  </div>
+                                 <div id="section1b" class="elements">
                                  <div>
                                    <div id="section1" class="label">
-                                     <p>내장기관</p>
+                                     <p>머리</p>
                                    </div>
                                    <div id="section1b" class="elements">
-                                     <input type="checkbox" name="box1" /> - 간<br />
-                                     <input type="checkbox" name="box1" /> - 심장<br />
-                                     <input type="checkbox" name="box1" /> - 갱년기<br />
-                                     <input type="checkbox" name="box1" /> - 위<br />
-                                     <input type="checkbox" name="box1" /> - 장<br />
+                                     <input type="checkbox" name="box1" /> - 왼쪽<br />
+                                     <input type="checkbox" name="box1" /> - 오른쪽<br />
+                                     <input type="checkbox" name="box1" /> - 앞<br />
+                                     <input type="checkbox" name="box1" /> - 뒤<br />
+                                     <input type="checkbox" name="box1" /> - 전체<br />
                                     </div>
                                   </div>
                                   <div>
                                     <div id="section1" class="label">
-                                      <p>기타</p>
+                                      <p>내장기관</p>
                                     </div>
                                     <div id="section1b" class="elements">
-                                      <input type="checkbox" name="box1" /> - 소화불량<br />
-                                      <input type="checkbox" name="box1" /> - 명치답답<br />
-                                      <input type="checkbox" name="box1" /> - 기타1<br />
-                                      <input type="checkbox" name="box1" /> - 기타2<br />
-                                      <input type="checkbox" name="box1" /> - 기타3<br />
+                                      <input type="checkbox" name="box1" /> - 간<br />
+                                      <input type="checkbox" name="box1" /> - 심장<br />
+                                      <input type="checkbox" name="box1" /> - 갱년기<br />
+                                      <input type="checkbox" name="box1" /> - 위<br />
+                                      <input type="checkbox" name="box1" /> - 장<br />
                                      </div>
                                    </div>
-                                 </div>
-                               </div>
-                            </form>
-                         </table>
-                    </div>
-                    <div style="width:27%; float:right;">
-                    <button type="button" class="btn btn-warning">Add to left</button><br />
-                    </div>
-                   </div>
-                   <div class="col-md-4 mx-auto">
-                     <h5 style="border: 10px solid #F2C46A; background-color:#F2C46A;"><strong>첩약</strong></h5>
-                     <div style="width:105%; height:417px; overflow:auto; background-color:white">
-                         <table class="table table-striped" style='line-height:90%'>
-                           <form>
-                              <!-- <div>
-                                <div id="section1" class="label" style="width:100%">
-                                  <p>카테고리</p>
-                                </div> -->
-                                  <div >
-                                    <input type="checkbox" name="box1" /> 첩약1<br />
-                                    <input type="checkbox" name="box1" /> 첩약2<br />
-                                    <input type="checkbox" name="box1" /> 첩약3<br />
-                                    <input type="checkbox" name="box1" /> 첩약4<br />
-                                    <input type="checkbox" name="box1" /> 첩약5<br />
-                                   </div>
-                               <!-- </div> -->
-                            </form>
-                         </table>
-                    </div>
-                    <div style="width:19%; float:right;">
-                    <button type="button" class="btn btn-warning">비교하기</button><br />
-                    </div>
-                   </div>
-                 </div>
+                                   <div>
+                                     <div id="section1" class="label">
+                                       <p>기타</p>
+                                     </div>
+                                     <div id="section1b" class="elements">
+                                       <input type="checkbox" name="box1" /> - 소화불량<br />
+                                       <input type="checkbox" name="box1" /> - 명치답답<br />
+                                       <input type="checkbox" name="box1" /> - 기타1<br />
+                                       <input type="checkbox" name="box1" /> - 기타2<br />
+                                       <input type="checkbox" name="box1" /> - 기타3<br />
+                                      </div>
+                                    </div>
+                                  </div>
+                                 <!-- <div id="section1b" class="elements">
+                                   <input type="checkbox" name="box1" /> - box one<br />
+                                   <input type="checkbox" name="box1" /> - box one<br />
+                                   <input type="checkbox" name="box1" /> - box one<br />
+                                   <input type="checkbox" name="box1" /> - box one<br />
+                                   <input type="checkbox" name="box1" /> - box one<br />
+                                  </div> -->
+                                </div>
 
-                 <div class="row">
-                  <div class="col-md-12 mx-auto">
-                    <h5 style="border: 10px solid #F2C46A; background-color:#F2C46A;"><strong>사상체질 의견</strong></h5>
-                    <div style="width:102%; height:150px; overflow:auto; background-color:white">
-                   <table class="table table-striped" style='line-height:100%'>
+                               <!-- <div>
+
+                               <div id="section2" class="label">
+                                 <p>Buttons</p>
+                               </div>
+                               <div class="elements">
+                                 <input type="radio" name="button1" /> - button one<br />
+                                 <input type="radio" name="button1" /> - button one<br />
+                                 <input type="radio" name="button1" /> - button one<br />
+                                 <input type="radio" name="button1" /> - button one<br />
+                                 <input type="radio" name="button1" /> - button one<br />
+                                 <button>Submit</button>
+                               </div>
+                             </div> -->
+                             </form>
+    									    </table>
+                     </div>
+                     <div style="float:right;">
+                     <input type="submit" value="Add to left"><br />
+                   </div>
+    								</div>
+    							</div>
+    							</div>
+    						</div>
+    					</div>
+    						<div class="row">
+    							<div class="col-md-4 mx-auto">
+    								<div class="row">
+          					<textarea style="width:100%; height:210px" class="noresize"></textarea>
+                              <div style="float:right;">
+          										<input type="submit" value="show list">
+          										<input type="submit" value="확인"><br />
+                              </div>
+          									
+    								</div>
+    							</div>
+    							<div class="col-md-8 mx-auto">
+                    <h5><strong>사상체질 의견</strong></h5>
+                    <div style="width:100%; height:200px; overflow:auto">
+    								<table class="table table-striped" style='line-height:90%' id="diagnosisTable">
                          <!-- <thead>
                              <tr>
                                  <th>진단</th>
@@ -491,13 +342,88 @@
                      </table>
                    </div>
                    <br></br>
-                  </div>
-                 </div>
+    							</div>
+    						</div>
+    						<div class="row">
+    							<div class="col-md-4 mx-auto">
+                    <h5><strong>대기명단</strong></h5>
+<div style="width:100%; height:200px; overflow:auto">
+ <table class="table table-striped" style='line-height:90%'>
+    <!-- <thead>
+        <tr>
+            <th>설문결과</th>
+        </tr>
+    </thead> -->
+    <tbody>
+      <tr>
+        <th>번호</th>
+        <th>이름</th>
+        <th>나이</th>
+        <th>성별</th>
+      </tr>
+        <tr>
+            <td>123</td>
+            <td>장원용</td>
+            <td>28</td>
+            <td>남자</td>
+        </tr>
+        <tr>
+            <td>234</td>
+            <td>김태우</td>
+            <td>25</td>
+            <td>남자</td>
+        </tr>
+        <tr>
+            <td>345</td>
+            <td>류준영</td>
+            <td>25</td>
+            <td>남자</td>
+        </tr>
+        <tr>
+            <td>456</td>
+            <td>차은채</td>
+            <td>23</td>
+            <td>여자</td>
+        </tr>
+        <tr>
+          <td>567</td>
+          <td>홍길동</td>
+          <td>29</td>
+          <td>남자</td>
+        </tr>
+        <tr>
+          <td>678</td>
+          <td>사람1</td>
+          <td>26</td>
+          <td>여자</td>
+        </tr>
+        <tr>
+          <td>890</td>
+          <td>사람2</td>
+          <td>21</td>
+          <td>여자</td>
+        </tr>
+        <tr>
+          <td>012</td>
+          <td>사람3</td>
+          <td>30</td>
+          <td>남자</td>
+        </tr>
+        <tr>
+          <td>987</td>
+          <td>사람4</td>
+          <td>35</td>
+          <td>여자</td>
+        </tr>
+    </tbody>
+</table>
+</div>
 
-                 <div class="row">
-                  <div class="col-md-12 mx-auto">
+
+    							</div>
+    							<div class="col-md-8 mx-auto">
                     <div style="float:left;">
-                    <h5 style="border: 10px solid #F2C46A; background-color:#F2C46A;">
+                    <h5>
                       <strong>
                         처방적합성<br />
                       </strong>
@@ -507,35 +433,32 @@
                   <div style="float:right;">
                     <p>
                     <span class="star-input">
-                       <span class="input">
-                           <input type="radio" name="star-input" value="1" id="p1">
-                           <label for="p1">1</label>
-                           <input type="radio" name="star-input" value="2" id="p2">
-                           <label for="p2">2</label>
-                           <input type="radio" name="star-input" value="3" id="p3">
-                           <label for="p3">3</label>
-                           <input type="radio" name="star-input" value="4" id="p4">
-                           <label for="p4">4</label>
-                           <input type="radio" name="star-input" value="5" id="p5">
-                           <label for="p5">5</label>
-                         </span>
-                      <output for="star-input"><b>0</b>점</output>
-                    </span>
-                    </p>
-                  </div>
-                    <div style="width:102%; height:159px; overflow:auto">
-                      <textarea style="width:100%; height:100%" class="noresize"></textarea><br />
+                  	<span class="input">
+                      	<input type="radio" name="star-input" value="1" id="p1">
+                      	<label for="p1">1</label>
+                      	<input type="radio" name="star-input" value="2" id="p2">
+                      	<label for="p2">2</label>
+                      	<input type="radio" name="star-input" value="3" id="p3">
+                      	<label for="p3">3</label>
+                      	<input type="radio" name="star-input" value="4" id="p4">
+                      	<label for="p4">4</label>
+                      	<input type="radio" name="star-input" value="5" id="p5">
+                      	<label for="p5">5</label>
+                    	</span>
+                  </span>
+                </p>
+              </div>
+                    <div style="width:100%; height:200px; overflow:auto">
+                      <textarea style="width:100%; height:82%" class="noresize"></textarea><br />
+                      <div style="float:right;">
+                      <input type="submit" value="저장">
                     </div>
-                    <div style="float:right;">
-                    <button type="button" class="btn btn-warning">저장</button><br />
                     </div>
-                  </div>
-                 </div>
-
-               </div>
-             </div>
-           </div>
-         </div>
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+    			</div>
               </div>
             </div>
 						
@@ -547,42 +470,9 @@
 	
 
 	<script type="text/javascript">
-	  function deleteLine(obj) {
-	        var tr = $(obj).parent().parent();
-
-	        //라인 삭제
-	        tr.remove();
-	    }
+   
  	
     </script>
-    <script type="text/javascript">
-    var elements = document.getElementsByTagName("div");
-    // 모든 영역 접기
-    for (var i = 0; i < elements.length; i++) {
-    if (elements[i].className == "elements") {
-    elements[i].style.display="none";
-    } else if (elements[i].className == "label") {
-    elements[i].onclick=switchDisplay;
-    }
-    }
-    // 상태에 따라 접거나 펼치기
-    function switchDisplay() {
-    var parent = this.parentNode;
-    var target = parent.getElementsByTagName("div")[1];
-    if (target.style.display == "none") {
-    target.style.display="block";
-    } else {
-    target.style.display="none";
-    }
-    return false;
-    }
-    </script>
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/star.js"></script>
-    <script src="js/assets/js/vendor/jquery-slim.min.js"></script>
-    <script src="js/assets/js/vendor/popper.min.js"></script>
-    <script src="js/js/dist/dropdown.js"></script>
-    
 	<script type="text/javascript" src="js/diagnosis.js?ver=1.512"></script>
 	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
 	<script type="text/javascript" src="js/search.js?ver=2.12221"></script>
