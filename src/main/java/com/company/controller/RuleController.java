@@ -39,7 +39,7 @@ public class RuleController {
 	private PatientSymptomVO symptomVO;
 	
 	private DroolsSpringTest drools;
-	
+	/*
 	@PostConstruct // 생성자 annotation
 	public void initialize(){ 
 		
@@ -67,7 +67,7 @@ public class RuleController {
 		
 		logger.info("setRuleDomain complete!");
 	}
-	
+	*/
 	/**
 	 * 환자 번호를 통해서 설문의 결과인 증상들을 검색 또한 환자 세부사항도 같이 refresh
 	 * @throws Exception 
