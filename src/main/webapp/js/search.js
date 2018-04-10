@@ -45,7 +45,7 @@ function callbackPatient(getPatientNum){ // 환자 번호로 증상과 환자 �
 			var symptomList ="";
 			var patientInfo ="";
 			patientInfo += "<h5 style='background-color:#EBEBEB; border: solid 5px #EBEBEB'>"+
-							resultData.visitDate +"| "+resultData.pName+"("+resultData.pNumber+") 500211-20*****(F. 67세 0개월 24일) | [국민공단] | 010-5199-**** | 경기도 남양주시 화도읍 명품하우스</h5>";
+							resultData.visitDate +"| "+resultData.pName+"("+resultData.pNumber+") 900111-10*****(F. 20세 0개월 24일) | [국민공단] | 010-5111-**** | 서울특별시 성북구 화도읍 명품하우스</h5>";
 			
 			$.each(resultData.symptomArr ,function(index,item){
 				symptomList += "<tr><td>"+item.symptom+"</td><td><button onclick='deleteLine(this);' style='float: right;'>삭제</button></td></tr>";

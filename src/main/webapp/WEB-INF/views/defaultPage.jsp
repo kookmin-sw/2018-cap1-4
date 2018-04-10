@@ -13,7 +13,6 @@
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 
 <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
-    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
   	<script type="text/javascript" src="table/jquery.tablesorter.min.js"></script>
     <link rel="stylesheet" href="js/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap2.css">
@@ -127,10 +126,7 @@
 				<div class="container-fluid">
 					<div class="row-fluid">
 						<div class="span1" id ="patientInfoView">
-							<h5 style="background-color:#EBEBEB; border: solid 5px #EBEBEB">2017-03-06
-								10:52:17 | 홍길동(17-01234)500419-20*****(F. 67세 0개월 24일) | [국민공단]
-								| 010-1234-5678 | 경기도 남양주시 화도읍 국민아파트</h5>
-							
+							<h5 style="background-color:#EBEBEB; border: solid 5px #EBEBEB"></h5>
 						</div>
               <div class="span11">
               <div class="col-md-12 mx-auto">
@@ -303,45 +299,30 @@
                    <div class="col-md-4 mx-auto">
                      <h5 style="border: 10px solid #F49A50; background-color:#F49A50;"><strong>증상</strong></h5>
                      <div style="width:105%; height:418px; overflow:auto; background-color:white">
-                        <table class="table table-striped" style='line-height:90%'>
+                        <table class="table table-striped" style='line-height:90%' id="showPsymptoms">
                           <tbody>
-                              <tr>
-                                  <td>소화불량</td>
-                                  <td><button onclick="deleteLine(this);" style="float:right;">삭제</button></td>
-                              </tr>
-                              <tr>
-                                  <td>명치답답</td>
-                                  <td><button onclick="deleteLine(this);" style="float:right;">삭제</button></td>
-                              </tr>
-                              <tr>
-                                  <td>명치부위 압통</td>
-                                  <td><button onclick="deleteLine(this);" style="float:right;">삭제</button></td>
-                              </tr>
-                              <tr>
-                                  <td>담적 상복부</td>
-                                  <td><button onclick="deleteLine(this);" style="float:right;">삭제</button></td>
-                              </tr>
-                              <tr>
-                                  <td>담적 하복부</td>
-                                  <td><button onclick="deleteLine(this);" style="float:right;">삭제</button></td>
-                              </tr>
-                              <tr>
-                                  <td>명치통증</td>
-                                  <td><button onclick="deleteLine(this);" style="float:right;">삭제</button></td>
-                              </tr>
-                              <tr>
-                                  <td>불안함</td>
-                                  <td><button onclick="deleteLine(this);" style="float:right;">삭제</button></td>
-                              </tr>
-                              <tr>
-                                  <td>추위 탐</td>
-                                  <td><button onclick="deleteLine(this);" style="float:right;">삭제</button></td>
-                              </tr>
-                              <tr>
-                                  <td>건망증</td>
-                                  <td><button onclick="deleteLine(this);" style="float:right;">삭제</button></td>
-                              </tr>
-                          </tbody>
+								<tr>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>-</td>
+								</tr>
+							</tbody>
                       </table>
                     </div>
                     <!-- <div style="float:right;">
@@ -360,9 +341,9 @@
                     </div> -->
                     <div style="float:right;">
                     <form class="form-inline">
-                      <input class="form-control" type="text">
+                      <input class="form-control" type="text" id="inputSymptom" name="symptom" >
                       <button type="button" class="btn btn-warning">Add</button>
-                      <button type="submit" class="btn btn-primary">진단하기</button>
+                      <button type="button" class="btn btn-primary" id="chkSymptom">진단하기</button>
                     </form>
                   </div>
                    </div>
@@ -452,7 +433,7 @@
                   <div class="col-md-12 mx-auto">
                     <h5 style="border: 10px solid #F2C46A; background-color:#F2C46A;"><strong>사상체질 의견</strong></h5>
                     <div style="width:102%; height:150px; overflow:auto; background-color:white">
-                   <table class="table table-striped" style='line-height:100%'>
+                   <table class="table table-striped" style='line-height:100%' id="diagnosisTable">
                          <!-- <thead>
                              <tr>
                                  <th>진단</th>
@@ -577,15 +558,15 @@
     return false;
     }
     </script>
-    <script src="js/jquery-1.11.3.min.js"></script>
+    
     <script src="js/star.js"></script>
     <script src="js/assets/js/vendor/jquery-slim.min.js"></script>
     <script src="js/assets/js/vendor/popper.min.js"></script>
     <script src="js/js/dist/dropdown.js"></script>
     
-	<script type="text/javascript" src="js/diagnosis.js?ver=1.512"></script>
+	<script type="text/javascript" src="js/diagnosis.js?ver=1.52122"></script>
 	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
-	<script type="text/javascript" src="js/search.js?ver=2.12221"></script>
+	<script type="text/javascript" src="js/search.js?ver=2.1921221"></script>
 	
 	<script src="js/js/dist/util.js"></script>
 	<script src="js/js/dist/tab.js"></script>
