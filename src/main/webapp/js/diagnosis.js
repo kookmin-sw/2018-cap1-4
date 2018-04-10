@@ -1,3 +1,24 @@
+/**
+ * 진단하기 버튼을 눌렀을때 해당 환자의 진단 클래스를 가져와서 진단명을 테이블로 보여줌
+ * url:"${pageContext.request.contextPath}/checkSymptom", ==> defaultPage에서 연결할때
+ */
+$(document).ready(function() {
+	$("#chkSymptom").click(function() {
+		$.ajax({
+			method:"GET",	
+			url:"checkSymptom",	
+			success:function(data) {
+				var show ="";
+				$.each(data.diagnosisArr ,function(index,item){
+	                  show += "<tr><td>"+item+"</td></tr>";
+				});
+				$("#diagnosisTable > tbody").empty();
+				$("#diagnosisTable").append(show); 
+			}
+		});
+	});
+});
+
 //증상 검색
 $(document).ready(function() {
 	$("#inputSymptom").autocomplete({

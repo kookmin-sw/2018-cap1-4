@@ -43,18 +43,18 @@
               <div class="col-md-6 mx-auto">
                 <h5><strong>환자정보</strong></h5>
                     <div style="width:105%; height:416px; overflow:auto;background-color:white">
-                    <table class="table table-striped" style='line-height:90%'>
+                    <table class="table table-striped" style='line-height:90%' id="showPatient">
                     <tbody>
+                        <tr>
+                            <td>환자번호</td>
+                            <td><input class="form-control" type="text"></td>
+                        </tr>
                         <tr>
                             <td>이름</td>
                             <td><input class="form-control" type="text"></td>
                         </tr>
                         <tr>
-                            <td>주소</td>
-                            <td><input class="form-control" type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>신장</td>
+                            <td>나이</td>
                             <td><input class="form-control" type="text"></td>
                         </tr>
                         <tr>
@@ -106,9 +106,9 @@
                     </div>
                     <div style="float:right;">
                     <form class="form-inline">
-                      <button type="button" >추가</button>
-                      <button type="button" >저장</button>
-                      <button type="submit" >새로고침</button>
+                      <button type="button">추가</button>
+                      <button type="button">저장</button>
+                      <button type="submit">새로고침</button>
                     </form>
                   </div>
                </div>
@@ -118,7 +118,7 @@
                  <script>
                     function nwindow(){
                         var url="hospitalSurvey";
-                        window.open(url,"","width=400,height=400,left=600");
+                        window.open(url,"","width=600,height=700,left=600");
                     }
                 </script>
 
@@ -173,6 +173,6 @@
 	
 	<script type="text/javascript" src="js/diagnosis.js?ver=5"></script>
 	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
-	<script type="text/javascript" src="js/search.js?ver=2"></script>
+	<script type="text/javascript" src="js/search.js?ver=3"></script>
 </body>
 </html>

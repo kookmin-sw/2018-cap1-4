@@ -1,37 +1,59 @@
 package com.company.drools;
 
+import java.util.Map;
+
+import javax.inject.Inject;
+
 import org.drools.runtime.StatefulKnowledgeSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
+import com.company.dto.PatientVO;
+import com.company.po.RuleMap;
+
 @Component("DroolsSpringTest")
 public class DroolsSpringTest {
 	
+	public static PatientVO patient;
+	@Inject
+	public static RuleMap ruleMap;
 	@Autowired
 	private ApplicationContext applicationContext;
 	/**
-	 * DomainRule 을 map 타입으로 셋팅  
+	 * 
 	 */
+	public void setRuleMap(Map<String,Object> map) {
+		//ruleMap = new RuleMap();
+		//ruleMap.setRuleMap(map);
+		System.out.println("setRuleMap success");
+	}
 	
+	public void setPatient(PatientVO patient) {
+		DroolsSpringTest.patient = patient;
+	}
 	public static void main(String args[]) {
 	}
 	/**
-	 * 환자를 선택 후 검사하기 버튼을 눌렀을 경우만 checkSymptom() 실행
+	 * checkSymptom() 함수가 실행되면 Drools 엔진을 통한 검사 시작 
 	 */
-	public void checkSymptom() {
+	public PatientVO checkSymptom() {
 		try {
-			// 경로 설정
+			
 			applicationContext = new ClassPathXmlApplicationContext(
 					"drools-context/applicationContext-drools.xml");
-			// stateful 방식의 session 을 getbean
+			// stateful 
 			StatefulKnowledgeSession ksession = (StatefulKnowledgeSession) applicationContext
 					.getBean("ksession");
+
+			//ksession.insert(ruleMap);
+			ksession.insert(patient);
 			ksession.fireAllRules();
 			
 		} catch( Throwable e) {
 			e.printStackTrace();
 		}
+		return patient;
 	}
 }

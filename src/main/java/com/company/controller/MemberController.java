@@ -28,7 +28,7 @@ public class MemberController {
 		List<PatientVO> list = service.getSearchPatient(patient); // 조건에 만족하는 환자 검색
 		for(PatientVO vo : list) // 만족하는 환자 정보 확인
 		{
-			System.out.println("/////////////"+vo.getpName()+vo.getpNumber() + " "+ vo.symptomArr.size());
+			System.out.println("/////////////"+vo.getpName()+vo.getpNumber()+ " "+ vo.symptomArr.size());
 		}
 		return list;
 	 }
