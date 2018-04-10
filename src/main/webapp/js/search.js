@@ -45,19 +45,28 @@ function callbackPatient(getPatientNum){ // 환자 번호로 증상과 환자 �
 			var symptomList ="";
 			var patientInfo ="";
 			patientInfo += "<h5 style='background-color:#EBEBEB; border: solid 5px #EBEBEB'>"+
-							resultData.visitDate +"| "+resultData.pName+"("+resultData.pNumber+") 500211-20*****(F. 67세 0개월 24일) | [국민공단] | 010-5199-**** | 경기도 남양주시 화도읍 명품하우스</h5>";
+							resultData.visitDate +"| "+resultData.pName+"("+resultData.pNumber+") 900111-10*****(F. 20세 0개월 24일) | [국민공단] | 010-5111-**** | 서울특별시 성북구 화도읍 명품하우스</h5>";
 			
 			$.each(resultData.symptomArr ,function(index,item){
 				symptomList += "<tr><td>"+item.symptom+"</td><td><button onclick='deleteLine(this);' style='float: right;'>삭제</button></td></tr>";
 			});
+			
+			var patientTable ="";
+			patientTable += "<tr><td>환자번호</td><td><input class=\"form-control\" type=\"text\" value="+resultData.pNumber+"></td></tr>"+
+							"<tr><td>이름</td><td><input class=\"form-control\" type=\"text\" value="+resultData.pName+"></td></tr>"
+							"<tr><td>나이</td><td><input class=\"form-control\" type=\"text\" value="+resultData.Age+"></td></tr>";
+			
 			$("#showPsymptoms > tbody").empty();
 			$("#showPsymptoms").append(symptomList);
 			$("#patientInfoView").empty();
 			$("#patientInfoView").append(patientInfo);
+			$("#showPatient > tbody").empty();
+			$("#showPatient").append(patientTable);
+			
+			
 		}
 	});
 }
-
 //Default Page 검색란에 입력하고 엔터눌렀을때 똑같이 검색되는 기능
 $("#searchPatient").keypress(function(event){
     if ( event.which == 13 ) {

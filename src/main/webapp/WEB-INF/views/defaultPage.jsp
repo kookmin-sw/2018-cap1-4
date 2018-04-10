@@ -12,6 +12,7 @@
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 
+
 <link rel="stylesheet" href="table/blue_style.css" type="text/css">
 <link rel="stylesheet" href="table/green_style.css" type="text/css">
 <link rel="stylesheet" href="css/bootstrap.min2.css">
@@ -111,10 +112,12 @@
 				<div class="container-fluid">
 					<div class="row-fluid">
 						<div class="span1" id ="patientInfoView">
+
 							<h5 style="background-color:#EBEBEB; border: solid 5px #EBEBEB">2018-04-13
 								10:52:17 | 홍길동(17-01268)500428-20*****(F. 67세 0개월 24일) | [국민공단]
 								| 010-1234-5678 | 경기도 남양주시 화도읍 국민아파트</h5>
 							
+
 						</div>
           <div class="container-fluid">
     			<div class="col-md-12 mx-auto">
@@ -206,6 +209,7 @@
                        <div style="float:right;">
     									 <button type="button" class="btn btn-primary" id="chkSymptom">진단하기</button>
                      </div>
+
                      </div>
     								</div>
     								<div class="col-md-4 mx-auto">
@@ -284,6 +288,7 @@
                      <div style="float:right;">
                      <input type="submit" value="Add to left"><br />
                    </div>
+
     								</div>
     							</div>
     							</div>
@@ -301,9 +306,10 @@
     								</div>
     							</div>
     							<div class="col-md-8 mx-auto">
-                    <h5><strong>사상체질 의견</strong></h5>
+                    <h5><strong>처방</strong></h5>
                     <div style="width:100%; height:200px; overflow:auto">
     								<table class="table table-striped" style='line-height:90%' id="diagnosisTable">
+
                          <!-- <thead>
                              <tr>
                                  <th>진단</th>
@@ -311,7 +317,7 @@
                          </thead> -->
                          <tbody>
                              <tr>
-                                   <th>사상체질</th>
+                                   <th></th>
                                    <th>의견</th>
                                  </tr>
                                    <tr>
@@ -469,13 +475,12 @@
 	</div>
 	
 
-	<script type="text/javascript">
-   
- 	
-    </script>
+<script type="text/javascript"> 
+</script>
 	<script type="text/javascript" src="js/diagnosis.js?ver=1.512"></script>
+
 	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
-	<script type="text/javascript" src="js/search.js?ver=2.12221"></script>
+	<script type="text/javascript" src="js/search.js?ver=2.1921221"></script>
 	
 	<script src="js/js/dist/util.js"></script>
 	<script src="js/js/dist/tab.js"></script>
