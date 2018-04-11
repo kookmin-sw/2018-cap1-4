@@ -112,12 +112,9 @@
 				<div class="container-fluid">
 					<div class="row-fluid">
 						<div class="span1" id ="patientInfoView">
-
-							<h5 style="background-color:#EBEBEB; border: solid 5px #EBEBEB">2018-04-13
-								10:52:17 | 홍길동(17-01268)500428-20*****(F. 67세 0개월 24일) | [국민공단]
-								| 010-1234-5678 | 경기도 남양주시 화도읍 국민아파트</h5>
-							
-
+							<h5 style="background-color:#EBEBEB; border: solid 5px #EBEBEB">&nbsp;
+							                                                           
+																			&nbsp;</h5>
 						</div>
           <div class="container-fluid">
     			<div class="col-md-12 mx-auto">
@@ -176,25 +173,25 @@
     									<table class="table table-striped" style='line-height:90%' id="showPsymptoms">
     										<tbody>
     											<tr>
-													<td></td>
+													<td>&nbsp; &nbsp;</td>
 												</tr>
 												<tr>
-													<td></td>
+													<td>&nbsp; &nbsp;</td>
 												</tr>
 												<tr>
-													<td></td>
+													<td>&nbsp; &nbsp;</td>
 												</tr>
 												<tr>
-													<td></td>
+													<td>&nbsp; &nbsp;</td>
 												</tr>
 												<tr>
-													<td></td>
+													<td>&nbsp; &nbsp;</td>
 												</tr>
 												<tr>
-													<td></td>
+													<td>&nbsp; &nbsp;</td>
 												</tr>
 												<tr>
-													<td></td>
+													<td>&nbsp; &nbsp;</td>
 												</tr>		
     										</tbody>
     									 </table>
@@ -316,33 +313,23 @@
                              </tr>
                          </thead> -->
                          <tbody>
-                             <tr>
-                                   <th></th>
-                                   <th>의견</th>
-                                 </tr>
-                                   <tr>
-                                       <td>소음인</td>
-                                       <td>신이 실하고 비가 약하다/ 찹쌀, 현미, 감자, 닭고기, 꿀</td>
+                               	   <tr>
+                                       <td>&nbsp; &nbsp;</td>
                                    </tr>
                                    <tr>
-                                       <td>소양인</td>
-                                       <td>에어로빅처럼 활동적인 운동이 필요하다/ 보리, 오리, 새우, 오이, 바나나</td>
+                                       <td>&nbsp; &nbsp;</td>
                                    </tr>
                                    <tr>
-                                       <td>태음인</td>
-                                       <td>허리가 굵고 목덜미가 가늘다/ 밀, 콩, 당근, 배, 자두</td>
+                                       <td>&nbsp; &nbsp;</td>
                                    </tr>
                                    <tr>
-                                       <td>태양인</td>
-                                       <td>폐가 실하고 간이 약하다/ 메밀, 모과, 솔잎, 알로에</td>
+                                       <td>&nbsp; &nbsp;</td>
                                    </tr>
                                    <tr>
-                                       <td>소음인</td>
-                                       <td>골반이 크고 가슴이 빈약하다/ 인삼, 생강, 대추, 당귀</td>
+                                       <td>&nbsp; &nbsp;</td>
                                    </tr>
                                    <tr>
-                                       <td>태양인</td>
-                                       <td>목덜미가 굵고 허리가 가늘다/ 조개류(굴, 홍합, 전복), 모밀</td>
+                                       <td>&nbsp; &nbsp;</td>
                                    </tr>
                          </tbody>
                      </table>
@@ -368,56 +355,56 @@
         <th>성별</th>
       </tr>
         <tr>
-            <td>123</td>
+            <td>18-20125</td>
             <td>장원용</td>
-            <td>28</td>
+            <td>20</td>
             <td>남자</td>
         </tr>
         <tr>
-            <td>234</td>
+            <td>18-20552</td>
             <td>김태우</td>
-            <td>25</td>
+            <td>20</td>
             <td>남자</td>
         </tr>
         <tr>
-            <td>345</td>
+            <td>18-20321</td>
             <td>류준영</td>
-            <td>25</td>
+            <td>20</td>
             <td>남자</td>
         </tr>
         <tr>
-            <td>456</td>
+            <td>18-20114</td>
             <td>차은채</td>
-            <td>23</td>
+            <td>20</td>
             <td>여자</td>
         </tr>
         <tr>
-          <td>567</td>
-          <td>홍길동</td>
-          <td>29</td>
+          <td>18-20115</td>
+          <td>박인수</td>
+          <td>20</td>
           <td>남자</td>
         </tr>
         <tr>
-          <td>678</td>
-          <td>사람1</td>
+          <td>18-20116</td>
+          <td>유상현</td>
           <td>26</td>
           <td>여자</td>
         </tr>
         <tr>
-          <td>890</td>
-          <td>사람2</td>
+          <td>18-20117</td>
+          <td>장진석</td>
           <td>21</td>
           <td>여자</td>
         </tr>
         <tr>
-          <td>012</td>
-          <td>사람3</td>
+          <td>18-20118</td>
+          <td>박승아</td>
           <td>30</td>
           <td>남자</td>
         </tr>
         <tr>
-          <td>987</td>
-          <td>사람4</td>
+          <td>18-20119</td>
+          <td>제지환</td>
           <td>35</td>
           <td>여자</td>
         </tr>
