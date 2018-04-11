@@ -25,8 +25,8 @@ public class DroolsSpringTest {
 	 * 
 	 */
 	public void setRuleMap(Map<String,Object> map) {
-		//ruleMap = new RuleMap();
-		//ruleMap.setRuleMap(map);
+		ruleMap = new RuleMap();
+		ruleMap.setRuleMap(map);
 		System.out.println("setRuleMap success");
 	}
 	
@@ -47,7 +47,7 @@ public class DroolsSpringTest {
 			StatefulKnowledgeSession ksession = (StatefulKnowledgeSession) applicationContext
 					.getBean("ksession");
 
-			//ksession.insert(ruleMap);
+			ksession.insert(ruleMap);
 			ksession.insert(patient);
 			ksession.fireAllRules();
 			

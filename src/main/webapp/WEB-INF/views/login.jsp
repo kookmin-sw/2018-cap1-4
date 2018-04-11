@@ -8,7 +8,7 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<title>Oriental Medicine Expert System</title>
+<title>Oriental Medical Expert System</title>
 <style rel="stylesheet">
 body {
    font: 13px/20px 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -160,12 +160,12 @@ input {
 </head>
 <body>
 	<form class="signUp" id="signupForm" method="post" action="loginCheck"> 
-		<h1 class="signUpTitle">Oriental Medicine Expert System</h1>
+		<h1 class="signUpTitle">Oriental Medical Expert System</h1>
 		<h3>아이디</h3>
 		<input type="text" name="userId" value="" class="signUpInput" placeholder="Type your username" autofocus required>
 		<h3>비밀번호</h3>
 		<input type="password" name="userPw" value="" class="signUpInput" placeholder="Choose a password" required> 
-		<p>ID 를 기억하시겠습니까? <input type="checkbox" name="useCookie" ></p>
+		<p>로그인 상태를 기억하시겠습니까? <input type="checkbox" name="useCookie" ></p>
 		<input type="submit" value="로그인" class="signUpButton"> 
 	</form> 
 </body>

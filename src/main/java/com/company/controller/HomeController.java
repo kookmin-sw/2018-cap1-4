@@ -98,13 +98,13 @@ public class HomeController {
 				Cookie cookie = new Cookie("loginCookie", session.getId());
 				// 경로 "/" 설정 함으로써 contextPath 이하의 모든 요청에 대해서 쿠키 전송할수 있도록 설정
 				cookie.setPath("/");
-				int amount = 60*60*24*1; // 단위는 초 임으로 1일정도 유효시킴
+				int amount = 1; // 단위는 초 임으로 1일정도 유효시킴 60*60*24*1;
 				cookie.setMaxAge(amount); 
 				//쿠키 적용
 				response.addCookie(cookie);
 				
 				// currentTimeMills()가 1/1000 초 단위임으로 1000곱해서 더해야함
-				Date sessionLimit = new Date(System.currentTimeMillis()+ (1000*amount));
+				Date sessionLimit = new Date(System.currentTimeMillis()+ (100*amount));
 				// 현재 세션 id 와 유효시간을 사용자 테이블에 저장한다.
 				Map<String, Object> map  = new HashMap<String, Object>();
 				map.put("userId", vo.getUserId());
