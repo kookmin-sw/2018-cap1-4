@@ -17,7 +17,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
+import org.springframework.web.util.WebUtils;
 
 import com.company.dto.DoctorVO;
 import com.company.service.LoginService;
@@ -120,6 +120,40 @@ public class HomeController {
 		
 		return returnURL;
 	}
+
+
+	// 로그아웃 하는 부분
+    @RequestMapping(value="logout")
+    public String logout(HttpSession session,HttpServletRequest request, HttpServletResponse response) {
+        Object obj = session.getAttribute("login");
+        if ( obj != null ){
+            DoctorVO vo = (DoctorVO)obj;
+            // null이 아닐 경우 제거
+            session.removeAttribute("login");
+            session.invalidate(); // 세션 전체를 날려버림
+            //쿠키를 가져와보고
+            Cookie loginCookie = WebUtils.getCookie(request, "loginCookie");
+            if ( loginCookie != null ){
+                // null이 아니면 존재하면!
+                loginCookie.setPath("/");
+                // 쿠키는 없앨 때 유효시간을 0으로 설정하는 것 !!! invalidate같은거 없음.
+                loginCookie.setMaxAge(0);
+                // 쿠키 설정을 적용한다.
+                response.addCookie(loginCookie);
+                // 사용자 테이블에서도 유효기간을 현재시간으로 다시 세팅해줘야함.
+                Date date = new Date(System.currentTimeMillis());
+                Map<String, Object> map  = new HashMap<String, Object>();
+				map.put("userId", vo.getUserId());
+				map.put("sessionId", session.getId());
+				map.put("next", date);
+                loginService.keepLogin(map);
+            }
+        }
+        return "/"; // 로그아웃 후 이동   // ajax 와 다시 확인
+    }
+
+	
+	
 	/**
 	 * 접수 페이지 이동
 	 */

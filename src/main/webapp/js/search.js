@@ -74,3 +74,17 @@ $("#searchPatient").keypress(function(event){
         return false;
     }
 });
+
+
+// 로그아웃
+$(document).ready(function() {
+	$("#clickedLogout").click(function() {
+		$.ajax({
+			method:"GET",	
+			url:"logout",	
+			success:function(data) {
+				window.location.href = data;
+			}
+		});
+	});
+});

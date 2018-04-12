@@ -102,7 +102,7 @@
 						id="searchPatient" placeholder="환자이름"
 						aria-label="환자이름">
 					<button type="button" class="btn btn-primary" id="searchButton">검색</button>
-					<button type="button" class="btn btn-danger">LogOut</button>
+					<button type="button" class="btn btn-danger" id ="clickedLogout">LogOut</button>
 				</form>
 			</form>
 		</div>
@@ -467,7 +467,7 @@
 	<script type="text/javascript" src="js/diagnosis.js?ver=1.512"></script>
 
 	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
-	<script type="text/javascript" src="js/search.js?ver=2.1921221"></script>
+	<script type="text/javascript" src="js/search.js?ver=2.29221221"></script>
 	
 	<script src="js/js/dist/util.js"></script>
 	<script src="js/js/dist/tab.js"></script>
