@@ -247,11 +247,11 @@
         </tr>
         <tr>
             <td>식후</td>
-            <td><input type=radio name="burb_2_fre" value="2"></td>
-            <td><input type=radio name="burb_2_fre" value="3"></td>
-            <td><input type=radio name="burb_2_deg" value="1"></td>
-            <td><input type=radio name="burb_2_deg" value="2"></td>
-            <td><input type=radio name="burb_2_deg" value="3"></td>
+            <td><input type=radio name="burb_3_fre" value="2"></td>
+            <td><input type=radio name="burb_3_fre" value="3"></td>
+            <td><input type=radio name="burb_3_deg" value="1"></td>
+            <td><input type=radio name="burb_3_deg" value="2"></td>
+            <td><input type=radio name="burb_3_deg" value="3"></td>
         </tr>
         <tr>
             <td>과식 후</td>
@@ -290,11 +290,11 @@
         </tr>
         <tr>
             <td>식후</td>
-            <td><input type=radio name="brash_2_fre" value="2"></td>
-            <td><input type=radio name="brash_2_fre" value="3"></td>
-            <td><input type=radio name="brash_2_deg" value="1"></td>
-            <td><input type=radio name="brash_2_deg" value="2"></td>
-            <td><input type=radio name="brash_2_deg" value="3"></td>
+            <td><input type=radio name="brash_3_fre" value="2"></td>
+            <td><input type=radio name="brash_3_fre" value="3"></td>
+            <td><input type=radio name="brash_3deg" value="1"></td>
+            <td><input type=radio name="brash_3_deg" value="2"></td>
+            <td><input type=radio name="brash_3_deg" value="3"></td>
         </tr>
         <tr>
             <td>수면중/새벽</td>
@@ -455,11 +455,11 @@
         
          <tr>
             <td colspan="2">가슴 답답</td>
-            <td><input type=radio name="back_1_fre" value="2"></td>
-            <td><input type=radio name="back_1_fre" value="3"></td>
-            <td><input type=radio name="back_1_deg" value="1"></td>
-            <td><input type=radio name="back_1_deg" value="2"></td>
-            <td><input type=radio name="back_1_deg" value="3"></td>
+            <td><input type=radio name="chest_1_fre" value="2"></td>
+            <td><input type=radio name="chest_1_fre" value="3"></td>
+            <td><input type=radio name="chest_1_deg" value="1"></td>
+            <td><input type=radio name="chest_1_deg" value="2"></td>
+            <td><input type=radio name="chest_1_deg" value="3"></td>
         </tr>
         
         <!-- 

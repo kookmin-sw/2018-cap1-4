@@ -57,56 +57,12 @@
                             <td>나이</td>
                             <td><input class="form-control" type="text"></td>
                         </tr>
-                        <tr>
-                            <td>몸무게</td>
-                            <td><input class="form-control" type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>과거 질병</td>
-                            <td><input class="form-control" type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>현재 질병</td>
-                            <td><input class="form-control" type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>빈칸1</td>
-                            <td><input class="form-control" type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>빈칸2</td>
-                            <td><input class="form-control" type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>빈칸3</td>
-                            <td><input class="form-control" type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>빈칸4</td>
-                            <td><input class="form-control" type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>빈칸5</td>
-                            <td><input class="form-control" type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>빈칸6</td>
-                            <td><input class="form-control" type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>빈칸7</td>
-                            <td><input class="form-control" type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>빈칸8</td>
-                            <td><input class="form-control" type="text"></td>
-                        </tr>
                     </tbody>
                     </table>
                     </div>
                     <div style="float:right;">
                     <form class="form-inline">
-                      <button type="button">추가</button>
+                      <button type="button" id="addList">추가</button>
                       <button type="button">저장</button>
                       <button type="submit">새로고침</button>
                     </form>
