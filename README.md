@@ -30,7 +30,8 @@ This project is to develop a system that provides diagnostic and prescription se
 
 
 ## 4. 팀 소개
-![dancheshot](https://user-images.githubusercontent.com/21376336/38675667-6ba0c9be-3e93-11e8-824c-bbc69b26d6bb.jpg){: width="400" height="500"}
+![dancheshot](https://user-images.githubusercontent.com/21376336/38676797-1c7d5538-3e97-11e8-98e1-c27bc5d4fd56.jpg)
+
 
 
 ### 장원용 (팀장)
