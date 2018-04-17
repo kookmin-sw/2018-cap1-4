@@ -28,23 +28,24 @@ import com.company.service.RuleService;
 @Controller
 public class RuleController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(RuleController.class);
 	
 	@Inject
 	private RuleService ruleService;
 	@Inject
 	private MemberService service;
-	
+	@Inject
 	private PatientVO patient;
+	@Inject
 	private PatientSymptomVO symptomVO;
-	
+	@Inject
 	private DroolsSpringTest drools;
 	
 	@PostConstruct // 생성자 annotation
 	public void initialize(){ 
 		
-		patient = new PatientVO(); // 추후 빈객체로 사용할 예정
-		symptomVO = new PatientSymptomVO();
+		//patient = new PatientVO(); // 추후 빈객체로 사용할 예정
+		//symptomVO = new PatientSymptomVO();
 		
 		List<DomainRuleVO> ruleList = null; // rules
 		
@@ -62,7 +63,7 @@ public class RuleController {
 			obj.countAndSymptom(); //
 		}
 		
-		drools = new DroolsSpringTest();
+		//drools = new DroolsSpringTest();
 		drools.setRuleMap(ruleMap); // drools hash map setting
 		
 		logger.info("setRuleDomain complete!");
@@ -147,9 +148,9 @@ public class RuleController {
 		patient.diagnosis.complexPrescr.clear();
 		patient.diagnosis.simplePrescr.clear();
 		patient.diagnosis.diagnosisArr.clear();
-		drools.setPatient(patient); // 검사할 환자 object 셋팅
+		//drools.setPatient(patient); // 검사할 환자 object 셋팅
 		
-		patient = drools.checkSymptom(); // drools 엔진에게 환자 object send
+		drools.checkSymptom(); // drools 엔진에게 환자 object send
 		
 		System.out.println("-------------------------------------------------------------------------");
 		System.out.println("단순증상 : "+patient.diagnosis.simplePrescr);

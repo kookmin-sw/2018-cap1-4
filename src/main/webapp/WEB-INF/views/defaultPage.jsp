@@ -12,9 +12,6 @@
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 
-
-<link rel="stylesheet" href="table/blue_style.css" type="text/css">
-<link rel="stylesheet" href="table/green_style.css" type="text/css">
 <link rel="stylesheet" href="css/bootstrap.min2.css">
 
 <!-- Bootstrap core CSS -->

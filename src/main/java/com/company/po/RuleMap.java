@@ -6,9 +6,8 @@ import com.company.dto.DomainRuleVO;
 import com.company.dto.PatientVO;
 
 /**
- * 
- * 
- *
+ * 데이터베이스에 있는 Rule을 프로그램 실행시 Map 타입으로 불러옴
+ * 프레임워크에 종속적이지 않은 일반 자바클래스를 POJO(Plain Old Java Object)	
  */
 public class RuleMap {
 	public Map<String, Object> ruleMap;

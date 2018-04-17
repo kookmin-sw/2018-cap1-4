@@ -1,10 +1,13 @@
 package com.company.dto;
 
+import org.springframework.stereotype.Component;
+
 /**
  * 
  * 환자 증상들을 객체로 관리
  *
  */
+@Component
 public class PatientSymptomVO {
 	private String pNum;
 	private String symptom;
