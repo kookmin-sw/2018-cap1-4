@@ -76,7 +76,7 @@ $("#searchPatient").keypress(function(event){
 });
 
 
-// 로그아웃
+// 로그아웃 클릭했을때
 $(document).ready(function() {
 	$("#clickedLogout").click(function() {
 		$.ajax({

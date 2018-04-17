@@ -17,6 +17,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.util.WebUtils;
 
 import com.company.dto.DoctorVO;
@@ -124,7 +125,8 @@ public class HomeController {
 
 	// 로그아웃 하는 부분
     @RequestMapping(value="logout")
-    public String logout(HttpSession session,HttpServletRequest request, HttpServletResponse response) {
+    public @ResponseBody String logout(HttpSession session,HttpServletRequest request, HttpServletResponse response) {
+    	logger.info("Logout");
         Object obj = session.getAttribute("login");
         if ( obj != null ){
             DoctorVO vo = (DoctorVO)obj;
@@ -149,11 +151,9 @@ public class HomeController {
                 loginService.keepLogin(map);
             }
         }
-        return "/"; // 로그아웃 후 이동   // ajax 와 다시 확인
+        return "/home/login"; // 로그아웃 후 이동  
     }
 
-	
-	
 	/**
 	 * 접수 페이지 이동
 	 */
@@ -185,7 +185,7 @@ public class HomeController {
 		return "evalTablePage";
 	}
 	/**
-	 * GeneralPage
+	 * GeneralPage 일반사용자 설문 페이지
 	 */
 	@RequestMapping(value="/generalSurvey")
 	public String generalSurvey(Model model) throws Exception
@@ -195,7 +195,7 @@ public class HomeController {
 		return "generalSurvey";
 	}
 	/**
-	 * HospitalSurveyPage
+	 * HospitalSurveyPage 병원 설문지 페이지
 	 */
 	@RequestMapping(value="/hospitalSurvey")
 	public String hospitalSurvey(Model model) throws Exception
