@@ -469,8 +469,5 @@
 	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
 	<script type="text/javascript" src="js/search.js?ver=2.391281221259"></script>
 	
-	<script src="js/js/dist/util.js"></script>
-	<script src="js/js/dist/tab.js"></script>
-	
 </body>
 </html>
