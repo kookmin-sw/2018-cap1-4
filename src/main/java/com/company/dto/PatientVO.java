@@ -5,9 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class PatientVO {
 	private String pNumber; // 환자 번호
 	private String pName; // 환자 이름

@@ -8,8 +8,11 @@ import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,6 +27,7 @@ import com.company.dto.PatientVO;
 import com.company.dto.SymptomVO;
 import com.company.service.MemberService;
 import com.company.service.RuleService;
+import com.company.util.BeanUtils;
 
 @Controller
 public class RuleController {
@@ -35,17 +39,17 @@ public class RuleController {
 	@Inject
 	private MemberService service;
 	@Inject
-	private PatientVO patient;
-	@Inject
-	private PatientSymptomVO symptomVO;
-	@Inject
 	private DroolsSpringTest drools;
+	
+	private PatientVO patient;
+	private PatientSymptomVO symptomVO;
 	
 	@PostConstruct // 생성자 annotation
 	public void initialize(){ 
 		
-		//patient = new PatientVO(); // 추후 빈객체로 사용할 예정
-		//symptomVO = new PatientSymptomVO();
+		patient = new PatientVO(); // 추후 빈객체로 사용할 예정
+		symptomVO = new PatientSymptomVO();
+		//patient = (PatientVO) BeanUtils.getBean("patientVO");
 		
 		List<DomainRuleVO> ruleList = null; // rules
 		
@@ -63,8 +67,9 @@ public class RuleController {
 			obj.countAndSymptom(); //
 		}
 		
-		//drools = new DroolsSpringTest();
+		drools = new DroolsSpringTest();
 		drools.setRuleMap(ruleMap); // drools hash map setting
+		
 		
 		logger.info("setRuleDomain complete!");
 	}
@@ -148,9 +153,10 @@ public class RuleController {
 		patient.diagnosis.complexPrescr.clear();
 		patient.diagnosis.simplePrescr.clear();
 		patient.diagnosis.diagnosisArr.clear();
-		//drools.setPatient(patient); // 검사할 환자 object 셋팅
+		drools.setPatient(patient); // 검사할 환자 object 셋팅
+	
 		
-		drools.checkSymptom(); // drools 엔진에게 환자 object send
+		patient = drools.checkSymptom(); // drools 엔진에게 환자 object send
 		
 		System.out.println("-------------------------------------------------------------------------");
 		System.out.println("단순증상 : "+patient.diagnosis.simplePrescr);

@@ -7,5 +7,5 @@
  
     <import resource="classpath:drools-context/drools-context.xml"/>
 		<!-- <context:component-scan base-package="com.company.drools" /> -->
-        <context:component-scan base-package="com.company.dto" />
+       <!--  <context:component-scan base-package="com.company.dto" /> -->
 </beans>
