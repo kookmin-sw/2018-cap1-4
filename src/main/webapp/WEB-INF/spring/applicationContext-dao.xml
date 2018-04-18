@@ -40,6 +40,12 @@
         <property name="basePackage" value="com.company.mapper" />
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
    </bean>
-	<!-- bean 등록 -->
+   
+   <bean id="applicationContextProvider" class="com.company.util.ApplicationContextProvider"></bean>
+   
+	<!-- bean 스캐너 등록 -->
 	<context:component-scan base-package="com.company.service"></context:component-scan>
+	<context:component-scan base-package="com.company.dto"></context:component-scan>
+	<context:component-scan base-package="com.company.drools"></context:component-scan>
+	
 </beans>
