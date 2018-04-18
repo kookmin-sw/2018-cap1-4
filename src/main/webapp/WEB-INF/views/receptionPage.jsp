@@ -30,8 +30,8 @@
 			<form class="form-inline" id="evalRuleForm">
 				<form class="navbar-form pull-left">
 					<input class="form-control" type="text" name="pName"
-						id="searchPatient" placeholder="환자이름" aria-label="환자이름" />
-					<button type="button" class="btn btn-primary">검색</button>
+						id="searchPatientReception" placeholder="환자이름" aria-label="환자이름" />
+					<button type="button" class="btn btn-primary" id="searchButtonrReception">검색</button>
 					<button type="button" class="btn btn-danger" id ="clickedLogout">LogOut</button>
 				</form>
 			</form>
@@ -43,26 +43,26 @@
               <div class="col-md-6 mx-auto">
                 <h5><strong>환자정보</strong></h5>
                     <div style="width:105%; height:416px; overflow:auto;background-color:white">
-                    <table class="table table-striped" style='line-height:90%' id="showPatient">
+                    <table class="table table-striped" style='line-height:90%' id="showWaitingPatient">
                     <tbody>
                         <tr>
                             <td>환자번호</td>
-                            <td><input class="form-control" type="text"></td>
+                            <td><input class="form-control" type="text" id="pNumber"></td>
                         </tr>
                         <tr>
                             <td>이름</td>
-                            <td><input class="form-control" type="text"></td>
+                            <td><input class="form-control" type="text" id="pName"></td>
                         </tr>
                         <tr>
                             <td>나이</td>
-                            <td><input class="form-control" type="text"></td>
+                            <td><input class="form-control" type="text" id="age"></td>
+                        </tr>
+                        <tr>
+                            <td>성별</td>
+                            <td><input class="form-control" type="text" id="sex"></td>
                         </tr>
                         <tr>
                             <td>몸무게</td>
-                            <td><input class="form-control" type="text"></td>
-                        </tr>
-                        <tr>
-                            <td>과거 질병</td>
                             <td><input class="form-control" type="text"></td>
                         </tr>
                         <tr>
@@ -70,7 +70,7 @@
                             <td><input class="form-control" type="text"></td>
                         </tr>
                         <tr>
-                            <td>빈칸1</td>
+                            <td>과거 질병</td>
                             <td><input class="form-control" type="text"></td>
                         </tr>
                         <tr>
@@ -106,9 +106,9 @@
                     </div>
                     <div style="float:right;">
                     <form class="form-inline">
-                      <button type="button">추가</button>
-                      <button type="button">저장</button>
-                      <button type="submit">새로고침</button>
+                      <button type="button" id="buttonWaitingList">추가</button>
+                      <button type="button" id="savePatientButton">저장</button>
+                      <button type="button"id ="refreshButton">새로고침</button>
                     </form>
                   </div>
                </div>
@@ -173,6 +173,7 @@
 	
 	<script type="text/javascript" src="js/diagnosis.js?ver=5"></script>
 	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
-	<script type="text/javascript" src="js/search.js?ver=3"></script>
+	<script type="text/javascript" src="js/search.js?ver=3.219111127629"></script>
+	<script type="text/javascript" src="js/reception.js?ver=1"></script>
 </body>
 </html>

@@ -464,7 +464,7 @@
 	<script type="text/javascript" src="js/diagnosis.js?ver=1.512"></script>
 
 	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
-	<script type="text/javascript" src="js/search.js?ver=2.391281221259"></script>
+	<script type="text/javascript" src="js/search.js?ver=2.3912281221259"></script>
 	
 </body>
 </html>
