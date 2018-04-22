@@ -6,6 +6,8 @@ import javax.inject.Inject;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -68,12 +70,16 @@ public class MemberController {
 	  * 저장 버튼을 클릭했을때 patient table 저장 하던지 기존 데이터가 있을때는 수정기능 제공 
 	  */
 	 @RequestMapping(value ="/savePatientInfo", method = RequestMethod.POST)
-	 public void savePatientInfo(@RequestBody PatientVO patient) throws Exception
+	 public ResponseEntity<PatientVO> savePatientInfo(@RequestBody PatientVO patient) throws Exception
 	 {
 		 logger.info("savePatientInfo[receptionPage]");
 		 
-		 // 추후 에러처리 하기 번호, 이름, 나이, 성별 등에 대해서 형식에 맞게 들어왔는지
- 		 
+		 // 추후 에러처리 하기 번호, 이름, 나이, 성별 등에 대해서 형식에 맞게 들어왔는지 (추후 좀더 디테일하게 하기)
+ 		 if(patient.getpNumber().length() < 1 || patient.getAge() == 0 || patient.getpName().length() < 1 || patient.getSex().length() < 1)
+ 		 {
+ 			logger.info("savePatientInfo[receptionPage] 예외처리");
+ 			 return new ResponseEntity<PatientVO>(patient, HttpStatus.NOT_ACCEPTABLE);
+ 		 }
 		 PatientVO vo = ruleService.getPatientSymptoms(patient.getpNumber());
 		 
 		 if(vo == null) // 새로운 환자이면 환자테이블에 추가
@@ -86,6 +92,7 @@ public class MemberController {
 			 logger.info("savePatientInfo[receptionPage] 환자 세부사항 수정");
 			 memberService.modifyPatient(patient);
 		 }
+		 return new ResponseEntity<PatientVO>(patient, HttpStatus.OK);
 	 }
 	 
 }
