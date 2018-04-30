@@ -196,16 +196,11 @@
 	{
 		var tr = $(obj).parent().parent().parent();
 		var td = tr.children();
-		var tempArr = td.eq(0).text().split('/'); // '/' 기준으로 자르기 pNum 가져오기
+		var tempArr = td.eq(0).text().split('/'); //  '/' 기준으로 자르기 pNum 가져오기
 		var pNum = tempArr[0].slice(0,-1); // 공백 제거
 		
-		alert("//"+pNum);
-	    
-		var url="hospitalSurvey";
-		var name = "hospitalSurvey";
-		var test = window.open(url,name,"width=600,height=700,left=600");
-		test.document.getElementById("childText").value = pNum;
-
+		var url="hospitalSurvey?user="+pNum; // URL 로 환자 번호 넘기기
+		windowObj = window.open(url,"","width=600,height=700,left=600");
 	}
 	</script>
 	<script type="text/javascript" src="js/diagnosis.js?ver=5"></script>

@@ -50,6 +50,7 @@ public class SurveyVO {
 	public void setSurveyMap(List<Map<String, Object>> surveyMap) {
 		this.surveyMap = surveyMap;
 	}
+	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	public String fromSurveyToSymptom(String str) // survey와 symptom mapping 작업 // 태우가 작업할것//////////////////
 	{

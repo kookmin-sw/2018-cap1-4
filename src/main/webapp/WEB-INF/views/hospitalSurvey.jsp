@@ -19,9 +19,7 @@
 </head>
 <body>
 	<table border="1" id= "surveyTable">
-		<tr>
-			<td><input class="form-control" id="childText" type="text" ></td>
-		</tr>
+
         <tr>
             <td rowspan="2" colspan="2">증상</td>
             <td colspan="2">빈도</td>
@@ -778,6 +776,6 @@
     
     <button type="button" class="btn btn-warning" id="H_SurveySaveButton">저장</button>
     
-    <script type="text/javascript" src="js/survey.js?ver=2.2212912229"></script>
+    <script type="text/javascript" src="js/survey.js?ver=2.312"></script>
 </body>
 </html>

@@ -24,8 +24,9 @@ public class SurveyController {
 	
 	@Inject
 	private RuleService ruleService;
+	
 	/**
-	  * 대기자 명단에 추가
+	  * 설문 작성 완료 한 후 save 버튼 클릭시
 	  */
 	@RequestMapping(value ="/saveHospitalSurvey", method = RequestMethod.POST)
 	public void H_SurveySaveButton(@RequestBody SurveyVO surveyResult) throws Exception
@@ -33,7 +34,7 @@ public class SurveyController {
 		logger.info("saveHospitalSurvey");
 		
 		List<Map<String,Object>> surveyMap = surveyResult.getSurveyMap();
-		System.out.println("////////////"+surveyMap.size());
+		//System.out.println("////////////"+surveyResult.getpNum());
 		for(Map<String,Object> map : surveyMap)
 		{
 			int num =0;
@@ -47,16 +48,16 @@ public class SurveyController {
 			String symptomName = surveyResult.fromSurveyToSymptom((String)map.get("symptom")); // survey 값을 증상과 맵핑
 			
 			PatientSymptomVO vo = new PatientSymptomVO();
-			vo.setDegree(num); // 임시로 저장
-			vo.setpNum("111"); // 임시로 저장
+			vo.setDegree(num); // degree
+			vo.setpNum(surveyResult.getpNum()); // 환자 번호
 			vo.setSymptom(symptomName);
-			vo.setVisitDate(surveyResult.getVisitDate());
+			vo.setVisitDate(surveyResult.getVisitDate()); // 설문한 날짜
 			surveyResult.symptomArr.add(vo);
 			
 			System.out.println("///////symptomName"+symptomName);
 		}
 		
-		//증상들을 updateSymptom 테이블로 insert
+		//최종적으로 증상들을 updateSymptom 테이블로 insert
 		for(PatientSymptomVO vo : surveyResult.symptomArr)
 		{
 			ruleService.addSymptom(vo);

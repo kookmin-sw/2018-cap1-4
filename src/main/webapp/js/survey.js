@@ -5,6 +5,10 @@
 $(document).ready(function() {
 	$("#H_SurveySaveButton").click(function() {
 		
+		var url = location.href;
+		var param = url.substring(url.indexOf('?')+1,url.length);
+		var pNum = param.split("=");
+		
 		var table = document.getElementById("surveyTable");
 		var rowLen = table.rows.length; // surveyTable 의 row 전체 길이를 가져옴 (빈도와 정도 테이블)
 		var fre = "_fre";
@@ -34,7 +38,7 @@ $(document).ready(function() {
 			arr.push(obj);
 		}
 		
-		var form = {surveyMap:arr, pNum:"1"};
+		var form = {surveyMap:arr, pNum:pNum[1]}; // 설문지 데이터와 환자 번호 전송
 		
 		$.ajax({
 			method:"POST",
@@ -42,8 +46,8 @@ $(document).ready(function() {
 			dataType: "json",
 			contentType: "application/json",
 			data : JSON.stringify(form), // Array 를 JSON string 형태로 변환
-			success:function(resultData) {
-				
+			complete:function() {
+				console.log("save");
 			}
 		});
 	});
