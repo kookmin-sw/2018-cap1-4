@@ -12,9 +12,6 @@
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 
-
-<link rel="stylesheet" href="table/blue_style.css" type="text/css">
-<link rel="stylesheet" href="table/green_style.css" type="text/css">
 <link rel="stylesheet" href="css/bootstrap.min2.css">
 
 <!-- Bootstrap core CSS -->
@@ -314,22 +311,22 @@
                          </thead> -->
                          <tbody>
                                	   <tr>
-                                       <td>&nbsp; &nbsp;</td>
+                                       <th>상체 비만 스타일 소양인</th>
                                    </tr>
                                    <tr>
-                                       <td>&nbsp; &nbsp;</td>
+                                       <th>소양인 참고사항</th>
                                    </tr>
                                    <tr>
-                                       <td>&nbsp; &nbsp;</td>
+                                       <td>판단력이 빠르지만 계획성이 적어 일을 시작하기는 잘하나 하는 일이 잘 안될때는 쉽게 체념하는 면이 있음</td>
                                    </tr>
                                    <tr>
-                                       <td>&nbsp; &nbsp;</td>
+                                       <td>열이 많고 성질이 급합 / 급한 마음을 절제하도록 노력</td>
                                    </tr>
                                    <tr>
-                                       <td>&nbsp; &nbsp;</td>
+                                       <th>소양인의 이로운 음식</th>
                                    </tr>
                                    <tr>
-                                       <td>&nbsp; &nbsp;</td>
+                                       <td>가지, 게, 게란, 돼지고기, 딸기, 배추, 보리, 새우, 수박, 참외</td>
                                    </tr>
                          </tbody>
                      </table>
@@ -467,10 +464,7 @@
 	<script type="text/javascript" src="js/diagnosis.js?ver=1.512"></script>
 
 	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
-	<script type="text/javascript" src="js/search.js?ver=2.29221221"></script>
-	
-	<script src="js/js/dist/util.js"></script>
-	<script src="js/js/dist/tab.js"></script>
+	<script type="text/javascript" src="js/search.js?ver=2.3912281221259"></script>
 	
 </body>
 </html>

@@ -9,6 +9,7 @@ public class PatientVO {
 	private String pNumber; // 환자 번호
 	private String pName; // 환자 이름
 	private int age; // 세부사항 더 추가 예정
+	private String sex;
 	private String visitDate; // 방문날짜
 	
 	public ArrayList<PatientSymptomVO> symptomArr; // 증상들을 drools 로 진단하기 위해 arraylist 로 관리
@@ -45,7 +46,12 @@ public class PatientVO {
 	public void setAge(int age) {
 		this.age = age;
 	}
-
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
 	public ArrayList<PatientSymptomVO> getSymptomArr() {
 		return symptomArr;
 	}
