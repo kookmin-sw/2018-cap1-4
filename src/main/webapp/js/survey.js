@@ -53,3 +53,27 @@ $(document).ready(function() {
 	});
 });
 
+
+/**
+ * general Survey
+ * 설문을 작성 완료하고 저장 버튼을 눌렀을 때 
+ */
+$(document).ready(function() {
+	$("#G_SurveySaveButton").click(function() {
+		
+		var arr = null;
+		
+		$.ajax({
+			method:"POST",
+			url:"saveGeneralSurvey",
+			dataType: "json",
+			contentType: "application/json",
+			data : arr, // Array 를 JSON string 형태로 변환
+			complete:function() {
+				console.log("save");
+			}
+		});
+	});
+});
+
+

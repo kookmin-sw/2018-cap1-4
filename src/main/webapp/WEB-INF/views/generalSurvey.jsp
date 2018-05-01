@@ -164,14 +164,14 @@
     <h4>21. 당신의 성격과 가장 가까운 것은?</h4>    
     &nbsp; <td><input type=radio name = character2></td> 
     ① 사교적인
-    <br>&nbsp; <td><input type=radio name = character2></td> 
+    <br>&nbsp; <td><input type=radio name = character2 ></td> 
     ② 순응하는
      <br>&nbsp; <td><input type=radio name = character2></td> 
     ③ 끈기있는
      <br>&nbsp; <td><input type=radio name = character2></td> 
     ④ 의지가강한
       
-    <h4>22. 당신의 단점과 가장 가까운 것은?</h4>    
+    <h4>22. 당신의 단점과 가장 가까운 것은?</h4>
      &nbsp; <td><input type=radio name = Disadvantages2></td> 
     ① 시끄러운
      <br>&nbsp; <td><input type=radio name = Disadvantages2></td> 
