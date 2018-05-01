@@ -7,7 +7,7 @@ $(document).ready(function() {
 		
 		var url = location.href;
 		var param = url.substring(url.indexOf('?')+1,url.length);
-		var pNum = param.split("=");
+		var pNum = param.split("="); // 환자 번호 가져오
 		
 		var table = document.getElementById("surveyTable");
 		var rowLen = table.rows.length; // surveyTable 의 row 전체 길이를 가져옴 (빈도와 정도 테이블)

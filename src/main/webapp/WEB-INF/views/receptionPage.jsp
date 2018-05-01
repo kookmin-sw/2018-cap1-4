@@ -199,7 +199,7 @@
 		var tempArr = td.eq(0).text().split('/'); //  '/' 기준으로 자르기 pNum 가져오기
 		var pNum = tempArr[0].slice(0,-1); // 공백 제거
 		
-		var url="hospitalSurvey?user="+pNum; // URL 로 환자 번호 넘기기
+		var url="hospitalSurvey?user="+pNum; // URL 로 환자 번호 넘기기 (환자 증상 넣을때 환자 번호와 같이 넣기 위해)
 		windowObj = window.open(url,"","width=600,height=700,left=600");
 	}
 	</script>
