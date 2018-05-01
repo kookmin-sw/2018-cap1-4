@@ -128,39 +128,39 @@
                         <tbody>
                             <tr>
                                 <td>장원용</td>
-                                <td><div style="float:right;"><input type="button" value="팝업창"  onclick="nwindow()" /></div></td>
+                                <td><div style="float:right;"><input type="button" value="설문지"  onclick="nwindow()" /></div></td>
                             </tr>
                             <tr>
                                 <td>김태우</td>
-                                <td><div style="float:right;"><input type="button"  value="팝업창"  onclick="nwindow()"/></div></td>
+                                <td><div style="float:right;"><input type="button"  value="설문지"  onclick="nwindow()"/></div></td>
                             </tr>
                             <tr>
                                 <td>류준영</td>
-                                <td><div style="float:right;"><input type="button"  value="팝업창"  onclick="nwindow()"/></div></td>
+                                <td><div style="float:right;"><input type="button"  value="설문지"  onclick="nwindow()"/></div></td>
                             </tr>
                             <tr>
                                 <td>차은채</td>
-                                <td><div style="float:right;"><input type="button"  value="팝업창"  onclick="nwindow()"/></div></td>
+                                <td><div style="float:right;"><input type="button"  value="설문지"  onclick="nwindow()"/></div></td>
                             </tr>
                             <tr>
                                 <td>환자1</td>
-                                <td><div style="float:right;"><input type="button"  value="팝업창"  onclick="nwindow()"/></div></td>
+                                <td><div style="float:right;"><input type="button"  value="설문지"  onclick="nwindow()"/></div></td>
                             </tr>
                             <tr>
                                 <td>환자2</td>
-                                <td><div style="float:right;"><input type="button"  value="팝업창"  onclick="nwindow()"/></div></td>
+                                <td><div style="float:right;"><input type="button"  value="설문지"  onclick="nwindow()"/></div></td>
                             </tr>
                             <tr>
                                 <td>환자3</td>
-                                <td><div style="float:right;"><input type="button" value="팝업창"  onclick="nwindow()"/></div></td>
+                                <td><div style="float:right;"><input type="button" value="설문지"  onclick="nwindow()"/></div></td>
                             </tr>
                             <tr>
                                 <td>환자4</td>
-                                <td><div style="float:right;"><input type="button"  value="팝업창"  onclick="nwindow()"/></div></td>
+                                <td><div style="float:right;"><input type="button"  value="설문지"  onclick="nwindow()"/></div></td>
                             </tr>
                             <tr>
                                 <td>환자5</td>
-                                <td><div style="float:right;"><input type="button"  value="팝업창"  onclick="nwindow()"/></div></td>
+                                <td><div style="float:right;"><input type="button"  value="설문지"  onclick="nwindow()"/></div></td>
                             </tr>
                         </tbody>
                     </table>

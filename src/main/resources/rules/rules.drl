@@ -1,2 +1,56 @@
 package rules
 
+import com.company.po.RuleMap
+import com.company.dto.DomainRuleVO
+import com.company.dto.SymptomVO
+import com.company.dto.PatientVO
+import com.company.dto.PrescriptionVO
+import com.company.dto.PatientDiagnosisVO
+
+rule "가스답답"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("가스답답"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "명치답답"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("명치답답"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "체기통증"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("체기통증"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "헤파간문"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("헤파간문"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
