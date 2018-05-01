@@ -27,4 +27,22 @@
 			</if>
 	</select>
 	
+	<!-- 대기자 명단에 추가 -->
+	<insert id="addWaitingList" parameterType="PatientVO">
+		INSERT INTO waitingList(pNumber, pName, age, sex) 
+		VALUES(#{pNumber},#{pName}, #{age}, #{sex})
+	</insert>
+	
+	<!-- 환자 테이블에 저장 / 신규 접수 일경우 -->
+	<insert id="savePatient" parameterType="PatientVO">
+		INSERT INTO patient(pNumber, pName, age, sex) 
+		VALUES(#{pNumber},#{pName}, #{age}, #{sex})
+	</insert>
+	
+	<!-- 환자 테이블에 수정 / 기존 접수되어있을 경우 수정  -->
+	<update id="modifyPatient" parameterType="PatientVO">
+		update patient set pName=#{pName}, age=#{age}, sex=#{sex}
+		Where pNumber = #{pNumber}
+	</update>
+	
 </mapper>
