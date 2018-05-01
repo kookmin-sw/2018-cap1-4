@@ -7,6 +7,8 @@
  <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min2.css">
 <title>사상체질 Survey </title>
 <h3>설문 선택시 자신에 해당되는 사항을 선택하고, <br>
 되도록 설문에 오랜시간을 기울이지 않는 것을 추천드립니다.</h3>
@@ -180,6 +182,6 @@
     ④ 주장하는
     <br>
 
-    
+    <button type="button" class="btn btn-warning" id="G_SurveySaveButton">저장</button>
     </body>
 </html>

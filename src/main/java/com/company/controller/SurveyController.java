@@ -26,14 +26,14 @@ public class SurveyController {
 	private RuleService ruleService;
 	
 	/**
-	  * 설문 작성 완료 한 후 save 버튼 클릭시
+	  * HospitalSurvey 설문 작성 완료 한 후 save 버튼 클릭시
 	  */
 	@RequestMapping(value ="/saveHospitalSurvey", method = RequestMethod.POST)
 	public void H_SurveySaveButton(@RequestBody SurveyVO surveyResult) throws Exception
 	{
 		logger.info("saveHospitalSurvey");
 		
-		List<Map<String,Object>> surveyMap = surveyResult.getSurveyMap();
+		List<Map<String,Object>> surveyMap = surveyResult.getSurveyMap(); // 설문결과 모두 가져옴 
 		//System.out.println("////////////"+surveyResult.getpNum());
 		for(Map<String,Object> map : surveyMap)
 		{
@@ -45,9 +45,10 @@ public class SurveyController {
 			if(num == 0) continue; // 수치가 낮은 값은 제외 // 임의로 일단 설정 태우가 보고 수정 할것
 			System.out.println(map.get("symptom")+" "+map.get("sum")); // 체크 확인
 			
-			String symptomName = surveyResult.fromSurveyToSymptom((String)map.get("symptom")); // survey 값을 증상과 맵핑
+			// survey 값을 증상과 맵핑 , symptomName은 DB updatesymptom 테이블에 들어
+			String symptomName = surveyResult.fromSurveyToSymptom((String)map.get("symptom")); 
 			
-			PatientSymptomVO vo = new PatientSymptomVO();
+			PatientSymptomVO vo = new PatientSymptomVO(); // 객체로 insert
 			vo.setDegree(num); // degree
 			vo.setpNum(surveyResult.getpNum()); // 환자 번호
 			vo.setSymptom(symptomName);
@@ -64,4 +65,18 @@ public class SurveyController {
 		}
 	}
 	
+	
+	/**
+	 * GeneralSurvey 설문 작성 완료 한 후 save 버튼 클릭시
+	 */
+	@RequestMapping(value ="/saveGeneralSurvey", method = RequestMethod.POST)
+	public void G_SurveySaveButton(@RequestBody SurveyVO surveyResult) throws Exception
+	{
+		logger.info("saveGeneralSurvey");
+			
+	}
+
 }
+
+
+
