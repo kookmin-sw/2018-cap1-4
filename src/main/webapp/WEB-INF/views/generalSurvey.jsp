@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
- <meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -184,10 +184,8 @@
     ④ 주장하는
     <br>
 
-<<<<<<< HEAD
-    <button type="button" class = "" id = " ">다음</button>
-=======
-    <button type="button" class="btn btn-warning" id="G_SurveySaveButton">저장</button>
->>>>>>> c4b6095d2902f411b2279ae4545ac70f6a8964ec
+    <button type="button" class="btn btn-warning" id="G_SurveySaveButton">다음</button>
+    
+    <script type="text/javascript" src="js/survey.js?ver=2.3122322215312151221"></script>
     </body>
 </html>

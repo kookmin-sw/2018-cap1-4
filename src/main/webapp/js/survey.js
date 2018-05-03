@@ -7,7 +7,7 @@ $(document).ready(function() {
 		
 		var url = location.href;
 		var param = url.substring(url.indexOf('?')+1,url.length);
-		var pNum = param.split("="); // 환자 번호 가져오
+		var pNum = param.split("="); // fetch patient number
 		
 		var table = document.getElementById("surveyTable");
 		var rowLen = table.rows.length; // surveyTable 의 row 전체 길이를 가져옴 (빈도와 정도 테이블)
@@ -61,12 +61,11 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$("#G_SurveySaveButton").click(function() {
 		
-		var nameList = ['eyes','walking','voice','face','talking','type1','relationship','processing','Disadvantages1',
-			'yes|no1','type2', 'yes|no2', 'yes|no3','type3', 'type4', 'Psychological','type5','type6','type7','character1',
-			'character2','Disadvantages2'];
-		var resultArr = [];
-		for(var i=0 ; i<nameList.length; i++){
-			resultArr[i] = $('input:radio[name="'+nameList[i]+'"]:checked').val(); // 체크된 값 가져오기
+		var	resultArr = [];
+		for(var i=0 ; i<22; i++){
+			var num = Number(i) + Number(1);
+			var curNum = "aq"+num;
+			resultArr[i] = $('input:radio[name="'+curNum+'"]:checked').val(); // put arr in a value of checked radio button
 		}
 		var form = {generalSurvey : resultArr};
 		$.ajax({
@@ -75,11 +74,70 @@ $(document).ready(function() {
 			dataType: "json",
 			contentType: "application/json",
 			data : JSON.stringify(form), // Array 를 JSON string 형태로 변환
-			complete:function() {
-				console.log("save");
+			complete:function(response) {
+				
+				alert(response.responseText);
+				window.location.href = response.responseText; //
 			}
 		});
 	});
 });
 
+/**
+ * general Survey_B
+ * 설문을 작성 완료하고 저장 버튼을 눌렀을 때 
+ */
+$(document).ready(function() {
+	$("#G_SurveyBsaveButton").click(function() {
+		
+		var	resultArr = [];
+		for(var i=0 ; i<18; i++){
+			var num = Number(i) + Number(1);
+			var curNum = "bq"+num;
+			resultArr[i] = $('input:radio[name="'+curNum+'"]:checked').val(); // put arr in a value of checked radio button
+		}
+		var form = {generalSurvey_B : resultArr};
+		$.ajax({
+			method:"POST",
+			url:"saveGeneralSurvey_B",
+			dataType: "json",
+			contentType: "application/json",
+			data : JSON.stringify(form), // Array 를 JSON string 형태로 변환
+			complete:function(response) {
+				
+				alert(response.responseText);
+				window.location.href = response.responseText; //
+			}
+		});
+	});
+});
+
+/**
+ * general Survey_C
+ * 설문을 작성 완료하고 저장 버튼을 눌렀을 때 
+ */
+$(document).ready(function() {
+	$("#G_SurveyCsaveButton").click(function() {
+		
+		var	resultArr = [];
+		for(var i=0 ; i<10; i++){
+			var num = Number(i) + Number(1);
+			var curNum = "cq"+num;
+			resultArr[i] = $('input:radio[name="'+curNum+'"]:checked').val(); // put arr in a value of checked radio button
+		}
+		var form = {generalSurvey_C : resultArr};
+		$.ajax({
+			method:"POST",
+			url:"saveGeneralSurvey_C",
+			dataType: "json",
+			contentType: "application/json",
+			data : JSON.stringify(form), // Array 를 JSON string 형태로 변환
+			complete:function(response) {
+				
+				alert(response.responseText);
+				window.location.href = response.responseText; //
+			}
+		});
+	});
+});
 

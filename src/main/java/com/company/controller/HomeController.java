@@ -184,25 +184,5 @@ public class HomeController {
 		
 		return "evalTablePage";
 	}
-	/**
-	 * GeneralPage 일반사용자 설문 페이지
-	 */
-	@RequestMapping(value="/generalSurvey")
-	public String generalSurvey(Model model) throws Exception
-	{
-		logger.info("generalSurvey");
-		
-		return "generalSurvey";
-	}
-	/**
-	 * HospitalSurveyPage 병원 설문지 페이지
-	 */
-	@RequestMapping(value="/hospitalSurvey")
-	public String hospitalSurvey(Model model) throws Exception
-	{
-		logger.info("hospitalSurvey");
-		
-		return "hospitalSurvey";
-	}
 	
 }

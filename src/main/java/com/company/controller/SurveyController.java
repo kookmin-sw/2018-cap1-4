@@ -9,9 +9,11 @@ import javax.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.company.dto.PatientSymptomVO;
 import com.company.dto.SurveyVO;
@@ -24,6 +26,57 @@ public class SurveyController {
 	
 	@Inject
 	private RuleService ruleService;
+	
+	/**
+	 * GeneralPage 일반사용자 설문 페이지
+	 */
+	@RequestMapping(value="/generalSurvey")
+	public String generalSurvey(Model model) throws Exception
+	{
+		logger.info("generalSurvey");
+		
+		return "generalSurvey";
+	}
+	/**
+	 * GeneralPage B 일반사용자 설문 페이지
+	 */
+	@RequestMapping(value="/generalSurvey_B")
+	public String generalSurvey_B() throws Exception
+	{
+		logger.info("generalSurvey_B");
+		
+		return "generalSurvey_B";
+	}
+	/**
+	 * GeneralPage C 일반사용자 설문 페이지
+	 */
+	@RequestMapping(value="/generalSurvey_C")
+	public String generalSurvey_C(Model model) throws Exception
+	{
+		logger.info("generalSurvey_C");
+		
+		return "generalSurvey_C";
+	}
+	/**
+	 * ResultPage 일반사용자 모든 설문 작성 완료 
+	 */
+	@RequestMapping(value="/resultPage")
+	public String resultPage(Model model) throws Exception
+	{
+		logger.info("resultPage");
+		
+		return "resultPage";
+	}
+	/**
+	 * HospitalSurveyPage 병원 설문지 페이지
+	 */
+	@RequestMapping(value="/hospitalSurvey")
+	public String hospitalSurvey(Model model) throws Exception
+	{
+		logger.info("hospitalSurvey");
+		
+		return "hospitalSurvey";
+	}
 	
 	/**
 	  * HospitalSurvey 설문 작성 완료 한 후 save 버튼 클릭시
@@ -70,10 +123,86 @@ public class SurveyController {
 	 * GeneralSurvey 설문 작성 완료 한 후 save 버튼 클릭시
 	 */
 	@RequestMapping(value ="/saveGeneralSurvey", method = RequestMethod.POST)
-	public void G_SurveySaveButton(@RequestBody SurveyVO surveyResult) throws Exception
+	public @ResponseBody String G_SurveySaveButton(@RequestBody SurveyVO surveyResult) throws Exception
 	{
 		logger.info("saveGeneralSurvey");
+		int sum =0;
+		for(Integer val : surveyResult.generalSurvey) 
+		{
+			// receive the value from 0 index sequentially in the array (0 ~ 21)
+			System.out.print(val+" "); // confirm message
+			if(val != null)
+			{
+				sum += val;
+			}
+		}
+		System.out.println("\ntotalSum : "+sum);
+		if(sum <= 10)return "/home/generalSurvey_B"; 
+		else if(sum >= 12) return "/home/generalSurvey_C";
+		else { // 판단 Rule
+			int a = surveyResult.generalSurvey.get(3); // 4번 문제  
+			int b = surveyResult.generalSurvey.get(13);
+			int c = surveyResult.generalSurvey.get(19);
+			System.out.println(a+" "+b+" "+c);
+			return "/home/generalSurvey";
+		}
+	}
+	
+	/**
+	 * GeneralSurvey_B 설문 작성 완료 한 후 save 버튼 클릭시
+	 */
+	@RequestMapping(value ="/saveGeneralSurvey_B", method = RequestMethod.POST)
+	public @ResponseBody String G_SurveyBsaveButton(@RequestBody SurveyVO surveyResult) throws Exception
+	{
+		logger.info("saveGeneralSurvey_B");
+		int sum =0;
+		for(Integer val : surveyResult.generalSurvey_B) 
+		{
+			// receive the value from 0 index sequentially in the array (0 ~ 17)
+			System.out.print(val+" "); // confirm message
+			if(val != null)
+			{
+				sum += val;
+			}
+		}
+		System.out.println("\ntotalSum : "+sum);
+		if(sum <= 8) {
+			// 디비 만들어주면 결과 하면에 띄워줄께  // 소음인 판단  
+		}
+		else if(sum >= 10) {
 			
+		}
+		else { // 판단 Rule
+			int a = surveyResult.generalSurvey_B.get(3); // 4번 문제  
+			int b = surveyResult.generalSurvey_B.get(5);
+			int c = surveyResult.generalSurvey_B.get(10);
+			System.out.println(a+" "+b+" "+c);
+			
+		}
+		return "/home/resultPage"; //결과 페이지 이동 
+	}
+	/**
+	 * GeneralSurvey_B 설문 작성 완료 한 후 save 버튼 클릭시
+	 */
+	@RequestMapping(value ="/saveGeneralSurvey_C", method = RequestMethod.POST)
+	public @ResponseBody String G_SurveyCsaveButton(@RequestBody SurveyVO surveyResult) throws Exception
+	{
+		logger.info("saveGeneralSurvey_C");
+		int sum =0;
+		for(Integer val : surveyResult.generalSurvey_C) 
+		{
+			// receive the value from 0 index sequentially in the array (0 ~ 9)
+			System.out.print(val+" "); // confirm message
+			if(val != null)
+			{
+				sum += val;
+			}
+		}
+		System.out.println("\ntotalSum : "+sum);
+		
+		//위와 같은 방식으로 조건 만들기 
+		
+		return "/home/resultPage"; //결과 페이지 이동 
 	}
 
 }
