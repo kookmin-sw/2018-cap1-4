@@ -61,14 +61,20 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$("#G_SurveySaveButton").click(function() {
 		
-		var arr = null;
-		
+		var nameList = ['eyes','walking','voice','face','talking','type1','relationship','processing','Disadvantages1',
+			'yes|no1','type2', 'yes|no2', 'yes|no3','type3', 'type4', 'Psychological','type5','type6','type7','character1',
+			'character2','Disadvantages2'];
+		var resultArr = [];
+		for(var i=0 ; i<nameList.length; i++){
+			resultArr[i] = $('input:radio[name="'+nameList[i]+'"]:checked').val(); // 체크된 값 가져오기
+		}
+		var form = {generalSurvey : resultArr};
 		$.ajax({
 			method:"POST",
 			url:"saveGeneralSurvey",
 			dataType: "json",
 			contentType: "application/json",
-			data : arr, // Array 를 JSON string 형태로 변환
+			data : JSON.stringify(form), // Array 를 JSON string 형태로 변환
 			complete:function() {
 				console.log("save");
 			}
