@@ -112,6 +112,8 @@
     ② 온순하고 꾸밈이 없다.
    
     <button type="button" class = "" id = " ">이전</button>
-    <button type="button" class = "" id = " ">저장</button>
+    <button type="button" class = "" id = "G_SurveyBsaveButton">저장</button>
+    
+    <script type="text/javascript" src="js/survey.js?ver=2.31222231"></script>
 </body>
 </html>

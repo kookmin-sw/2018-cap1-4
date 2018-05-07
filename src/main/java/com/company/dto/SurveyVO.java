@@ -15,11 +15,18 @@ public class SurveyVO {
 	public ArrayList<PatientSymptomVO> symptomArr; // 설문한내용을 바탕으로 증상 추출 // 태우가 마무리
 	private String pNum;
 	private String visitDate; // 설문한 날짜
-	List<Map<String, Object>> surveyMap; // key value 
+	public List<Map<String, Object>> surveyMap; // key value (hospital survey에서 받아옴 ) 
+	public List<Integer> generalSurvey; // generalSurvey 에서 받아 
+	public List<Integer> generalSurvey_B;
+	public List<Integer> generalSurvey_C;
+	
 	public SurveyVO()
 	{
 		symptomArr = new ArrayList<PatientSymptomVO>();
 		surveyMap = new ArrayList<Map<String,Object>>();
+		generalSurvey = new ArrayList<Integer>();
+		generalSurvey_B = new ArrayList<Integer>();
+		generalSurvey_C = new ArrayList<Integer>();
 		
 		Calendar cal= Calendar.getInstance();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd"); //"yyyy:MM:dd-HH:mm:ss"

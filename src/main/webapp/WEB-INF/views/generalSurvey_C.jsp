@@ -71,8 +71,8 @@
     &nbsp; <td><input type=radio name = "cq10" value=0></td> 
     ② 아니요
     
-     <button type="button" class = "" id = " ">이전</button>
-    <button type="button" class = "" id = " ">저장</button>
-   
+   <button type="button" class = "" id = " ">이전</button>
+   <button type="button" class = "" id = "G_SurveyCsaveButton">저장</button>
+   <script type="text/javascript" src="js/survey.js?ver=2.312231"></script>
 </body>
 </html>
