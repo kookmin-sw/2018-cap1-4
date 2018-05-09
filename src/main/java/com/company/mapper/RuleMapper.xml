@@ -11,11 +11,12 @@
 		<result property="pNumber" column="pNumber"/>
 		<result property="pName" column="pName"/>
 		<result property="age" column="age"/>
+		<result property="sex" column="sex"/>
 		<collection property="symptomArr" column="pNumber" javaType="java.util.ArrayList" ofType="PatientSymptomVO" select="selectPatientSymptoms"/>
 	</resultMap>
 	
 	<select id="getPatientSymptoms" parameterType="String" resultMap="PatientResult">
-		SELECT pNumber, pName, age FROM patient WHERE pNumber = #{pNumber}
+		SELECT pNumber, pName, age, sex FROM patient WHERE pNumber = #{pNumber}
 	</select>
 	
 	<select id="selectPatientSymptoms" resultType="PatientSymptomVO">

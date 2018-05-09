@@ -20,4 +20,22 @@ public class MemberServiceImpl implements MemberService{
 		// TODO Auto-generated method stub
 		return mapper.getSearchPatient(patient);
 	}
+
+	@Override
+	public void addWaitingList(PatientVO patient) throws Exception {
+		// TODO Auto-generated method stub
+		mapper.addWaitingList(patient);
+	}
+
+	@Override
+	public void savePatient(PatientVO patient) throws Exception {
+		// TODO Auto-generated method stub
+		mapper.savePatient(patient);
+	}
+
+	@Override
+	public void modifyPatient(PatientVO patient) throws Exception {
+		// TODO Auto-generated method stub
+		mapper.modifyPatient(patient);
+	}
 }

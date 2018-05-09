@@ -4,16 +4,18 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
- <meta charset="utf-8">
+<meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="css/bootstrap.min2.css">
 
 <link rel="stylesheet"
 	href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min2.css">
 <title>Insert title here</title>
+
 </head>
 <body>
 	<div class="ui_container">
@@ -30,9 +32,10 @@
 			<form class="form-inline" id="evalRuleForm">
 				<form class="navbar-form pull-left">
 					<input class="form-control" type="text" name="pName"
-						id="searchPatient" placeholder="환자이름" aria-label="환자이름" />
-					<button type="submit" class="btn btn-primary">검색</button>
-					<button type="submit" class="btn btn-danger">LogOut</button>
+						id="searchPatientReception" placeholder="환자이름" aria-label="환자이름" />
+					<button type="button" class="btn btn-primary"
+						id="searchButtonrReception">검색</button>
+					<button type="button" class="btn btn-danger" id="clickedLogout">LogOut</button>
 				</form>
 			</form>
 		</div>
@@ -69,14 +72,8 @@
                   </div>
                </div>
 
-               <!-- 전체 오른쪽 -->
-               <div class="col-md-6 mx-auto">
-                 <script>
-                    function nwindow(){
-                        var url="hospitalSurvey";
-                        window.open(url,"","width=600,height=700,left=600");
-                    }
-                </script>
+				<!-- 전체 오른쪽 -->
+				<div class="col-md-6 mx-auto">
 
                  <h5><strong>환자 대기자 명단</strong></h5>
                     <div style="width:105%; height:418px; overflow:auto; background-color:white">
@@ -107,11 +104,23 @@
                </div>
              </div>
            </div>
-		
 	</div>
-	
+	<script type="text/javascript">
+	function nwindow(obj)
+	{
+		var tr = $(obj).parent().parent().parent();
+		var td = tr.children();
+		var tempArr = td.eq(0).text().split('/'); //  '/' 기준으로 자르기 pNum 가져오기
+		var pNum = tempArr[0].slice(0,-1); // 공백 제거
+		
+		var url="hospitalSurvey?user="+pNum; // URL 로 환자 번호 넘기기 (환자 증상 넣을때 환자 번호와 같이 넣기 위해)
+		windowObj = window.open(url,"","width=600,height=700,left=600");
+	}
+	</script>
 	<script type="text/javascript" src="js/diagnosis.js?ver=5"></script>
 	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
-	<script type="text/javascript" src="js/search.js?ver=3"></script>
+	<script type="text/javascript" src="js/search.js?ver=3.219111127629"></script>
+	<script type="text/javascript" src="js/reception.js?ver=1.12121111"></script>
+	<script type="text/javascript" src="js/survey.js?ver=1.1"></script>
 </body>
 </html>

@@ -1,6 +1,5 @@
 package com.company.service;
 
-import java.sql.Date;
 import java.util.Map;
 
 import com.company.dto.DoctorVO;

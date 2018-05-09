@@ -5,6 +5,7 @@ package com.company.dto;
  * 환자 증상들을 객체로 관리
  *
  */
+
 public class PatientSymptomVO {
 	private String pNum;
 	private String symptom;
