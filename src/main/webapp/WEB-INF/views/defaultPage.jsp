@@ -17,6 +17,12 @@
 <!-- Bootstrap core CSS -->
 <title>Oriental Medicine Expert System</title>
 <style>
+
+      .noresize {
+        resize: none;
+        background-color: #EBEBEB;
+      }
+      
       .label
       {
         width: 290px;
