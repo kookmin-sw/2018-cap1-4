@@ -184,14 +184,4 @@ public class HomeController {
 		
 		return "evalTablePage";
 	}
-	/**
-	 * resultPage 룰 평가 페이지
-	 */
-	@RequestMapping(value="/resultPage")
-	public String resultPage(Model model) throws Exception
-	{
-		logger.info("resultPage");
-		
-		return "resultPage";
-	}
 }
