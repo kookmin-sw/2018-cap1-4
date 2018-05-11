@@ -55,6 +55,7 @@ public class HomeController {
 	}
 	/**
 	 * Home 에서 일반사용자 버튼 클릭시 페이지 이동
+	 * 
 	 */
 	@RequestMapping(value = "generalUserButton",  method = RequestMethod.GET)
 	public String generalUserButton() throws Exception{
@@ -184,4 +185,15 @@ public class HomeController {
 		
 		return "evalTablePage";
 	}
-}
+  
+	/**
+	 * 환자 리스트 추가
+	 */
+	@RequestMapping(value = "addList",  method = RequestMethod.GET)
+	public String addList() throws Exception{
+
+		logger.info("Add to List");
+		
+		return "addList";
+	}	
+  	 */

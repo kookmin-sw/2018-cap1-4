@@ -41,155 +41,69 @@
 		</div>
 		</nav>
 		<div class="col-md-12 mx-auto">
-			<div class="row">
-				<!-- 전체 왼쪽 -->
-				<div class="col-md-6 mx-auto">
-					<h5>
-						<strong>환자정보</strong>
-					</h5>
-					<div
-						style="width: 105%; height: 416px; overflow: auto; background-color: white">
-						<table class="table table-striped" style='line-height: 90%'
-							id="showWaitingPatient">
-							<tbody>
-								<tr>
-									<td>환자번호</td>
-									<td><input class="form-control" type="text" id="pNumber"></td>
-								</tr>
-								<tr>
-									<td>이름</td>
-									<td><input class="form-control" type="text" id="pName"></td>
-								</tr>
-								<tr>
-									<td>나이</td>
-									<td><input class="form-control" type="text" id="age"></td>
-								</tr>
-								<tr>
-									<td>성별</td>
-									<td><input class="form-control" type="text" id="sex"></td>
-								</tr>
-								<tr>
-									<td>몸무게</td>
-									<td><input class="form-control" type="text"></td>
-								</tr>
-								<tr>
-									<td>현재 질병</td>
-									<td><input class="form-control" type="text"></td>
-								</tr>
-								<tr>
-									<td>과거 질병</td>
-									<td><input class="form-control" type="text"></td>
-								</tr>
-								<tr>
-									<td>빈칸2</td>
-									<td><input class="form-control" type="text"></td>
-								</tr>
-								<tr>
-									<td>빈칸3</td>
-									<td><input class="form-control" type="text"></td>
-								</tr>
-								<tr>
-									<td>빈칸4</td>
-									<td><input class="form-control" type="text"></td>
-								</tr>
-								<tr>
-									<td>빈칸5</td>
-									<td><input class="form-control" type="text"></td>
-								</tr>
-								<tr>
-									<td>빈칸6</td>
-									<td><input class="form-control" type="text"></td>
-								</tr>
-								<tr>
-									<td>빈칸7</td>
-									<td><input class="form-control" type="text"></td>
-								</tr>
-								<tr>
-									<td>빈칸8</td>
-									<td><input class="form-control" type="text"></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<div style="float: right;">
-						<form class="form-inline">
-							<button type="button" id="buttonWaitingList">추가</button>
-							<button type="button" id="savePatientButton">저장</button>
-							<button type="button" id="refreshButton">새로고침</button>
-						</form>
-					</div>
-				</div>
+            <div class="row">
+              <!-- 전체 왼쪽 -->
+              <div class="col-md-6 mx-auto">
+                <h5><strong>환자정보</strong></h5>
+                    <div style="width:105%; height:416px; overflow:auto;background-color:white">
+                    <table class="table table-striped" style='line-height:90%' id="showPatient">
+                    <tbody>
+                        <tr>
+                            <td>환자번호</td>
+                            <td><input class="form-control" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>이름</td>
+                            <td><input class="form-control" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>나이</td>
+                            <td><input class="form-control" type="text"></td>
+                        </tr>
+                    </tbody>
+                    </table>
+                    </div>
+                    <div style="float:right;">
+                    <form class="form-inline">
+                      <button type="button" id="addList">추가</button>
+                      <button type="button">저장</button>
+                      <button type="submit">새로고침</button>
+                    </form>
+                  </div>
+               </div>
 
 				<!-- 전체 오른쪽 -->
 				<div class="col-md-6 mx-auto">
 
-					<h5>
-						<strong>환자 대기자 명단</strong>
-					</h5>
-					<div
-						style="width: 105%; height: 418px; overflow: auto; background-color: white">
-						<table class="table table-striped" style='line-height: 90%'>
-							<tbody>
-								<tr>
-									<td>18-20125 / 장원용</td>
-									<td><div style="float: right;">
-											<input type="button" value="설문지" onclick="nwindow(this)" />
-										</div></td>
-								</tr>
-								<tr>
-									<td>18-20123 / 김철수</td>
-									<td><div style="float: right;">
-											<input type="button" value="설문지" onclick="nwindow(this)" />
-										</div></td>
-								</tr>
-								<tr>
-									<td>18-20321 / 류준영</td>
-									<td><div style="float: right;">
-											<input type="button" value="설문지" onclick="nwindow(this)" />
-										</div></td>
-								</tr>
-								<tr>
-									<td>18-20114 / 차은채</td>
-									<td><div style="float: right;">
-											<input type="button" value="설문지" onclick="nwindow(this)" />
-										</div></td>
-								</tr>
-								<tr>
-									<td>환자1</td>
-									<td><div style="float: right;">
-											<input type="button" value="설문지" onclick="nwindow(this)" />
-										</div></td>
-								</tr>
-								<tr>
-									<td>환자2</td>
-									<td><div style="float: right;">
-											<input type="button" value="설문지" onclick="nwindow(this)" />
-										</div></td>
-								</tr>
-								<tr>
-									<td>환자3</td>
-									<td><div style="float: right;">
-											<input type="button" value="설문지" onclick="nwindow(this)" />
-										</div></td>
-								</tr>
-								<tr>
-									<td>환자4</td>
-									<td><div style="float: right;">
-											<input type="button" value="설문지" onclick="nwindow(this)" />
-										</div></td>
-								</tr>
-								<tr>
-									<td>환자5</td>
-									<td><div style="float: right;">
-											<input type="button" value="설문지" onclick="nwindow(this)" />
-										</div></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
+                 <h5><strong>환자 대기자 명단</strong></h5>
+                    <div style="width:105%; height:418px; overflow:auto; background-color:white">
+                      <table class="table table-striped" style='line-height:90%'>
+                        <tbody>
+                            <tr>
+                                <td>장원용</td>
+                                <td><div style="float:right;"><input type="button" value="팝업창"  onclick="nwindow()" /></div></td>
+                            </tr>
+                            <tr >
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    </div>
+               </div>
+             </div>
+           </div>
 	</div>
 	<script type="text/javascript">
 	function nwindow(obj)
