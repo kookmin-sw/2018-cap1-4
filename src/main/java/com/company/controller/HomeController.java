@@ -185,7 +185,7 @@ public class HomeController {
 		
 		return "evalTablePage";
 	}
-	
+  
 	/**
 	 * 환자 리스트 추가
 	 */
@@ -196,4 +196,4 @@ public class HomeController {
 		
 		return "addList";
 	}	
-}
+  	 */

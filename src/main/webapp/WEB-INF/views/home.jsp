@@ -11,8 +11,8 @@
 <style>
 .loca{
    float: center;
-   width: 23%;
-   padding: 250px 300px;
+   width: 60%;
+   padding: 30px 300px;
    text-align: center;
 }
  body{
@@ -21,7 +21,7 @@
    background-size:contain;
  }
  html,body{
-  height:100%;
+  height:0%;
 }
 body{
   text-align:left;
@@ -72,7 +72,7 @@ button:hover:before,button:hover:after{
 </head>
 <body>
     <div class="loca">
-    <img src="img/login.png">
+    <img src="img/login.png" style="width:600px;">
 	<form method="get" action="docPageButton">
 		<button type="submit" name="doctorUser" style="height:100px; width:600px; font:50px/1 굴림, Gulim, sans-serif;">의사</button>
 	</form>

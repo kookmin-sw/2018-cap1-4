@@ -16,11 +16,36 @@
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 
+<script type="text/javascript" src="table/jquery.tablesorter.min.js"></script>
+<link rel="stylesheet" href="table/blue_style.css" type="text/css">
+<link rel="stylesheet" href="table/green_style.css" type="text/css">
+
+     <style>
+      #tablesorter-demo{
+        text-align: left;
+        font-size:25px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #search{
+        text-align: center;
+      }
+     </style>
+
 
 <!-- Bootstrap core CSS -->
 <title>Oriental Medicine Expert System</title>
 
 </head>
+
+    <script type="text/javascript">
+    <!--
+    	$(document).ready(function(){
+    		$("#tablesorter-demo").tablesorter();
+    	});
+    //-->
+    </script>
+    
 <body>
 	<div class="ui_container">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -46,9 +71,86 @@
 	</div>
 	
 
+	<table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="0" cellspacing="1">
+    <thead>
+      <tr>
+        <th style="font-size:2rem">No.</th>
+        <th style="font-size:2rem">Date</th>
+        <th style="font-size:2rem">Score</th>
+        <th style="font-size:2rem">Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>2017.10.22</td>
+        <td>2</td>
+        <td>문제점1</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>2017.05.19</td>
+        <td>5</td>
+        <td>문제점2</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>2017.09.28</td>
+        <td>4</td>
+        <td>문제점3</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>2017.08.22</td>
+        <td>1</td>
+        <td>문제점4</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>2016.10.26</td>
+        <td>4</td>
+        <td>문제점5</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>2017.09.26</td>
+        <td>3</td>
+        <td>문제점6</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>2018.01.02</td>
+        <td>3</td>
+        <td>문제점7</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>2017.04.17</td>
+        <td>2</td>
+        <td>문제점8</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>2017.10.22</td>
+        <td>5</td>
+        <td>문제점9</td>
+      </tr>
+    </tbody>
+  </table>
+  <br></br>
+  <ul class= "nav justify-content-center" >
+    <form class="form-inline" id="search">
+      <input type="number" style="font-size:25px; width:150px; text-align:center;" placeholder="최소점수" min="1" max="5">
+      <h1>&nbsp;~&nbsp;</h1>
+      <input type="number" style="font-size:25px; width:150px; text-align:center;" placeholder="최대점수" min="1" max="5">
+      <button type="submit" class="btn btn-large" type="button">검색</button>
+    </form>
+  </ul>
+
 	<script type="text/javascript" src="js/diagnosis.js?ver=5"></script>
 	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
 	<script type="text/javascript" src="js/search.js?ver=2"></script>
 
 </body>
 </html>
+	
