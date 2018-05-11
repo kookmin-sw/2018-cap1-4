@@ -456,7 +456,7 @@
             <td><input type=radio name="pounding_1_deg" value="3"></td>
         </tr>
         
-         <tr id = "back_1">
+         <tr id = "chest_1">
             <td colspan="2">가슴 답답</td>
             <td><input type=radio name="chest_1_fre" value="2"></td>
             <td><input type=radio name="chest_1_fre" value="3"></td>
@@ -684,7 +684,7 @@
         </tr>
         
         
-        <tr id="mouth_1">
+        <tr id="mouthstatus_1">
             <td rowspan="3">입</td>
             <td>입이 건조(구건)</td>
             <td><input type=radio name="mouth_1_fre" value="2"></td>
@@ -693,7 +693,7 @@
             <td><input type=radio name="mouth_1_deg" value="2"></td>
             <td><input type=radio name="mouth_1_deg" value="3"></td>
         </tr>
-        <tr id ="mouth_2">
+        <tr id ="mouthstatus_2">
             <td>목이 건조(인건)</td>
             <td><input type=radio name="mouth_2_fre" value="2"></td>
             <td><input type=radio name="mouth_2_fre" value="3"></td>
@@ -701,7 +701,7 @@
             <td><input type=radio name="mouth_2_deg" value="2"></td>
             <td><input type=radio name="mouth_2_deg" value="3"></td>
         </tr>
-        <tr id ="mouth_3">
+        <tr id ="mouthstatus_3">
             <td>쓴맛이 남(구고)</td>
             <td><input type=radio name="mouth_3_fre" value="2"></td>
             <td><input type=radio name="mouth_3_fre" value="3"></td>

@@ -1,3 +1,4 @@
+/*
 $(document).ready(function() {
 	$("#addList").click(function() {
 		$.ajax({
@@ -14,3 +15,4 @@ $(document).ready(function() {
 		});
 	});
 });
+*/
