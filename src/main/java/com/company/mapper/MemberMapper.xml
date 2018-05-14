@@ -45,4 +45,14 @@
 		Where pNumber = #{pNumber}
 	</update>
 	
+	<!-- 평가된 룰 전체 불러 옴  -->
+	<select id="selectMember" resultType="memberVO">
+		SELECT patientNum ,patientName ,DATE ,SCORE ,COMMENT FROM EvaluatedRule
+	</select>
+	
+	<!-- 룰 평가 후 디비 저장    -->
+	<insert id="insertEvalRule" parameterType="memberVO">
+		INSERT INTO EvaluatedRule(patientNum, patientName, DATE, SCORE, COMMENT) 
+		VALUES(#{patientNum}, #{patientName}, #{date}, #{score}, #{comment})
+	</insert>
 </mapper>

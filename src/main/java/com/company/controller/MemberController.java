@@ -9,11 +9,13 @@ import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.company.dto.MemberVO;
 import com.company.dto.PatientVO;
 import com.company.service.MemberService;
 import com.company.service.RuleService;
@@ -95,4 +97,18 @@ public class MemberController {
 		 return new ResponseEntity<PatientVO>(patient, HttpStatus.OK);
 	 }
 	 
+	/**
+	 *  평가페이지 클릭시 디비에 저장되어 있는 룰 평가된 리스트 불러옴  
+	 */
+	@RequestMapping(value="/evalTablePage")
+	public String evaluateRule(Model model) throws Exception
+	{
+		logger.info("evalTablePage");
+		List<MemberVO> memberList = memberService.selectMember();
+		
+		model.addAttribute("memberList", memberList);
+		
+		return "evalTablePage";
+	}
+	
 }
