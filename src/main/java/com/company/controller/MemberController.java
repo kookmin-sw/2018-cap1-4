@@ -111,4 +111,14 @@ public class MemberController {
 		return "evalTablePage";
 	}
 	
+	/**
+	 * 평가된 룰 검색기능 
+	 */
+	@RequestMapping(value ="/searchEvalRule", method = RequestMethod.GET)
+	public @ResponseBody List<MemberVO> searchEvalRule(MemberVO member) throws Exception
+	{
+		logger.info("searchEvalRule");
+		List<MemberVO> list = memberService.getSearchEvalRule(member);
+		return list;
+	}
 }

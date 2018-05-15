@@ -60,8 +60,8 @@
 			</ul>
 			<form class="form-inline" id="evalRuleForm">
 				<form class="navbar-form pull-left">
-					<input class="form-control" type="text" name="pName"
-						id="searchPatient" placeholder="환자이름" aria-label="환자이름" />
+					<input class="form-control" type="text" name="patientName"
+						id="search" placeholder="환자이름" aria-label="환자이름" />
 					<button type="button" class="btn btn-primary">검색</button>
 					<button type="button" class="btn btn-danger" id ="clickedLogout">LogOut</button>
 				</form>
@@ -70,7 +70,6 @@
 		</nav>
 	</div>
 	
-
 	<table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="0" cellspacing="1">
     <thead>
       <tr>
@@ -81,7 +80,7 @@
         <th style="font-size:2rem">Comment</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="evalRuleTable">
     	<c:forEach items="${memberList}" var="member">
     		<tr>
     			<td>${member.patientNum}</td>
@@ -103,10 +102,7 @@
     </form>
   </ul>
 
-	<script type="text/javascript" src="js/diagnosis.js?ver=5"></script>
-	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
-	<script type="text/javascript" src="js/search.js?ver=2"></script>
-
+	<script type="text/javascript" src="js/evalRule.js?ver=2.111"></script>
 </body>
 </html>
 	

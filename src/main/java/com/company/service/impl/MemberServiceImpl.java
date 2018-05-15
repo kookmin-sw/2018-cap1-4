@@ -51,4 +51,10 @@ public class MemberServiceImpl implements MemberService{
 		// TODO Auto-generated method stub
 		mapper.insertEvalRule(memberVO);
 	}
+
+	@Override
+	public List<MemberVO> getSearchEvalRule(MemberVO member) throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.getSearchEvalRule(member);
+	}
 }

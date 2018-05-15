@@ -55,4 +55,12 @@
 		INSERT INTO EvaluatedRule(patientNum, patientName, DATE, SCORE, COMMENT) 
 		VALUES(#{patientNum}, #{patientName}, #{date}, #{score}, #{comment})
 	</insert>
+	
+	<!-- 룰 평가 테이블에서 검색기능 -->
+	<select id="getSearchEvalRule" parameterType="MemberVO" resultType="MemberVO">
+		SELECT * FROM EvaluatedRule WHERE 1=1
+		<if test="patientName != null and patientName != ''">
+			AND patientName LIKE CONCAT('%',#{patientName},'%')
+		</if>
+	</select>
 </mapper>

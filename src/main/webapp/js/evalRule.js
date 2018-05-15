@@ -23,10 +23,11 @@ $(document).ready(function() {
                             	"</td><td>"+item.date+
                             	"</td><td>"+item.score+
                             	//"</td><td><a href='patientDiagnosis_view?pNumber=${item.patientNum}'>"+item.comment+
-                            	"</td><td><a href='#' onclick='patientHistory('item')'>"+item.comment+
-                            	"</a></td></tr>";
+                            	//"</td><td><a href='#' onclick='patientHistory('item')'>"+item.comment+
+                            	"</td><td>"+item.comment+
+                            	"</td></tr>";
 						})
-						$("#evalRuleTable > tbody").empty();
+						$("#evalRuleTable").empty();
 						$("#evalRuleTable").append(show);
 					}
 			});
@@ -50,7 +51,7 @@ $(document).ready(function() {
 			data : {"comment":resultComment,"score":checkedScore},
 			success:function(resultData) {
 				//var diagnosis = JSON.stringify(resultData);
-				alert("저장 완료!")
+				alert("저장 완료!");
 			}
 		});
 	});

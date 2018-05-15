@@ -24,4 +24,7 @@ public interface MemberMapper {
 	
 	// insert evaluated rule into db
 	public void insertEvalRule(MemberVO memberVO) throws Exception;
+	
+	// search evaluated rule list
+	public List<MemberVO> getSearchEvalRule(MemberVO member) throws Exception;
 }
