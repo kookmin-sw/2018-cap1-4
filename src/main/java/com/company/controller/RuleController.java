@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.company.drools.DroolsSpringTest;
 import com.company.dto.DomainRuleVO;
+import com.company.dto.MemberVO;
 import com.company.dto.PatientDiagnosisVO;
 import com.company.dto.PatientSymptomVO;
 import com.company.dto.PatientVO;
@@ -43,7 +44,7 @@ public class RuleController {
 	
 	private PatientVO patient;
 	private PatientSymptomVO symptomVO;
-/*	
+
 	@PostConstruct // 생성자 annotation
 	public void initialize(){ 
 		
@@ -73,7 +74,7 @@ public class RuleController {
 		
 		logger.info("setRuleDomain complete!");
 	}
-*/
+
 	/**
 	 * 환자 번호를 통해서 설문의 결과인 증상들을 검색 또한 환자 세부사항도 같이 refresh
 	 * @throws Exception 
@@ -164,4 +165,17 @@ public class RuleController {
 		
 	    return patient.diagnosis;
 	 }
+	/**
+	 * save after rule evaluation
+	 */
+	@RequestMapping(value="saveEvalRule")
+	public String write(MemberVO memberVO) throws Exception
+	{
+		logger.info("ruleEvaluate");
+		memberVO.setPatientNum(patient.getpNumber());
+		memberVO.setPatientName(patient.getpName());
+		memberVO.setDate(patient.getVisitDate());
+		service.insertEvalRule(memberVO);
+		return "redirect:e/defaultPage"; //
+	}
 }

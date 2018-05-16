@@ -140,10 +140,13 @@ public class SurveyController {
 		if(sum <= 10)return "/home/generalSurvey_B"; 
 		else if(sum >= 12) return "/home/generalSurvey_C";
 		else { // 판단 Rule
-			int a = surveyResult.generalSurvey.get(3); // 4번 문제  
-			int b = surveyResult.generalSurvey.get(13);
-			int c = surveyResult.generalSurvey.get(19);
+			int a = surveyResult.generalSurvey.get(4); // 5번 문제  
+			int b = surveyResult.generalSurvey.get(14);
+			int c = surveyResult.generalSurvey.get(20);
 			System.out.println(a+" "+b+" "+c);
+			// a,b,c 더한 값이 3점이면 양 판단 c 로 이동 //  0 이면 음 판단  b 로 이동
+			// 2점이면 => 11번 문항이 1점이면 c로 넘어가고 그렇지 않으면 에러 
+			// 1점일때 => 6번이 0점이면 b 로 그러허지 않으면 에러  
 			return "/home/generalSurvey";
 		}
 	}
@@ -173,11 +176,12 @@ public class SurveyController {
 			
 		}
 		else { // 판단 Rule
-			int a = surveyResult.generalSurvey_B.get(3); // 4번 문제  
-			int b = surveyResult.generalSurvey_B.get(5);
-			int c = surveyResult.generalSurvey_B.get(10);
+			int a = surveyResult.generalSurvey_B.get(4); // 5 번문제 
+			int b = surveyResult.generalSurvey_B.get(6);
+			int c = surveyResult.generalSurvey_B.get(11);
 			System.out.println(a+" "+b+" "+c);
-			
+			// 더한 값이 2점이상  태음인 확점
+			// 1 또는 0 소음인 확정  
 		}
 		return "/home/resultPage"; //결과 페이지 이동 
 	}
@@ -200,7 +204,8 @@ public class SurveyController {
 		}
 		System.out.println("\ntotalSum : "+sum);
 		
-		//위와 같은 방식으로 조건 만들기 
+		// 6점 이상이면 태양인 확정
+		// 6점 미만이면 소양인 확정   
 		
 		return "/home/resultPage"; //결과 페이지 이동 
 	}

@@ -175,17 +175,7 @@ public class HomeController {
 		
 		return "defaultPage";
 	}
-	/**
-	 * evalTablePage 룰 평가 페이지
-	 */
-	@RequestMapping(value="/evalTablePage")
-	public String evaluateRule(Model model) throws Exception
-	{
-		logger.info("evalTablePage");
-		
-		return "evalTablePage";
-	}
-  
+	
 	/**
 	 * 환자 리스트 추가
 	 */
@@ -195,5 +185,6 @@ public class HomeController {
 		logger.info("Add to List");
 		
 		return "addList";
-	}	
-  	 */
+	}
+}	
+  	 
