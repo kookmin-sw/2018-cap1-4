@@ -72,6 +72,10 @@
                             <td>과거력  </td>
                             <td><input class="form-control" type="text" ></td>
                         </tr>
+                       <tr>
+                            <td>기타 </td>
+                            <td><input class="form-control" type="text" ></td>
+                        </tr>
                     </tbody>
                     </table>
                     </div>
