@@ -9,11 +9,11 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <link rel="stylesheet" href="css/bootstrap.min2.css">
-<title>사상체질 Survey </title>
+<title>사상체질 Survey</title>
 </head>
 <body>
   <div style="margin-left: 300px; margin-top: 50px; margin-right: 300px;">
-  <br><h1 style="text-align: center">사상체질 & 수지침 설문지</h1>
+  <br><h1 style="text-align: center">사상체질 설문지</h1>
   <br>
   <div style="border: 2px solid; background-color: #EBEBEB;">
     <br>
