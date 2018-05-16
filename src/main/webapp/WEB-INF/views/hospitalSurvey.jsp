@@ -11,19 +11,29 @@
 <title>Patient Survey</title>
 
 <style>
-	td {
+	td,th {
 		text-align : center;
 	}
 </style>
 
 </head>
 <body>
-	<table border="1" id= "surveyTable">
+    <div style="margin-left: 400px; margin-top: 50px; margin-right: 400px;">
+      <div style="border: 1px solid; background-color: #EBEBEB;">
+        <br>
+      <h3 style="text-align: center;">해당 증상을 선택해주세요.</h3>
+      <br>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+  <table border="1" id= "surveyTable">
 
         <tr>
-            <td rowspan="2" colspan="2">증상</td>
-            <td colspan="2">빈도</td>
-            <td colspan="3">정도</td>
+            <th rowspan="2" colspan="2">증상</th>
+            <th colspan="2">빈도</th>
+            <th colspan="3">정도</th>
         </tr>
         <tr>
             <td>가끔</td>
@@ -57,7 +67,7 @@
             <td><input type=radio name="head_4_deg" value="2"></td>
             <td><input type=radio name="head_4_deg" value="3"></td>
         </tr>
-        
+
         <tr id="whirl_1">
             <td rowspan="3">어지러움</td>
             <td>핑돈다</td>
@@ -83,8 +93,8 @@
             <td><input type=radio name="whirl_5_deg" value="2"></td>
             <td><input type=radio name="whirl_5_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr id="mouth_1">
             <td rowspan="3">구취</td>
             <td>항상</td>
@@ -110,8 +120,8 @@
             <td><input type=radio name="mouth_5_deg" value="2"></td>
             <td><input type=radio name="mouth_5_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr id="indigestion_1">
             <td colspan="2">소화불량</td>
             <td><input type=radio name="indigestion_1_fre" value="2"></td>
@@ -120,8 +130,8 @@
             <td><input type=radio name="indigestion_1_deg" value="2"></td>
             <td><input type=radio name="indigestion_1_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr id="frustrated_1">
             <td rowspan="2">명치답답</td>
             <td>항상</td>
@@ -139,8 +149,8 @@
             <td><input type=radio name="frustrated_3_deg" value="2"></td>
             <td><input type=radio name="frustrated_3_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr id="ache_1">
             <td rowspan="3">명치통증</td>
             <td>뻐근</td>
@@ -166,7 +176,7 @@
             <td><input type=radio name="ache_3_deg" value="2"></td>
             <td><input type=radio name="ache_3_deg" value="3"></td>
         </tr>
-        
+
         <tr id="impact_1">
         	<td colspan="2">체함</td>
         	<td><input type=radio name="impact_1_fre" value="2"></td>
@@ -175,8 +185,8 @@
             <td><input type=radio name="impact_1_deg" value="2"></td>
             <td><input type=radio name="impact_1_deg" value="3"></td>
         </tr>
-        
-        <!-- 
+
+        <!--
         <tr>
             <td rowspan="4">잘 체함</td>
             <td>체함</td>
@@ -211,7 +221,7 @@
             <td><input type=radio name="impact_4_deg"></td>
         </tr>
          -->
-        
+
         <tr id="gas_1">
             <td rowspan="2">가스가 차고 더부룩</td>
             <td>상복부</td>
@@ -229,8 +239,8 @@
             <td><input type=radio name="gas_2_deg" value="2"></td>
             <td><input type=radio name="gas_2_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr id="burb_1">
             <td rowspan="5">트림</td>
             <td>항상</td>
@@ -272,8 +282,8 @@
             <td><input type=radio name="burb_5_deg" value="2"></td>
             <td><input type=radio name="burb_5_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr id="brash_1">
             <td rowspan="6">속쓰림</td>
             <td>항상</td>
@@ -323,8 +333,8 @@
             <td><input type=radio name="brash_6_deg" value="2"></td>
             <td><input type=radio name="brash_6_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr id="backflow_1">
             <td colspan="2">역류</td>
             <td><input type=radio name="backflow_1_fre" value="2"></td>
@@ -334,8 +344,8 @@
             <td><input type=radio name="backflow_1_deg" value="3"></td>
         </tr>
 
-        
-        
+
+
         <tr id="mass_1">
             <td colspan="2">메스꺼움(오심)</td>
             <td><input type=radio name="mass_1_fre" value="2"></td>
@@ -344,8 +354,8 @@
             <td><input type=radio name="mass_1_deg" value="2"></td>
             <td><input type=radio name="mass_1_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr id="colic_1">
             <td rowspan="6">복통</td>
             <td>상복부</td>
@@ -395,8 +405,8 @@
             <td><input type=radio name="colic_8_deg" value="2"></td>
             <td><input type=radio name="colic_8_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr id="tired_1">
             <td colspan="2">피로감</td>
             <td><input type=radio name="tired_1_fre" value="2"></td>
@@ -405,8 +415,8 @@
             <td><input type=radio name="tired_1_deg" value="2"></td>
             <td><input type=radio name="tired_1_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr id="forget_1">
             <td colspan="2">건망증</td>
             <td><input type=radio name="forget_1_fre" value="2"></td>
@@ -415,8 +425,8 @@
             <td><input type=radio name="forget_1_deg" value="2"></td>
             <td><input type=radio name="forget_1_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr id="eyepain_1">
             <td colspan="2">안구통증</td>
             <td><input type=radio name="eyepain_1_fre" value="2"></td>
@@ -425,8 +435,8 @@
             <td><input type=radio name="eyepain_1_deg" value="2"></td>
             <td><input type=radio name="eyepain_1_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr id="dryeye_1">
             <td colspan="2">안구건조</td>
             <td><input type=radio name="dryeye_1_fre" value="2"></td>
@@ -435,8 +445,8 @@
             <td><input type=radio name="dryeye_1_deg" value="2"></td>
             <td><input type=radio name="dryeye_1_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr id ="anxiety_1">
             <td colspan="2">불안감</td>
             <td><input type=radio name="anxiety_1_fre" value="2"></td>
@@ -445,8 +455,8 @@
             <td><input type=radio name="anxiety_1_deg" value="2"></td>
             <td><input type=radio name="anxiety_1_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr id = "pounding_1">
             <td colspan="2">가슴이 두근거림</td>
             <td><input type=radio name="pounding_1_fre" value="2"></td>
@@ -455,7 +465,7 @@
             <td><input type=radio name="pounding_1_deg" value="2"></td>
             <td><input type=radio name="pounding_1_deg" value="3"></td>
         </tr>
-        
+
          <tr id = "chest_1">
             <td colspan="2">가슴 답답</td>
             <td><input type=radio name="chest_1_fre" value="2"></td>
@@ -464,8 +474,8 @@
             <td><input type=radio name="chest_1_deg" value="2"></td>
             <td><input type=radio name="chest_1_deg" value="3"></td>
         </tr>
-        
-        <!-- 
+
+        <!--
         <tr>
             <td rowspan="6">가슴</td>
             <td>식후에 가슴 답답</td>
@@ -515,8 +525,8 @@
             <td><input type=radio name="chest_6_deg"></td>
             <td><input type=radio name="chest_6_deg"></td>
         </tr>  -->
-        
-        
+
+
         <tr id="throat_1">
             <td colspan="2">목 이물감</td>
             <td><input type=radio name="throat_1_fre" value="2"></td>
@@ -525,8 +535,8 @@
             <td><input type=radio name="throat_1_deg" value="2"></td>
             <td><input type=radio name="throat_1_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr id="back_1">
             <td colspan="2">등 뻐근</td>
             <td><input type=radio name="back_1_fre" value="2"></td>
@@ -535,8 +545,8 @@
             <td><input type=radio name="back_1_deg" value="2"></td>
             <td><input type=radio name="back_1_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr id="upside_1">
             <td colspan="2">머리로 열이 오름</td>
             <td><input type=radio name="upside_1_fre" value="2"></td>
@@ -545,8 +555,8 @@
             <td><input type=radio name="upside_1_deg" value="2"></td>
             <td><input type=radio name="upside_1_deg" value="3"></td>
         </tr>
-        
-        <!-- 
+
+        <!--
         <tr>
             <td rowspan="3">숨참/호흡곤란</td>
             <td>식후</td>
@@ -572,8 +582,8 @@
             <td><input type=radio name="breathe_3_deg"></td>
             <td><input type=radio name="breathe_3_deg"></td>
         </tr>-->
-        
-        
+
+
         <tr id="skin_1">
             <td rowspan="2">피부이상</td>
             <td>두드러기</td>
@@ -591,8 +601,8 @@
             <td><input type=radio name="skin_2_deg" value="2"></td>
             <td><input type=radio name="skin_2_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr id="stiff_1">
             <td colspan="2">담결림</td>
             <td><input type=radio name="stiff_1_fre" value="2"></td>
@@ -601,8 +611,8 @@
             <td><input type=radio name="stiff_1_deg" value="2"></td>
             <td><input type=radio name="stiff_1_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr id="neck_1">
             <td colspan="2">뒷목이 뻣뻣하고 결림</td>
             <td><input type=radio name="neck_1_fre" value="2"></td>
@@ -611,8 +621,8 @@
             <td><input type=radio name="neck_1_deg" value="2"></td>
             <td><input type=radio name="neck_1_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr id="shoulder_1">
             <td colspan="2">어깨결림</td>
             <td><input type=radio name="shoulder_1_fre" value="2"></td>
@@ -621,8 +631,8 @@
             <td><input type=radio name="shoulder_1_deg" value="2"></td>
             <td><input type=radio name="shoulder_1_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr id="pooh_1">
             <td rowspan="6">변 상태</td>
             <td>딱딱</td>
@@ -672,8 +682,8 @@
             <td><input type=radio name="pooh_7_deg" value="2"></td>
             <td><input type=radio name="pooh_7_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr id="womb_1">
             <td colspan="2">부인질환(냉/대하)</td>
             <td><input type=radio name="womb_1_fre" value="2"></td>
@@ -682,8 +692,8 @@
             <td><input type=radio name="womb_1_deg" value="2"></td>
             <td><input type=radio name="womb_1_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr id="mouthstatus_1">
             <td rowspan="3">입</td>
             <td>입이 건조(구건)</td>
@@ -709,17 +719,19 @@
             <td><input type=radio name="mouth_3_deg" value="2"></td>
             <td><input type=radio name="mouth_3_deg" value="3"></td>
         </tr>
-        
-        
+
+
         <tr>
             <td colspan="2">기타</td>
             <td colspan="6"><input type="text"></td>
         </tr>
     </table><br>
-    
-    <table border="1">
+</div>
+
+<div class="col-md-6 mx-auto" align = "right">
+    <table border="1" >
         <tr>
-        	<td colspan="2">복부점수</td>
+        	<th colspan="2">복부점수</th>
         </tr>
         <tr>
             <td>상복부</td>
@@ -730,7 +742,12 @@
             <td><input type="text"></td>
         </tr>
     </table><br>
-    
+
+<br>
+<br>
+
+
+
     <table border="1">
         <tr>
             <th>식사습관</th>
@@ -773,9 +790,12 @@
             <td><input type=radio name="instant_fre" value="6"></td>
         </tr>
     </table>
-    
-    <button type="button" class="btn btn-warning" id="H_SurveySaveButton">저장</button>
-    
+  </div>
+  </div>
+<div style="float:right;">
+    <button type="button" class="btn btn-primary" id="H_SurveySaveButton">저장</button>
+</div>
+</div>
     <script type="text/javascript" src="js/survey.js?ver=2.312"></script>
 </body>
 </html>
