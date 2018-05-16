@@ -123,8 +123,7 @@
 			<form class="form-inline">
 				<form class="navbar-form pull-left">
 					<input class="form-control" type="text" name="pName"
-						id="searchPatient" placeholder="환자이름"
-						aria-label="환자이름">
+						id="searchPatient" placeholder="환자이름 " aria-label="환자이름 "/>
 					<button type="button" class="btn btn-primary" id="searchButton">검색</button>
 					<button type="button" class="btn btn-danger" id ="clickedLogout">LogOut</button>
 				</form>

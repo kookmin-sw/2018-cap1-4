@@ -61,7 +61,7 @@
 			<form class="form-inline" id="evalRuleForm">
 				<form class="navbar-form pull-left">
 					<input class="form-control" type="text" name="patientName"
-						id="search" placeholder="환자이름" aria-label="환자이름" />
+						id="search" placeholder="Rule 검색 " aria-label="Rule 검색 " />
 					<button type="button" class="btn btn-primary">검색</button>
 					<button type="button" class="btn btn-danger" id ="clickedLogout">LogOut</button>
 				</form>
