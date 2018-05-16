@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
- <meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet"
@@ -307,7 +307,7 @@
     									    </table>
                      </div>
                      <div style="float:right;">
-                     <input type="submit" value="Add to left"><br />
+                     <input type="button" value="Add to left"><br />
                    </div>
 
     								</div>
@@ -467,9 +467,9 @@
                 </p>
               </div>
                     <div style="width:100%; height:200px; overflow:auto">
-                      <textarea style="width:100%; height:82%" class="noresize"></textarea><br />
+                      <textarea style="width:100%; height:82%" class="noresize" id="commentArea"></textarea><br />
                       <div style="float:right;">
-                      <input type="submit" value="저장">
+                      <input type="button" class="btn btn-primary" id="evalSaveButton" value="저장">
                     </div>
                     </div>
     							</div>
@@ -512,7 +512,7 @@
 </script>
 	<script type="text/javascript" src="js/diagnosis.js?ver=1.512"></script>
     <script src="js/star.js"></script>
-	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
+	<script type="text/javascript" src="js/evalRule.js?ver=2.1"></script>
 	<script type="text/javascript" src="js/search.js?ver=2.3912281221259"></script>
 	
 </body>

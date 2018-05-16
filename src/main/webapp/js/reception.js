@@ -15,12 +15,10 @@ $(document).ready(function() {
 			contentType: "application/json",
 			url:"savePatientInfo",
 			data : JSON.stringify(form),
-			success:function(data) {
+			complete:function(response) {
 				alert("환자 세부사항 수정 완료");
-			},
-			error:function(request,status,error){
-        		alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-        	}
+				window.location.href = response.responseText;
+			}
 		});
 	});
 });
