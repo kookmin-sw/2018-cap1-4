@@ -22,7 +22,7 @@
 
      <style>
       #tablesorter-demo{
-        text-align: left;
+        text-align: center;
         font-size:25px;
         margin-left: auto;
         margin-right: auto;
@@ -30,6 +30,7 @@
       #scoreSearch{
         text-align: center;
       }
+      
      </style>
 
 
@@ -70,7 +71,7 @@
 		</nav>
 	</div>
 	
-	<table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="0" cellspacing="1">
+	<table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="15px" cellspacing="1">
     <thead>
       <tr>
         <th style="font-size:2rem">No.</th>
