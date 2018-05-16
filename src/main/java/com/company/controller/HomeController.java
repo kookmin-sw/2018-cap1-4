@@ -184,11 +184,11 @@ public class HomeController {
 		logger.info("evalTablePage");
 		
 		return "evalTablePage";
-	}
-  
+	}}
+/*
 	/**
 	 * 환자 리스트 추가
-	 */
+	 
 	@RequestMapping(value = "addList",  method = RequestMethod.GET)
 	public String addList() throws Exception{
 
@@ -197,3 +197,4 @@ public class HomeController {
 		return "addList";
 	}	
   	 */
+ 
