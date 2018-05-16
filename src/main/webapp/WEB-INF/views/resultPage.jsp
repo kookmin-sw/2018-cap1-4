@@ -6,20 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>resultPage</title>
 
-<script src="https://d3js.org/d3.v5.min.js"></script>
 <style>
-.chart
-{
-	display:inline-block;
-	width:25px;
-	height:75px;
-	margin-right:2px;
-	background-color:coral;
-}
+
 </style>
 </head>
 <body>
-<div class="graph"></div>
-<script type="text/javascript" src="js/resultPage.js?ver=1"></script>
 </body>
 </html>

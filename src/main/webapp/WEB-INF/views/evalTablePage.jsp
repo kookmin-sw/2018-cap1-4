@@ -22,14 +22,15 @@
 
      <style>
       #tablesorter-demo{
-        text-align: left;
+        text-align: center;
         font-size:25px;
         margin-left: auto;
         margin-right: auto;
       }
-      #search{
+      #scoreSearch{
         text-align: center;
       }
+      
      </style>
 
 
@@ -70,7 +71,7 @@
 		</nav>
 	</div>
 	
-	<table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="0" cellspacing="1">
+	<table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="15px" cellspacing="1">
     <thead>
       <tr>
         <th style="font-size:2rem">No.</th>
@@ -94,11 +95,11 @@
   </table>
   <br></br>
   <ul class= "nav justify-content-center" >
-    <form class="form-inline" id="search">
+    <form class="form-inline" id="scoreSearch">
       <input type="number" style="font-size:25px; width:150px; text-align:center;" placeholder="최소점수" min="1" max="5">
       <h1>&nbsp;~&nbsp;</h1>
       <input type="number" style="font-size:25px; width:150px; text-align:center;" placeholder="최대점수" min="1" max="5">
-      <button type="submit" class="btn btn-large" type="button">검색</button>
+      <button type="button" class="btn btn-success btn-lg" type="button">검색</button>
     </form>
   </ul>
 
