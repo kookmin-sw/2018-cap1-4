@@ -31,7 +31,7 @@ public class MemberController {
 	private RuleService ruleService;
 	/**
 	  * 검색란에 이름 검색
-	 *  DefaultPage
+	 *  [ DefaultPage ]
 	  */
 	 @RequestMapping(value ="/searchPatientInfo", method = RequestMethod.GET)
 	 public @ResponseBody List<PatientVO> searchPatientInfo(PatientVO patient) throws Exception
@@ -47,7 +47,7 @@ public class MemberController {
 	 
 	/**
 	 * 검색란에 이름 검색
-	 *  ReceptionPage
+	 *  [ ReceptionPage ]
 	 */
 	 @RequestMapping(value ="/searchReceptionInfo", method = RequestMethod.GET)
 	 public @ResponseBody List<PatientVO> searchReceptionInfo(PatientVO patient) throws Exception
@@ -72,7 +72,7 @@ public class MemberController {
 	  * 저장 버튼을 클릭했을때 patient table 저장 하던지 기존 데이터가 있을때는 수정기능 제공 
 	  */
 	 @RequestMapping(value ="/savePatientInfo", method = RequestMethod.POST)
-	 public ResponseEntity<PatientVO> savePatientInfo(@RequestBody PatientVO patient) throws Exception
+	 public @ResponseBody String savePatientInfo(@RequestBody PatientVO patient) throws Exception
 	 {
 		 logger.info("savePatientInfo[receptionPage]");
 		 
@@ -80,7 +80,7 @@ public class MemberController {
  		 if(patient.getpNumber().length() < 1 || patient.getAge() == 0 || patient.getpName().length() < 1 || patient.getSex().length() < 1)
  		 {
  			logger.info("savePatientInfo[receptionPage] 예외처리");
- 			 return new ResponseEntity<PatientVO>(patient, HttpStatus.NOT_ACCEPTABLE);
+ 			// return new ResponseEntity<PatientVO>(patient, HttpStatus.NOT_ACCEPTABLE);
  		 }
 		 PatientVO vo = ruleService.getPatientSymptoms(patient.getpNumber());
 		 
@@ -88,13 +88,16 @@ public class MemberController {
 		 {
 			 logger.info("savePatientInfo[receptionPage] 신규접수");
 			 memberService.savePatient(patient);
+			 memberService.addWaitingList(patient); // 대기자 명단 추가 
 		 }
 		 else //수정일 경우
 		 {
 			 logger.info("savePatientInfo[receptionPage] 환자 세부사항 수정");
 			 memberService.modifyPatient(patient);
+			 memberService.addWaitingList(patient); // 대기자 명단 추가  
 		 }
-		 return new ResponseEntity<PatientVO>(patient, HttpStatus.OK);
+		 //return new ResponseEntity<PatientVO>(patient, HttpStatus.OK);
+		 return "/home/receptionPage";
 	 }
 	 
 	/**

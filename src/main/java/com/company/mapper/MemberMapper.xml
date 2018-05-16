@@ -63,4 +63,10 @@
 			AND patientName LIKE CONCAT('%',#{patientName},'%')
 		</if>
 	</select>
+	
+	<!-- 대기 환자 전체 불러옴    -->
+	<select id="selectWaitList" resultType="WaitlistVO">
+		SELECT pNumber ,pName ,age ,sex FROM waitingList
+	</select>
+	
 </mapper>

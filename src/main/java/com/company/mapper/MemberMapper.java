@@ -4,11 +4,15 @@ import java.util.List;
 
 import com.company.dto.MemberVO;
 import com.company.dto.PatientVO;
+import com.company.dto.WaitlistVO;
 
 public interface MemberMapper {
 	
 	// 환자 이름으로 검색
 	public List<PatientVO> getSearchPatient(PatientVO patient) throws Exception;
+	
+	// 대기자 명단 불러옴  
+	public List<WaitlistVO> selectWaitList() throws Exception;
 	
 	// 대기자 명단에 추가 ( DB : 대기자 명단 테이블)
 	public void addWaitingList(PatientVO patient) throws Exception;

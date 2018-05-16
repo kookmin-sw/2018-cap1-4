@@ -307,7 +307,7 @@
     									    </table>
                      </div>
                      <div style="float:right;">
-                     <input type="submit" value="Add to left"><br />
+                     <input type="button" value="Add to left"><br />
                    </div>
 
     								</div>
