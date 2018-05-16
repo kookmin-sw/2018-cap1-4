@@ -235,7 +235,7 @@
     								<div class="col-md-4 mx-auto">
                       <h5><strong>증상 선택 리스트</strong></h5>
                       <div style="width:100%; height:200px; overflow:auto">
-    											<table class="table table-striped" style='line-height:90%'>
+    						<table class="table table-striped" style='line-height:90%'>
                             <form>
                                <div>
                                  <div id="section1" class="label" style="width:100%">
