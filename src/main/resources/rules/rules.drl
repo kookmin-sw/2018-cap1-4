@@ -54,3 +54,687 @@ rule "헤파간문"
 			diagnosis.setSimplePrescr(ds.getMedicines())
 			};		
 end
+
+rule "가스"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("가스"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "가스&장무력"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("가스&장무력"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "가스가스"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("가스가스"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "가스가스2"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("가스가스2"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "가스답답"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("가스답답"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "가스답답2"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("가스답답2"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "가스변비"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("가스변비"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "가스설사"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("가스설사"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "가스통증"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("가스통증"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "가스-두근거림"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("가슴-두근거림"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "가슴답답/통증"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("가슴답답/통증"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "건망증"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("건망증"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "구건"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("구건"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "구고"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("구고"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "구취"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("구취"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "담결림"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("담결림"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "도인승기변비"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("도인승기변비"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "두드러기"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("두드러기"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "두통"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("두통"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "뒷목결림"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("뒷목결림"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "등뻐근"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("등뻐근"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "메스꺼움"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("메스꺼움"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "명치답답"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("명치답답"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "명치통증"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("명치통증"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "목이물감"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("목이물감"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "변비"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("변비"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "변비가스"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("변비가스"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "변비변비"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("변비변비"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "변비장무력"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("변비장무력"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "변비통증"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("변비통증"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "복통"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("복통"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "부인질환"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("부인질환"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "불안감"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("불안감"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "상열감"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("상열감"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "설사"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("설사"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "설사가스"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("설사가스"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "설사가스2"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("설사가스2"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "설사변비"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("설사변비"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "설사복통"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("설사복통"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "설사설사"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("설사설사"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "소화답답"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("소화답답"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "소화무력"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("소화무력"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "소화불량"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("소화불량"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "속쓰림"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("속쓰림"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "숨참/호흡곤란"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("숨참/호흡곤란"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "아티답답"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("아티답답"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "안구건조"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("안구건조"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "안구통증"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("안구통증"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "어깨결림"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("어깨결림"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "어지러움"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("어지러움"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "역류"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("역류"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "옻복통"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("옻복통"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "유산균가스"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("유산균가스"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "음적답답"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("음적답답"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "음적변비"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("음적변비"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "음적통증"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("음적통증"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
+
+rule "인건"
+	lock-on-active true
+	when
+		ps: PatientVO()
+		ruleMap:RuleMap(ds : getRuleMatch("인건"), checkSymptom(ps , ds))
+	then
+		modify(ps){
+			diagnosis.addDiagnosisArr(ds.ruleID),
+			diagnosis.setSimplePrescr(ds.getMedicines())
+			};		
+end
