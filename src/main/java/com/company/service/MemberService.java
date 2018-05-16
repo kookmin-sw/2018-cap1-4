@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.company.dto.MemberVO;
 import com.company.dto.PatientVO;
+import com.company.dto.WaitlistVO;
 
 public interface MemberService {
 	
@@ -12,6 +13,9 @@ public interface MemberService {
 	
 	// 대기자 명단에 추가
 	public void addWaitingList(PatientVO patient) throws Exception;
+	
+	// 대기자 명단 불러옴  
+	public List<WaitlistVO> selectWaitList() throws Exception;
 	
 	// reception Page에서 저장버튼 클릭했을 경우 환자 저장 (기존의 데이터 없을경우 patient table 추가)
 	public void savePatient(PatientVO patient) throws Exception;

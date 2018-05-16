@@ -7,13 +7,32 @@ package com.company.dto;
  */
 
 public class WaitlistVO {
-	private int pNumber;
-	
-	public int getPatient(){
+	private String pNumber; // 환자 번호
+	private String pName; // 환자 이름
+	private int age; // 
+	private String sex;
+	public String getpNumber() {
 		return pNumber;
 	}
-	
-	public void setPatient(int pNumber){
+	public void setpNumber(String pNumber) {
 		this.pNumber = pNumber;
+	}
+	public String getpName() {
+		return pName;
+	}
+	public void setpName(String pName) {
+		this.pName = pName;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
 	}
 }

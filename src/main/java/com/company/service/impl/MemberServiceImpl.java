@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.company.dto.MemberVO;
 import com.company.dto.PatientVO;
+import com.company.dto.WaitlistVO;
 import com.company.mapper.MemberMapper;
 import com.company.service.MemberService;
 
@@ -56,5 +57,11 @@ public class MemberServiceImpl implements MemberService{
 	public List<MemberVO> getSearchEvalRule(MemberVO member) throws Exception {
 		// TODO Auto-generated method stub
 		return mapper.getSearchEvalRule(member);
+	}
+
+	@Override
+	public List<WaitlistVO> selectWaitList() throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.selectWaitList();
 	}
 }

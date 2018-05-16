@@ -2,6 +2,7 @@ package com.company.controller;
 
 import java.sql.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -21,7 +22,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.util.WebUtils;
 
 import com.company.dto.DoctorVO;
+import com.company.dto.WaitlistVO;
 import com.company.service.LoginService;
+import com.company.service.MemberService;
 
 /**
  * Handles requests for the application home page.
@@ -31,6 +34,8 @@ public class HomeController {
 	
 	@Inject
 	private LoginService loginService;
+	@Inject
+	private MemberService memberService;
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
@@ -162,7 +167,8 @@ public class HomeController {
 	public String receptionPage(Model model) throws Exception
 	{
 		logger.info("receptionPage");
-		
+		List<WaitlistVO> waitList = memberService.selectWaitList();
+		model.addAttribute("waitList",waitList);
 		return "receptionPage";
 	}
 	/**
