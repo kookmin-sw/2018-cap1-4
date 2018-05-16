@@ -181,16 +181,5 @@ public class HomeController {
 		
 		return "defaultPage";
 	}
-	
-	/**
-	 * 환자 리스트 추가
-	 */
-	@RequestMapping(value = "addList",  method = RequestMethod.GET)
-	public String addList() throws Exception{
-
-		logger.info("Add to List");
-		
-		return "addList";
-	}
-}	
-  	 
+ 
+}
