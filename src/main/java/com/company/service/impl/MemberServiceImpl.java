@@ -24,7 +24,7 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public void addWaitingList(PatientVO patient) throws Exception {
+	public void addWaitingList(WaitlistVO patient) throws Exception {
 		// TODO Auto-generated method stub
 		mapper.addWaitingList(patient);
 	}
@@ -69,5 +69,11 @@ public class MemberServiceImpl implements MemberService{
 	public List<WaitlistVO> getSearchWaitingPatient(WaitlistVO patient) throws Exception {
 		// TODO Auto-generated method stub
 		return mapper.getSearchWaitingPatient(patient);
+	}
+
+	@Override
+	public WaitlistVO getWaitPatient(WaitlistVO patient) throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.getWaitPatient(patient);
 	}
 }
