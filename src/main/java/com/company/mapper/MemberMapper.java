@@ -11,6 +11,9 @@ public interface MemberMapper {
 	// 환자 이름으로 검색
 	public List<PatientVO> getSearchPatient(PatientVO patient) throws Exception;
 	
+	// 대기 환자 이름으로 검색
+	public List<WaitlistVO> getSearchWaitingPatient(WaitlistVO patient) throws Exception;
+	
 	// 대기자 명단 불러옴  
 	public List<WaitlistVO> selectWaitList() throws Exception;
 	

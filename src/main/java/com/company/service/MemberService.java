@@ -11,6 +11,9 @@ public interface MemberService {
 	//환자 검색
 	public List<PatientVO> getSearchPatient(PatientVO patient) throws Exception;
 	
+	// 대기 환자 이름으로 검색
+	public List<WaitlistVO> getSearchWaitingPatient(WaitlistVO patient) throws Exception;
+	
 	// 대기자 명단에 추가
 	public void addWaitingList(PatientVO patient) throws Exception;
 	
