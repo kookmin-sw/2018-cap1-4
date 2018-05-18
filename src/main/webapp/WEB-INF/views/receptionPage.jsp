@@ -44,8 +44,9 @@
             <div class="row">
               <!-- 전체 왼쪽 -->
               <div class="col-md-6 mx-auto">
+              <br>
                 <h5><strong>환자정보</strong></h5>
-                    <div style="width:105%; height:416px; overflow:auto;background-color:white">
+                    <div style="width:100%; height:416px; overflow:auto;background-color:white">
                     <table class="table table-striped" style='line-height:90%' id="showWaitingPatient">
                     <tbody>
                         <tr>
@@ -69,7 +70,7 @@
                             <td><input class="form-control" type="text" ></td>
                         </tr>
                         <tr>
-                            <td>과거력  </td>
+                            <td>주소  </td>
                             <td><input class="form-control" type="text" ></td>
                         </tr>
                        <tr>
@@ -83,16 +84,17 @@
                     <form class="form-inline">
                       <button type="button" id="addPatientButton">추가</button>
                       <button type="button" id="savePatientButton">저장</button>
-                      <button type="submit">새로고침</button>
+                      <button type="submit" id="refreshButton">새로고침</button>
                     </form>
                   </div>
                </div>
 
 				<!-- 전체 오른쪽 -->
 				<div class="col-md-6 mx-auto">
-
+				<br>
                  <h5><strong>환자 대기자 명단</strong></h5>
-                    <div style="width:105%; height:418px; overflow:auto; background-color:white">
+              
+                    <div style="width:100%; height:418px; overflow:auto; background-color:white">
                       <table class="table table-striped table-hover" style='line-height:90%' >
                         <tbody>
                         <c:forEach items="${waitList}" var="member">
@@ -123,7 +125,7 @@
 	<script type="text/javascript" src="js/diagnosis.js?ver=5"></script>
 	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
 	<script type="text/javascript" src="js/search.js?ver=3.219111127629"></script>
-	<script type="text/javascript" src="js/reception.js?ver=1.212152922111"></script>
+	<script type="text/javascript" src="js/reception.js?ver=1.2121529222111"></script>
 	<script type="text/javascript" src="js/survey.js?ver=1.1"></script>
 </body>
 </html>

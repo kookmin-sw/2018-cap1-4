@@ -32,7 +32,7 @@ public class MemberController {
 	private RuleService ruleService;
 	/**
 	  * 검색란에 이름 검색
-	 *  [ DefaultPage ]
+	  * [ DefaultPage ]
 	  */
 	 @RequestMapping(value ="/searchPatientInfo", method = RequestMethod.GET)
 	 public @ResponseBody List<PatientVO> searchPatientInfo(PatientVO patient) throws Exception
@@ -60,7 +60,17 @@ public class MemberController {
 	 }
 	 
 	 /**
-	  * 저장 버튼을 클릭했을때 patient table 저장 하던지 기존 데이터가 있을때는 수정기능 제공 
+	  * 새로고침 Refresh 버튼 누를 때 
+	  *  [ ReceptionPage ]
+	  */
+	 @RequestMapping(value ="/refreshReception", method = RequestMethod.GET)
+	 public @ResponseBody void refreshReception() throws Exception
+	 {
+		logger.info("refreshReception[receptionPage]");
+	 }
+	 
+	 /**
+	  * 저장 버튼을 클릭했을때 patient table 저장 하던지 기존 데이터가 있을때는 수정기능 제공
 	  */
 	 @RequestMapping(value ="/savePatientInfo", method = RequestMethod.POST)
 	 public @ResponseBody String savePatientInfo(@RequestBody PatientVO patient) throws Exception

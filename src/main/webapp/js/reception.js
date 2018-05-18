@@ -113,3 +113,26 @@ $(document).ready(function() {
 		});
 	});
 });
+
+
+/**
+ *  receptionPage 에서 새로고침 버튼을 클릭했을 때 
+ */
+$(document).ready(function() {
+	$("#refreshButton").click(function() {
+		$("#pNumber").val("");
+		$("#pName").val("");
+		$("#age").val("");
+		$("#sex").val("");
+		
+		$.ajax({
+			method:"GET",
+			type: "json",
+			url:"refreshReception",
+			complete:function(response) {
+				alert("환자 대기자명단 새로고침 완료");
+				// window.location.href = response.responseText;
+			}
+		});
+	});
+});
