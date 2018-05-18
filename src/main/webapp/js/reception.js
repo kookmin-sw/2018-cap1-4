@@ -16,7 +16,7 @@ $(document).ready(function() {
 			url:"savePatientInfo",
 			data : JSON.stringify(form),
 			complete:function(response) {
-				alert("환자 세부사항 수정 완료");
+				alert("환자 세부사항 저장 완료");
 				window.location.href = response.responseText;
 			}
 		});
@@ -94,7 +94,7 @@ $("#searchPatientReception").keypress(function(event){
  * 대기자 명단 작성하거나 기존에 데이터가 존재하는 경우 대기자 명단에 추가 버튼 클릭한 경우 대기자명단으로 추가
  */
 $(document).ready(function() {
-	$("#buttonWaitingList").click(function() {
+	$("#addPatientButton").click(function() {
 		var pNumber = $("#pNumber").val();
 		var pName = $("#pName").val();
 		var age = $("#age").val();
@@ -106,8 +106,9 @@ $(document).ready(function() {
 			contentType: "application/json",
 			url:"addWaitingList",
 			data : JSON.stringify(form),
-			success:function(data) {
-				
+			complete:function(response) {
+				alert("환자 대기자명단 추가 완료");
+				window.location.href = response.responseText;
 			}
 		});
 	});

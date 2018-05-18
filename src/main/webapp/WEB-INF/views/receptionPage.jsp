@@ -81,7 +81,7 @@
                     </div>
                     <div style="float:right;">
                     <form class="form-inline">
-                      <!-- <button type="button" >추가</button> -->
+                      <button type="button" id="addPatientButton">추가</button>
                       <button type="button" id="savePatientButton">저장</button>
                       <button type="submit">새로고침</button>
                     </form>

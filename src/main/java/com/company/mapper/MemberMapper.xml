@@ -36,7 +36,7 @@
 	</select>
 	
 	<!-- 대기자 명단에 추가 -->
-	<insert id="addWaitingList" parameterType="PatientVO">
+	<insert id="addWaitingList" parameterType="WaitlistVO">
 		INSERT INTO waitingList(pNumber, pName, age, sex) 
 		VALUES(#{pNumber},#{pName}, #{age}, #{sex})
 	</insert>
@@ -75,6 +75,12 @@
 	<!-- 대기 환자 전체 불러옴    -->
 	<select id="selectWaitList" resultType="WaitlistVO">
 		SELECT pNumber ,pName ,age ,sex FROM waitingList
+	</select>
+	
+	<!-- 대기 환자 환자 번호로 검색   -->
+	<select id="getWaitPatient" resultType="WaitlistVO">
+		SELECT pNumber, pName, age, sex FROM waitingList 
+		WHERE pNumber = #{pNumber} 	
 	</select>
 	
 </mapper>
