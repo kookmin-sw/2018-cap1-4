@@ -44,8 +44,9 @@
             <div class="row">
               <!-- 전체 왼쪽 -->
               <div class="col-md-6 mx-auto">
+              <br>
                 <h5><strong>환자정보</strong></h5>
-                    <div style="width:105%; height:416px; overflow:auto;background-color:white">
+                    <div style="width:100%; height:416px; overflow:auto;background-color:white">
                     <table class="table table-striped" style='line-height:90%' id="showWaitingPatient">
                     <tbody>
                         <tr>
@@ -69,7 +70,7 @@
                             <td><input class="form-control" type="text" ></td>
                         </tr>
                         <tr>
-                            <td>과거력  </td>
+                            <td>주소  </td>
                             <td><input class="form-control" type="text" ></td>
                         </tr>
                        <tr>
@@ -90,9 +91,10 @@
 
 				<!-- 전체 오른쪽 -->
 				<div class="col-md-6 mx-auto">
-
+				<br>
                  <h5><strong>환자 대기자 명단</strong></h5>
-                    <div style="width:105%; height:418px; overflow:auto; background-color:white">
+              
+                    <div style="width:100%; height:418px; overflow:auto; background-color:white">
                       <table class="table table-striped table-hover" style='line-height:90%' >
                         <tbody>
                         <c:forEach items="${waitList}" var="member">

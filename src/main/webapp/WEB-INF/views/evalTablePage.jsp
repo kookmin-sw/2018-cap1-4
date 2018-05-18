@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -70,7 +69,7 @@
 		</div>
 		</nav>
 	</div>
-	
+	<!-- tablesorter-demo -->
 	<table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="15px" cellspacing="1">
     <thead>
       <tr>
@@ -94,7 +93,7 @@
     </tbody>
   </table>
   <br></br>
-  <ul class= "nav justify-content-center" >
+  <ul class= "nav justify-content-center">
     <form class="form-inline" id="scoreSearch">
       <input type="number" style="font-size:25px; width:150px; text-align:center;" placeholder="최소점수" min="1" max="5">
       <h1>&nbsp;~&nbsp;</h1>
@@ -103,7 +102,7 @@
     </form>
   </ul>
 
-	<script type="text/javascript" src="js/evalRule.js?ver=2.111"></script>
+	<script type="text/javascript" src="js/evalRule.js?ver=2.1211"></script>
 </body>
 </html>
 	
