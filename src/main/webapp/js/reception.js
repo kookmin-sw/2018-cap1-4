@@ -16,7 +16,7 @@ $(document).ready(function() {
 			url:"savePatientInfo",
 			data : JSON.stringify(form),
 			complete:function(response) {
-				alert("환자 세부사항 수정 완료");
+				alert("환자 세부사항 저장 완료");
 				window.location.href = response.responseText;
 			}
 		});
