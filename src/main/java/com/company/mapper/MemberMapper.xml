@@ -21,7 +21,15 @@
 	
 	<!-- 환자 이름으로 환자 검색 -->
 	<select id="getSearchPatient" parameterType="PatientVO" resultType="PatientVO">
-		SELECT pNumber, pName, age FROM patient WHERE 1=1
+		SELECT pNumber, pName, age, sex FROM patient WHERE 1=1
+			<if test="pName != null">
+				AND pName LIKE CONCAT('%',#{pName},'%')
+			</if>
+	</select>
+	
+	<!-- 대기 환자 이름으로 환자 검색 -->
+	<select id="getSearchWaitingPatient" parameterType="WaitlistVO" resultType="WaitlistVO">
+		SELECT pNumber, pName, age, sex FROM waitingList WHERE 1=1
 			<if test="pName != null">
 				AND pName LIKE CONCAT('%',#{pName},'%')
 			</if>

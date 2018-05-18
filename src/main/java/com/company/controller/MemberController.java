@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.company.dto.MemberVO;
 import com.company.dto.PatientVO;
+import com.company.dto.WaitlistVO;
 import com.company.service.MemberService;
 import com.company.service.RuleService;
 
@@ -50,10 +51,10 @@ public class MemberController {
 	 *  [ ReceptionPage ]
 	 */
 	 @RequestMapping(value ="/searchReceptionInfo", method = RequestMethod.GET)
-	 public @ResponseBody List<PatientVO> searchReceptionInfo(PatientVO patient) throws Exception
+	 public @ResponseBody List<WaitlistVO> searchReceptionInfo(WaitlistVO patient) throws Exception
 	 {
 		logger.info("searchReceptionInfo[receptionPage]");
-		List<PatientVO> list = memberService.getSearchPatient(patient); // 조건에 만족하는 환자 검색
+		List<WaitlistVO> list = memberService.getSearchWaitingPatient(patient); // 조건에 만족하는 환자 검색
 		
 		return list;
 	 }

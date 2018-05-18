@@ -64,4 +64,10 @@ public class MemberServiceImpl implements MemberService{
 		// TODO Auto-generated method stub
 		return mapper.selectWaitList();
 	}
+
+	@Override
+	public List<WaitlistVO> getSearchWaitingPatient(WaitlistVO patient) throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.getSearchWaitingPatient(patient);
+	}
 }

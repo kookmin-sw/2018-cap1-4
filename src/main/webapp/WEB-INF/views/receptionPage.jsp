@@ -46,7 +46,7 @@
               <div class="col-md-6 mx-auto">
                 <h5><strong>환자정보</strong></h5>
                     <div style="width:105%; height:416px; overflow:auto;background-color:white">
-                    <table class="table table-striped" style='line-height:90%' id="showPatient">
+                    <table class="table table-striped" style='line-height:90%' id="showWaitingPatient">
                     <tbody>
                         <tr>
                             <td>환자번호</td>
@@ -93,7 +93,7 @@
 
                  <h5><strong>환자 대기자 명단</strong></h5>
                     <div style="width:105%; height:418px; overflow:auto; background-color:white">
-                      <table class="table table-striped table-hover" style='line-height:90%'>
+                      <table class="table table-striped table-hover" style='line-height:90%' >
                         <tbody>
                         <c:forEach items="${waitList}" var="member">
     						<tr>
@@ -123,7 +123,7 @@
 	<script type="text/javascript" src="js/diagnosis.js?ver=5"></script>
 	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
 	<script type="text/javascript" src="js/search.js?ver=3.219111127629"></script>
-	<script type="text/javascript" src="js/reception.js?ver=1.12121522111"></script>
+	<script type="text/javascript" src="js/reception.js?ver=1.212152922111"></script>
 	<script type="text/javascript" src="js/survey.js?ver=1.1"></script>
 </body>
 </html>
