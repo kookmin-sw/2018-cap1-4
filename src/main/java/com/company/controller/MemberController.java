@@ -60,6 +60,16 @@ public class MemberController {
 	 }
 	 
 	 /**
+	  * 새로고침 Refresh 버튼 누를 때 
+	  *  [ ReceptionPage ]
+	  */
+	 @RequestMapping(value ="/refreshReception", method = RequestMethod.GET)
+	 public @ResponseBody void refreshReception() throws Exception
+	 {
+		logger.info("refreshReception[receptionPage]");
+	 }
+	 
+	 /**
 	  * 저장 버튼을 클릭했을때 patient table 저장 하던지 기존 데이터가 있을때는 수정기능 제공 
 	  */
 	 @RequestMapping(value ="/savePatientInfo", method = RequestMethod.POST)

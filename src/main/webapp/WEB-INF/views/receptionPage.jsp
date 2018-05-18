@@ -83,7 +83,7 @@
                     <form class="form-inline">
                       <button type="button" id="addPatientButton">추가</button>
                       <button type="button" id="savePatientButton">저장</button>
-                      <button type="submit">새로고침</button>
+                      <button type="submit" id="refreshButton">새로고침</button>
                     </form>
                   </div>
                </div>
@@ -123,7 +123,7 @@
 	<script type="text/javascript" src="js/diagnosis.js?ver=5"></script>
 	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
 	<script type="text/javascript" src="js/search.js?ver=3.219111127629"></script>
-	<script type="text/javascript" src="js/reception.js?ver=1.212152922111"></script>
+	<script type="text/javascript" src="js/reception.js?ver=1.2121529222111"></script>
 	<script type="text/javascript" src="js/survey.js?ver=1.1"></script>
 </body>
 </html>
