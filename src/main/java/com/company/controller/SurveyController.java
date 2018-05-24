@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.company.dto.GeneralSurveyVO;
 import com.company.dto.PatientSymptomVO;
 import com.company.dto.SurveyVO;
 import com.company.service.RuleService;
@@ -26,6 +27,8 @@ public class SurveyController {
 	
 	@Inject
 	private RuleService ruleService;
+	
+	private static int typeNum;
 	
 	/**
 	 * GeneralPage 일반사용자 설문 페이지
@@ -65,6 +68,8 @@ public class SurveyController {
 	{
 		logger.info("resultPage");
 		
+		GeneralSurveyVO resultVO = ruleService.getTypeRule(typeNum);
+		model.addAttribute("resultVO", resultVO);
 		return "resultPage";
 	}
 	/**
@@ -137,7 +142,7 @@ public class SurveyController {
 			}
 		}
 		System.out.println("\ntotalSum : "+sum);
-		if(sum <= 10)return "/home/generalSurvey_B"; 
+		if(sum <= 10) return "/home/generalSurvey_B"; 
 		else if(sum >= 12) return "/home/generalSurvey_C";
 		else { // 판단 Rule
 			int a = surveyResult.generalSurvey.get(4); // 5번 문제  
@@ -146,8 +151,22 @@ public class SurveyController {
 			System.out.println(a+" "+b+" "+c);
 			// a,b,c 더한 값이 3점이면 양 판단 c 로 이동 //  0 이면 음 판단  b 로 이동
 			// 2점이면 => 11번 문항이 1점이면 c로 넘어가고 그렇지 않으면 에러 
-			// 1점일때 => 6번이 0점이면 b 로 그러허지 않으면 에러  
-			return "/home/generalSurvey";
+			// 1점일때 => 6번이 0점이면 b 로 그러허지 않으면 에러
+			if(a+b+c == 3) { // 양 판단  c로 이동  
+				return "/home/generalSurvey_C";
+			}
+			else if(a+b+c == 0) { // 더한 값이 0 점일 때 음 판단 b로 이
+				return "/home/generalSurvey_B";
+			}
+			else if(a+b+c == 2 ) { // 2점 일때 
+				int tmpC  = surveyResult.generalSurvey.get(10); // 11번 문항  
+				if(tmpC == 1) return "/home/generalSurvey_C";
+			}
+			else if(a+b+c == 1) {
+				int tmpB = surveyResult.generalSurvey.get(5); // 6번 문항 0 
+				if(tmpB == 0) return "/home/generalSurvey_B";
+			}
+			return "/home/generalSurvey"; // 그렇지 않으면 에러처리  
 		}
 	}
 	
@@ -155,9 +174,10 @@ public class SurveyController {
 	 * GeneralSurvey_B 설문 작성 완료 한 후 save 버튼 클릭시
 	 */
 	@RequestMapping(value ="/saveGeneralSurvey_B", method = RequestMethod.POST)
-	public @ResponseBody String G_SurveyBsaveButton(@RequestBody SurveyVO surveyResult) throws Exception
+	public @ResponseBody String G_SurveyBsaveButton(@RequestBody SurveyVO surveyResult, Model model) throws Exception
 	{
 		logger.info("saveGeneralSurvey_B");
+		GeneralSurveyVO resultVO = null;
 		int sum =0;
 		for(Integer val : surveyResult.generalSurvey_B) 
 		{
@@ -170,29 +190,39 @@ public class SurveyController {
 		}
 		System.out.println("\ntotalSum : "+sum);
 		if(sum <= 8) {
-			// 디비 만들어주면 결과 하면에 띄워줄께  // 소음인 판단  
+			// typenumber == 4  // 소음인 판단  
+			typeNum = 4;
 		}
 		else if(sum >= 10) {
-			
+			// ?????? 태음인 ? 
+			typeNum = 2;
 		}
 		else { // 판단 Rule
 			int a = surveyResult.generalSurvey_B.get(4); // 5 번문제 
 			int b = surveyResult.generalSurvey_B.get(6);
 			int c = surveyResult.generalSurvey_B.get(11);
 			System.out.println(a+" "+b+" "+c);
+			if(a+b+c >= 2 ) { // 태음인 확정       2
+				typeNum = 2;
+			}
+			else if(a+b+c == 1 || a+b+c ==0) { // 소음인 확정  4    
+				typeNum = 4;
+			}
 			// 더한 값이 2점이상  태음인 확점
 			// 1 또는 0 소음인 확정  
 		}
+		
 		return "/home/resultPage"; //결과 페이지 이동 
 	}
 	/**
-	 * GeneralSurvey_B 설문 작성 완료 한 후 save 버튼 클릭시
+	 * GeneralSurvey_C 설문 작성 완료 한 후 save 버튼 클릭시
 	 */
 	@RequestMapping(value ="/saveGeneralSurvey_C", method = RequestMethod.POST)
-	public @ResponseBody String G_SurveyCsaveButton(@RequestBody SurveyVO surveyResult) throws Exception
+	public @ResponseBody String G_SurveyCsaveButton(@RequestBody SurveyVO surveyResult, Model model) throws Exception
 	{
 		logger.info("saveGeneralSurvey_C");
 		int sum =0;
+		
 		for(Integer val : surveyResult.generalSurvey_C) 
 		{
 			// receive the value from 0 index sequentially in the array (0 ~ 9)
@@ -204,6 +234,12 @@ public class SurveyController {
 		}
 		System.out.println("\ntotalSum : "+sum);
 		
+		if( sum >= 6) { // 태양인 확정   1
+			typeNum = 1;
+		}
+		else { // 소양인 확정 3 
+			typeNum = 3;
+		}
 		// 6점 이상이면 태양인 확정
 		// 6점 미만이면 소양인 확정   
 		
