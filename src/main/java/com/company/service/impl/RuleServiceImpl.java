@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.company.dto.DomainRuleVO;
+import com.company.dto.GeneralSurveyVO;
 import com.company.dto.PatientSymptomVO;
 import com.company.dto.PatientVO;
 import com.company.dto.SymptomVO;
@@ -46,5 +47,11 @@ public class RuleServiceImpl implements RuleService{
 	public List<DomainRuleVO> selectDomain() throws Exception {
 		// TODO Auto-generated method stub
 		return mapper.selectDomain();
+	}
+
+	@Override
+	public GeneralSurveyVO getTypeRule(int typenumber) throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.getTypeRule(typenumber);
 	}
 }

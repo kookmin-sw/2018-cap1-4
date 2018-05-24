@@ -3,6 +3,7 @@ package com.company.mapper;
 import java.util.List;
 
 import com.company.dto.DomainRuleVO;
+import com.company.dto.GeneralSurveyVO;
 import com.company.dto.PatientSymptomVO;
 import com.company.dto.PatientVO;
 import com.company.dto.SymptomVO;
@@ -23,4 +24,7 @@ public interface RuleMapper {
 	
 	// DB에서 모든 Rule을 불러와서 검사할 준비
 	public List<DomainRuleVO> selectDomain() throws Exception;
+	
+	// 사상체질 룰 결과 select 타입 번호를 통해서 검색  
+	public GeneralSurveyVO getTypeRule(int typenumber) throws Exception;
 }

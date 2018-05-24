@@ -89,5 +89,11 @@
 		FROM prescription
 		WHERE ruleID = #{ruleID} ORDER BY medicine ASC
 	</select>
+	
+	<select id="getTypeRule" resultType="GeneralSurveyVO">
+		SELECT typeNumber, type, weakRegion, goodfood, badfood, summary, recommandfood
+		FROM fourTypeRule
+		WHERE typenumber = #{typenumber}
+	</select>
 
 </mapper>
