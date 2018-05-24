@@ -73,6 +73,16 @@ public class SurveyController {
 		return "resultPage";
 	}
 	/**
+	 * HospitalResultPage 의사페이지의 결과 페이지 view
+	 */
+	@RequestMapping(value="/hospitalResultPage")
+	public String hospitalResultPage(Model model) throws Exception
+	{
+		logger.info("hospitalResultPage");
+		return "hospitalResultPage";
+	}
+	
+	/**
 	 * HospitalSurveyPage 병원 설문지 페이지
 	 */
 	@RequestMapping(value="/hospitalSurvey")
