@@ -172,6 +172,6 @@ public class RuleController {
 		memberVO.setPatientName(patient.getpName());
 		memberVO.setDate(patient.getVisitDate());
 		service.insertEvalRule(memberVO);
-		return "redirect:e/defaultPage"; //
+		return "redirect:/defaultPage"; //
 	}
 }
