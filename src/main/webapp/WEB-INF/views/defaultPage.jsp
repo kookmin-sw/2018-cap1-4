@@ -468,7 +468,10 @@
                     <div style="width:100%; height:200px; overflow:auto">
                       <textarea style="width:100%; height:82%" class="noresize" id="commentArea"></textarea><br />
                       <div style="float:right;">
-                      <input type="button" class="btn btn-primary" id="evalSaveButton" value="저장">
+                      <form method="get" action="hospitalResultPage">
+                      	<input type="button" class="btn btn-primary" id="evalSaveButton" value="저장">
+                      	<input type="submit" class="btn btn-primary"  value="출력 ">
+                      </form>
                     </div>
                     </div>
     							</div>
@@ -510,6 +513,7 @@
 <script type="text/javascript"> 
 </script>
 	<script type="text/javascript" src="js/diagnosis.js?ver=1.512"></script>
+	<script type="text/javascript" src="js/resultPage.js?ver=1.512"></script>
     <script src="js/star.js"></script>
 	<script type="text/javascript" src="js/evalRule.js?ver=2.1"></script>
 	<script type="text/javascript" src="js/search.js?ver=2.3912281221259"></script>
