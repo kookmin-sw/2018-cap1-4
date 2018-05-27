@@ -10,8 +10,6 @@ public class PatientDiagnosisVO  implements Cloneable{
 	private int score;
 	private String visitDate;
 	
-	public ArrayList<String> selectedGroup; // 의사가 선택한 처방군 스트링
-	public List<PrescriptionGroupVO> selectedGroupList; // 환자의 증상과 처방군과 비교해서 일치하는 처방군 리스트
 	public ArrayList<String> simplePrescr; // 환자에 증상에 매칭 되는 단순처방
 	public ArrayList<String> complexPrescr; // 환자에 증상에 매칭 되는 복합처방
 	public ArrayList<String> diagnosisArr; // 환자가 받은 진단명 리스트
@@ -26,14 +24,10 @@ public class PatientDiagnosisVO  implements Cloneable{
 		this.state = NODIAGNOSISED;
 		simplePrescr = new ArrayList<String>();
 		complexPrescr = new ArrayList<String>();
-		selectedGroup = new ArrayList<String>();
 		diagnosisArr = new ArrayList<String>();
 		this.visitDate = visitDate;
 		
-		selectedGroup.add("갱년기"); ////////////////// 의사가 체크했을때 선택한 처방군 임시로 저장
-		selectedGroup.add("수면심장약");
 		
-		selectedGroupList = new ArrayList<PrescriptionGroupVO>();
 	}
 	public Object clone() {
 		try {
@@ -98,19 +92,6 @@ public class PatientDiagnosisVO  implements Cloneable{
 	}
 	public void setpName(String pName) {
 		this.pName = pName;
-	}
-	public ArrayList<String> getSelectedGroup() {
-		return selectedGroup;
-	}
-	public void setSelectedGroup(ArrayList<String> selectedGroup) {
-		this.selectedGroup = selectedGroup;
-	}
-	
-	public List<PrescriptionGroupVO> getSelectedGroupList() {
-		return selectedGroupList;
-	}
-	public void setSelectedGroupList(List<PrescriptionGroupVO> selectedGroupList) {
-		this.selectedGroupList = selectedGroupList;
 	}
 	public ArrayList<String> getSimplePrescr() {
 		return simplePrescr;

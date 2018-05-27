@@ -1,11 +1,10 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<!--<meta charset="utf-8">  -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -16,11 +15,37 @@
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
 
+<script type="text/javascript" src="table/jquery.tablesorter.min.js"></script>
+<link rel="stylesheet" href="table/blue_style.css" type="text/css">
+<link rel="stylesheet" href="table/green_style.css" type="text/css">
+
+     <style>
+      #tablesorter-demo{
+        text-align: center;
+        font-size:25px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #scoreSearch{
+        text-align: center;
+      }
+      
+     </style>
+
 
 <!-- Bootstrap core CSS -->
-<title>Oriental Medicine Expert System</title>
+<title>Oriental Medical Expert System</title>
 
 </head>
+
+    <script type="text/javascript">
+    <!--
+    	$(document).ready(function(){
+    		$("#tablesorter-demo").tablesorter();
+    	});
+    //-->
+    </script>
+    
 <body>
 	<div class="ui_container">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -35,8 +60,8 @@
 			</ul>
 			<form class="form-inline" id="evalRuleForm">
 				<form class="navbar-form pull-left">
-					<input class="form-control" type="text" name="pName"
-						id="searchPatient" placeholder="환자이름" aria-label="환자이름" />
+					<input class="form-control" type="text" name="patientName"
+						id="search" placeholder="Rule 검색 " aria-label="Rule 검색 " />
 					<button type="button" class="btn btn-primary">검색</button>
 					<button type="button" class="btn btn-danger" id ="clickedLogout">LogOut</button>
 				</form>
@@ -44,11 +69,40 @@
 		</div>
 		</nav>
 	</div>
-	
+	<!-- tablesorter-demo -->
+	<table id="tablesorter-demo" class="tablesorter" border="0" cellpadding="15px" cellspacing="1">
+    <thead>
+      <tr>
+        <th style="font-size:2rem">No.</th>
+        <th style="font-size:2rem">Name</th>
+        <th style="font-size:2rem">Date</th>
+        <th style="font-size:2rem">Score</th>
+        <th style="font-size:2rem">Comment</th>
+      </tr>
+    </thead>
+    <tbody id="evalRuleTable">
+    	<c:forEach items="${memberList}" var="member">
+    		<tr>
+    			<td>${member.patientNum}</td>
+    			<td>${member.patientName}</td>
+    			<td>${member.date}</td>
+    			<td>${member.score}</td>
+    			<td>${member.comment}</td>
+    		</tr>
+    	</c:forEach>
+    </tbody>
+  </table>
+  <br></br>
+  <ul class= "nav justify-content-center">
+    <form class="form-inline" id="scoreSearch">
+      <input type="number" style="font-size:25px; width:150px; text-align:center;" placeholder="최소점수" min="1" max="5">
+      <h1>&nbsp;~&nbsp;</h1>
+      <input type="number" style="font-size:25px; width:150px; text-align:center;" placeholder="최대점수" min="1" max="5">
+      <button type="button" class="btn btn-success btn-lg" type="button">검색</button>
+    </form>
+  </ul>
 
-	<script type="text/javascript" src="js/diagnosis.js?ver=5"></script>
-	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
-	<script type="text/javascript" src="js/search.js?ver=2"></script>
-
+	<script type="text/javascript" src="js/evalRule.js?ver=2.1211"></script>
 </body>
 </html>
+	

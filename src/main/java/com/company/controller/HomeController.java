@@ -2,6 +2,7 @@ package com.company.controller;
 
 import java.sql.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -21,7 +22,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.util.WebUtils;
 
 import com.company.dto.DoctorVO;
+import com.company.dto.WaitlistVO;
 import com.company.service.LoginService;
+import com.company.service.MemberService;
 
 /**
  * Handles requests for the application home page.
@@ -31,6 +34,8 @@ public class HomeController {
 	
 	@Inject
 	private LoginService loginService;
+	@Inject
+	private MemberService memberService;
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
@@ -55,6 +60,7 @@ public class HomeController {
 	}
 	/**
 	 * Home 에서 일반사용자 버튼 클릭시 페이지 이동
+	 * 
 	 */
 	@RequestMapping(value = "generalUserButton",  method = RequestMethod.GET)
 	public String generalUserButton() throws Exception{
@@ -161,7 +167,8 @@ public class HomeController {
 	public String receptionPage(Model model) throws Exception
 	{
 		logger.info("receptionPage");
-		
+		List<WaitlistVO> waitList = memberService.selectWaitList();
+		model.addAttribute("waitList",waitList);
 		return "receptionPage";
 	}
 	/**
@@ -174,15 +181,4 @@ public class HomeController {
 		
 		return "defaultPage";
 	}
-	/**
-	 * evalTablePage 룰 평가 페이지
-	 */
-	@RequestMapping(value="/evalTablePage")
-	public String evaluateRule(Model model) throws Exception
-	{
-		logger.info("evalTablePage");
-		
-		return "evalTablePage";
-	}
-	
-}
+}	

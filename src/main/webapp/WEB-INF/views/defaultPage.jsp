@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
- <meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet"
@@ -17,6 +17,33 @@
 <!-- Bootstrap core CSS -->
 <title>Oriental Medicine Expert System</title>
 <style>
+
+      .noresize {
+        resize: none;
+        background-color: #EBEBEB;
+      }
+      
+      .star-input>.input,
+      /* .star-input>.input>label:hover, */
+      /* .star-input>.input>input:focus+label, */
+      .star-input>.input>input:checked+label{display: inline-block;vertical-align:middle;background:url('img/grade_img.png')no-repeat;}
+      .star-input{display:inline-block; white-space:nowrap;width:225px;height:40px;padding:25px;line-height:30px;}
+      .star-input>.input{display:inline-block;width:150px;background-size:150px;height:28px;white-space:nowrap;overflow:hidden;position: relative;}
+      .star-input>.input>input{position:absolute;width:1px;height:1px;opacity:0;}
+      star-input>.input.focus{outline:1px dotted #ddd;}
+      .star-input>.input>label{width:30px;height:0;padding:28px 0 0 0;overflow: hidden;float:left;cursor: pointer;position: absolute;top: 0;left: 0;}
+      /* .star-input>.input>label:hover, */
+      /* .star-input>.input>input:focus+label, */
+      .star-input>.input>input:checked+label{background-size: 150px;background-position: 0 bottom;}
+      .star-input>.input>label:label{background-image: none;}
+      .star-input>.input>label[for="p1"]{width:30px;z-index:5;}
+      .star-input>.input>label[for="p2"]{width:60px;z-index:4;}
+      .star-input>.input>label[for="p3"]{width:90px;z-index:3;}
+      .star-input>.input>label[for="p4"]{width:120px;z-index:2;}
+      .star-input>.input>label[for="p5"]{width:150px;z-index:1;}
+      .star-input>output{display:inline-block;width:60px; font-size:18px;text-align:right; vertical-align:middle;}
+      
+      
       .label
       {
         width: 290px;
@@ -96,8 +123,7 @@
 			<form class="form-inline">
 				<form class="navbar-form pull-left">
 					<input class="form-control" type="text" name="pName"
-						id="searchPatient" placeholder="환자이름"
-						aria-label="환자이름">
+						id="searchPatient" placeholder="환자이름 " aria-label="환자이름 "/>
 					<button type="button" class="btn btn-primary" id="searchButton">검색</button>
 					<button type="button" class="btn btn-danger" id ="clickedLogout">LogOut</button>
 				</form>
@@ -209,7 +235,7 @@
     								<div class="col-md-4 mx-auto">
                       <h5><strong>증상 선택 리스트</strong></h5>
                       <div style="width:100%; height:200px; overflow:auto">
-    											<table class="table table-striped" style='line-height:90%'>
+    						<table class="table table-striped" style='line-height:90%'>
                             <form>
                                <div>
                                  <div id="section1" class="label" style="width:100%">
@@ -280,7 +306,7 @@
     									    </table>
                      </div>
                      <div style="float:right;">
-                     <input type="submit" value="Add to left"><br />
+                     <input type="button" value="Add to left"><br />
                    </div>
 
     								</div>
@@ -435,13 +461,14 @@
                       	<input type="radio" name="star-input" value="5" id="p5">
                       	<label for="p5">5</label>
                     	</span>
+                    	<output for="star-input"><b>0</b>점</output>
                   </span>
                 </p>
               </div>
                     <div style="width:100%; height:200px; overflow:auto">
-                      <textarea style="width:100%; height:82%" class="noresize"></textarea><br />
+                      <textarea style="width:100%; height:82%" class="noresize" id="commentArea"></textarea><br />
                       <div style="float:right;">
-                      <input type="submit" value="저장">
+                      <input type="button" class="btn btn-primary" id="evalSaveButton" value="저장">
                     </div>
                     </div>
     							</div>
@@ -457,13 +484,34 @@
 			</div>
 		</div>
 	</div>
-	
+	<script type="text/javascript">
+    var elements = document.getElementsByTagName("div");
+    // 모든 영역 접기
+    for (var i = 0; i < elements.length; i++) {
+    if (elements[i].className == "elements") {
+    elements[i].style.display="none";
+    } else if (elements[i].className == "label") {
+    elements[i].onclick=switchDisplay;
+    }
+    }
+    // 상태에 따라 접거나 펼치기
+    function switchDisplay() {
+    var parent = this.parentNode;
+    var target = parent.getElementsByTagName("div")[1];
+    if (target.style.display == "none") {
+    target.style.display="block";
+    } else {
+    target.style.display="none";
+    }
+    return false;
+    }
+    </script>
 
 <script type="text/javascript"> 
 </script>
 	<script type="text/javascript" src="js/diagnosis.js?ver=1.512"></script>
-
-	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
+    <script src="js/star.js"></script>
+	<script type="text/javascript" src="js/evalRule.js?ver=2.1"></script>
 	<script type="text/javascript" src="js/search.js?ver=2.3912281221259"></script>
 	
 </body>

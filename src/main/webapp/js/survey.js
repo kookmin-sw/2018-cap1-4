@@ -75,7 +75,6 @@ $(document).ready(function() {
 			contentType: "application/json",
 			data : JSON.stringify(form), // Array 를 JSON string 형태로 변환
 			complete:function(response) {
-				
 				alert(response.responseText);
 				window.location.href = response.responseText; //
 			}

@@ -21,14 +21,22 @@
 	
 	<!-- 환자 이름으로 환자 검색 -->
 	<select id="getSearchPatient" parameterType="PatientVO" resultType="PatientVO">
-		SELECT pNumber, pName, age FROM patient WHERE 1=1
+		SELECT pNumber, pName, age, sex FROM patient WHERE 1=1
+			<if test="pName != null">
+				AND pName LIKE CONCAT('%',#{pName},'%')
+			</if>
+	</select>
+	
+	<!-- 대기 환자 이름으로 환자 검색 -->
+	<select id="getSearchWaitingPatient" parameterType="WaitlistVO" resultType="WaitlistVO">
+		SELECT pNumber, pName, age, sex FROM waitingList WHERE 1=1
 			<if test="pName != null">
 				AND pName LIKE CONCAT('%',#{pName},'%')
 			</if>
 	</select>
 	
 	<!-- 대기자 명단에 추가 -->
-	<insert id="addWaitingList" parameterType="PatientVO">
+	<insert id="addWaitingList" parameterType="WaitlistVO">
 		INSERT INTO waitingList(pNumber, pName, age, sex) 
 		VALUES(#{pNumber},#{pName}, #{age}, #{sex})
 	</insert>
@@ -44,5 +52,35 @@
 		update patient set pName=#{pName}, age=#{age}, sex=#{sex}
 		Where pNumber = #{pNumber}
 	</update>
+	
+	<!-- 평가된 룰 전체 불러 옴  -->
+	<select id="selectMember" resultType="memberVO">
+		SELECT patientNum ,patientName ,DATE ,SCORE ,COMMENT FROM EvaluatedRule
+	</select>
+	
+	<!-- 룰 평가 후 디비 저장    -->
+	<insert id="insertEvalRule" parameterType="memberVO">
+		INSERT INTO EvaluatedRule(patientNum, patientName, DATE, SCORE, COMMENT) 
+		VALUES(#{patientNum}, #{patientName}, #{date}, #{score}, #{comment})
+	</insert>
+	
+	<!-- 룰 평가 테이블에서 검색기능 -->
+	<select id="getSearchEvalRule" parameterType="MemberVO" resultType="MemberVO">
+		SELECT * FROM EvaluatedRule WHERE 1=1
+		<if test="patientName != null and patientName != ''">
+			AND patientName LIKE CONCAT('%',#{patientName},'%')
+		</if>
+	</select>
+	
+	<!-- 대기 환자 전체 불러옴    -->
+	<select id="selectWaitList" resultType="WaitlistVO">
+		SELECT pNumber ,pName ,age ,sex FROM waitingList
+	</select>
+	
+	<!-- 대기 환자 환자 번호로 검색   -->
+	<select id="getWaitPatient" resultType="WaitlistVO">
+		SELECT pNumber, pName, age, sex FROM waitingList 
+		WHERE pNumber = #{pNumber} 	
+	</select>
 	
 </mapper>

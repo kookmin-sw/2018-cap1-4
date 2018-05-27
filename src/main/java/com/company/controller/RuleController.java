@@ -8,11 +8,8 @@ import java.util.Map;
 import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
-import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,13 +18,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.company.drools.DroolsSpringTest;
 import com.company.dto.DomainRuleVO;
+import com.company.dto.MemberVO;
 import com.company.dto.PatientDiagnosisVO;
 import com.company.dto.PatientSymptomVO;
 import com.company.dto.PatientVO;
 import com.company.dto.SymptomVO;
 import com.company.service.MemberService;
 import com.company.service.RuleService;
-import com.company.util.BeanUtils;
 
 @Controller
 public class RuleController {
@@ -43,7 +40,7 @@ public class RuleController {
 	
 	private PatientVO patient;
 	private PatientSymptomVO symptomVO;
-	
+/*
 	@PostConstruct // 생성자 annotation
 	public void initialize(){ 
 		
@@ -73,7 +70,7 @@ public class RuleController {
 		
 		logger.info("setRuleDomain complete!");
 	}
-	
+*/
 	/**
 	 * 환자 번호를 통해서 설문의 결과인 증상들을 검색 또한 환자 세부사항도 같이 refresh
 	 * @throws Exception 
@@ -164,4 +161,17 @@ public class RuleController {
 		
 	    return patient.diagnosis;
 	 }
+	/**
+	 * save after rule evaluation
+	 */
+	@RequestMapping(value="saveEvalRule")
+	public String write(MemberVO memberVO) throws Exception
+	{
+		logger.info("ruleEvaluate");
+		memberVO.setPatientNum(patient.getpNumber());
+		memberVO.setPatientName(patient.getpName());
+		memberVO.setDate(patient.getVisitDate());
+		service.insertEvalRule(memberVO);
+		return "redirect:e/defaultPage"; //
+	}
 }

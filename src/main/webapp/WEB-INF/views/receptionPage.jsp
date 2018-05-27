@@ -41,155 +41,74 @@
 		</div>
 		</nav>
 		<div class="col-md-12 mx-auto">
-			<div class="row">
-				<!-- 전체 왼쪽 -->
-				<div class="col-md-6 mx-auto">
-					<h5>
-						<strong>환자정보</strong>
-					</h5>
-					<div
-						style="width: 105%; height: 416px; overflow: auto; background-color: white">
-						<table class="table table-striped" style='line-height: 90%'
-							id="showWaitingPatient">
-							<tbody>
-								<tr>
-									<td>환자번호</td>
-									<td><input class="form-control" type="text" id="pNumber"></td>
-								</tr>
-								<tr>
-									<td>이름</td>
-									<td><input class="form-control" type="text" id="pName"></td>
-								</tr>
-								<tr>
-									<td>나이</td>
-									<td><input class="form-control" type="text" id="age"></td>
-								</tr>
-								<tr>
-									<td>성별</td>
-									<td><input class="form-control" type="text" id="sex"></td>
-								</tr>
-								<tr>
-									<td>몸무게</td>
-									<td><input class="form-control" type="text"></td>
-								</tr>
-								<tr>
-									<td>현재 질병</td>
-									<td><input class="form-control" type="text"></td>
-								</tr>
-								<tr>
-									<td>과거 질병</td>
-									<td><input class="form-control" type="text"></td>
-								</tr>
-								<tr>
-									<td>빈칸2</td>
-									<td><input class="form-control" type="text"></td>
-								</tr>
-								<tr>
-									<td>빈칸3</td>
-									<td><input class="form-control" type="text"></td>
-								</tr>
-								<tr>
-									<td>빈칸4</td>
-									<td><input class="form-control" type="text"></td>
-								</tr>
-								<tr>
-									<td>빈칸5</td>
-									<td><input class="form-control" type="text"></td>
-								</tr>
-								<tr>
-									<td>빈칸6</td>
-									<td><input class="form-control" type="text"></td>
-								</tr>
-								<tr>
-									<td>빈칸7</td>
-									<td><input class="form-control" type="text"></td>
-								</tr>
-								<tr>
-									<td>빈칸8</td>
-									<td><input class="form-control" type="text"></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<div style="float: right;">
-						<form class="form-inline">
-							<button type="button" id="buttonWaitingList">추가</button>
-							<button type="button" id="savePatientButton">저장</button>
-							<button type="button" id="refreshButton">새로고침</button>
-						</form>
-					</div>
-				</div>
+            <div class="row">
+              <!-- 전체 왼쪽 -->
+              <div class="col-md-6 mx-auto">
+              <br>
+                <h5><strong>환자정보</strong></h5>
+                    <div style="width:100%; height:416px; overflow:auto;background-color:white">
+                    <table class="table table-striped" style='line-height:90%' id="showWaitingPatient">
+                    <tbody>
+                        <tr>
+                            <td>환자번호</td>
+                            <td><input class="form-control" type="text" id="pNumber"></td>
+                        </tr>
+                        <tr>
+                            <td>이름</td>
+                            <td><input class="form-control" type="text" id="pName"></td>
+                        </tr>
+                        <tr>
+                            <td>나이</td>
+                            <td><input class="form-control" type="text" id="age"></td>
+                        </tr>
+                        <tr>
+                            <td>성별 </td>
+                            <td><input class="form-control" type="text" id="sex"></td>
+                        </tr>
+                        <tr>
+                            <td>몸무게  </td>
+                            <td><input class="form-control" type="text" ></td>
+                        </tr>
+                        <tr>
+                            <td>주소  </td>
+                            <td><input class="form-control" type="text" ></td>
+                        </tr>
+                       <tr>
+                            <td>기타 </td>
+                            <td><input class="form-control" type="text" ></td>
+                        </tr>
+                    </tbody>
+                    </table>
+                    </div>
+                    <div style="float:right;">
+                    <form class="form-inline">
+                      <button type="button" id="addPatientButton">추가</button>
+                      <button type="button" id="savePatientButton">저장</button>
+                      <button type="submit" id="refreshButton">새로고침</button>
+                    </form>
+                  </div>
+               </div>
 
 				<!-- 전체 오른쪽 -->
 				<div class="col-md-6 mx-auto">
-
-					<h5>
-						<strong>환자 대기자 명단</strong>
-					</h5>
-					<div
-						style="width: 105%; height: 418px; overflow: auto; background-color: white">
-						<table class="table table-striped" style='line-height: 90%'>
-							<tbody>
-								<tr>
-									<td>18-20125 / 장원용</td>
-									<td><div style="float: right;">
-											<input type="button" value="설문지" onclick="nwindow(this)" />
-										</div></td>
-								</tr>
-								<tr>
-									<td>18-20123 / 김철수</td>
-									<td><div style="float: right;">
-											<input type="button" value="설문지" onclick="nwindow(this)" />
-										</div></td>
-								</tr>
-								<tr>
-									<td>18-20321 / 류준영</td>
-									<td><div style="float: right;">
-											<input type="button" value="설문지" onclick="nwindow(this)" />
-										</div></td>
-								</tr>
-								<tr>
-									<td>18-20114 / 차은채</td>
-									<td><div style="float: right;">
-											<input type="button" value="설문지" onclick="nwindow(this)" />
-										</div></td>
-								</tr>
-								<tr>
-									<td>환자1</td>
-									<td><div style="float: right;">
-											<input type="button" value="설문지" onclick="nwindow(this)" />
-										</div></td>
-								</tr>
-								<tr>
-									<td>환자2</td>
-									<td><div style="float: right;">
-											<input type="button" value="설문지" onclick="nwindow(this)" />
-										</div></td>
-								</tr>
-								<tr>
-									<td>환자3</td>
-									<td><div style="float: right;">
-											<input type="button" value="설문지" onclick="nwindow(this)" />
-										</div></td>
-								</tr>
-								<tr>
-									<td>환자4</td>
-									<td><div style="float: right;">
-											<input type="button" value="설문지" onclick="nwindow(this)" />
-										</div></td>
-								</tr>
-								<tr>
-									<td>환자5</td>
-									<td><div style="float: right;">
-											<input type="button" value="설문지" onclick="nwindow(this)" />
-										</div></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
+				<br>
+                 <h5><strong>환자 대기자 명단</strong></h5>
+              
+                    <div style="width:100%; height:418px; overflow:auto; background-color:white">
+                      <table class="table table-striped table-hover" style='line-height:90%' >
+                        <tbody>
+                        <c:forEach items="${waitList}" var="member">
+    						<tr>
+				    			<td>${member.pNumber} / ${member.pName}</td>
+				    			<td><div style="float:right;"><input type="button" value="팝업창"  onclick="nwindow(this)" /></div></td>
+    						</tr>
+    					</c:forEach>
+                        </tbody>
+                    </table>
+                    </div>
+               </div>
+             </div>
+           </div>
 	</div>
 	<script type="text/javascript">
 	function nwindow(obj)
@@ -197,8 +116,8 @@
 		var tr = $(obj).parent().parent().parent();
 		var td = tr.children();
 		var tempArr = td.eq(0).text().split('/'); //  '/' 기준으로 자르기 pNum 가져오기
+		alert(tempArr[1]+ " " + tempArr[0]);
 		var pNum = tempArr[0].slice(0,-1); // 공백 제거
-		
 		var url="hospitalSurvey?user="+pNum; // URL 로 환자 번호 넘기기 (환자 증상 넣을때 환자 번호와 같이 넣기 위해)
 		windowObj = window.open(url,"","width=600,height=700,left=600");
 	}
@@ -206,7 +125,7 @@
 	<script type="text/javascript" src="js/diagnosis.js?ver=5"></script>
 	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
 	<script type="text/javascript" src="js/search.js?ver=3.219111127629"></script>
-	<script type="text/javascript" src="js/reception.js?ver=1.12121111"></script>
+	<script type="text/javascript" src="js/reception.js?ver=1.2121529222111"></script>
 	<script type="text/javascript" src="js/survey.js?ver=1.1"></script>
 </body>
 </html>
