@@ -57,7 +57,7 @@
     <h4>7. 시작한 일은 끝까지 이루는 편이다 쉽게 포기하지 않는다</h4>       
      &nbsp; <td><input type=radio name = "bq7" value=1></td> 
     ① 예 
-     <br>&nbsp; <td><input type=radio name = "bq7" value=1></td> 
+     <br>&nbsp; <td><input type=radio name = "bq7" value=0></td> 
     ② 아니요
   <br>
 <br>   
