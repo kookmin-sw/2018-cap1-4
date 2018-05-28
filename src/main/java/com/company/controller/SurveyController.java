@@ -72,6 +72,7 @@ public class SurveyController {
 		model.addAttribute("resultVO", resultVO);
 		return "resultPage";
 	}
+	
 	/**
 	 * HospitalResultPage 의사페이지의 결과 페이지 view
 	 */
