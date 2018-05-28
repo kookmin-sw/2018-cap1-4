@@ -11,6 +11,7 @@ import javax.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -40,7 +41,7 @@ public class RuleController {
 	
 	private PatientVO patient;
 	private PatientSymptomVO symptomVO;
-/*
+
 	@PostConstruct // 생성자 annotation
 	public void initialize(){ 
 		
@@ -70,7 +71,7 @@ public class RuleController {
 		
 		logger.info("setRuleDomain complete!");
 	}
-*/
+
 	/**
 	 * 환자 번호를 통해서 설문의 결과인 증상들을 검색 또한 환자 세부사항도 같이 refresh
 	 * @throws Exception 
@@ -172,6 +173,17 @@ public class RuleController {
 		memberVO.setPatientName(patient.getpName());
 		memberVO.setDate(patient.getVisitDate());
 		service.insertEvalRule(memberVO);
-		return "redirect:e/defaultPage"; //
+		return "redirect:/defaultPage"; //
+	}
+	
+	/**
+	 * HospitalResultPage 의사페이지의 결과 페이지 view
+	 */
+	@RequestMapping(value="/hospitalResultPage")
+	public String hospitalResultPage(Model model) throws Exception
+	{
+		logger.info("hospitalResultPage");
+		model.addAttribute("patient", patient.getDiagnosis());
+		return "hospitalResultPage";
 	}
 }
