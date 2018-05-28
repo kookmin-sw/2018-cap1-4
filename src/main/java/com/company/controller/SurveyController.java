@@ -69,7 +69,8 @@ public class SurveyController {
 		logger.info("resultPage");
 		
 		GeneralSurveyVO resultVO = ruleService.getTypeRule(typeNum);
-		resultVO.setTypePicture("img/소양인.PNG");
+		resultVO.setTypePicture("img/소음인 특징.jpg");
+		resultVO.setHandPicture("img/소음인 혈자리.jpg");
 		model.addAttribute("resultVO", resultVO);
 		
 		return "resultPage";

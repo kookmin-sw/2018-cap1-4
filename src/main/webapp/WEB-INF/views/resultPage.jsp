@@ -42,15 +42,14 @@
 
                      <h5><strong>체형특징</strong></h5>
                      <div style="width:100%; height:416px; background-color:white">
-                     <img src="img/소양인.PNG" style="width:100%; height:120%;" alt="소양인">
+                     <img src="<c:out value='${resultVO.typePicture}' default='홍 길동 ' />" style="width:100%; height:120%;" alt="소양인">
                    </div>
 
                    </div>
-
                    <div class="col-md-6 mx-auto">
                      <h5><strong>수지침</strong></h5>
                      <div style="width:100%; height:416px; background-color:white">
-                      <img src="img/소양인_수지침.PNG" style="width:100%; height:120%;" alt="소양인_수지침">
+                      <img src="<c:out value='${resultVO.handPicture}' default='홍 길동 ' />" style="width:100%; height:120%;" alt="소양인_수지침">
                    </div>
                    </div>
                  </div>
