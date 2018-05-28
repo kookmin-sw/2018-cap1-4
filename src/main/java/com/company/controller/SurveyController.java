@@ -29,6 +29,7 @@ public class SurveyController {
 	private RuleService ruleService;
 	
 	private static int typeNum;
+	private static String name;
 	
 	/**
 	 * GeneralPage 일반사용자 설문 페이지
@@ -69,8 +70,25 @@ public class SurveyController {
 		logger.info("resultPage");
 		
 		GeneralSurveyVO resultVO = ruleService.getTypeRule(typeNum);
-		resultVO.setTypePicture("img/소음인 특징.jpg");
-		resultVO.setHandPicture("img/소음인 혈자리.jpg");
+		if( typeNum == 1 ) // 1 태양인  
+		{
+			resultVO.setTypePicture("img/태양인 특징.jpg");
+			resultVO.setHandPicture("img/태양인 혈자리.jpg");
+		}
+		else if( typeNum == 2 ) { // 2 태음인 
+			resultVO.setTypePicture("img/태음인 특징.jpg");
+			resultVO.setHandPicture("img/태음인 혈자리.jpg");
+		}
+		else if(typeNum == 3) { //3 소양인  
+			resultVO.setTypePicture("img/소양인 특징.jpg");
+			resultVO.setHandPicture("img/소양인 혈자리.jpg");
+		}
+		else if(typeNum ==4) { // 4 소음인 
+			resultVO.setTypePicture("img/소음인 특징.jpg");
+			resultVO.setHandPicture("img/소음인 혈자리.jpg");
+		}
+		
+		resultVO.setName(name);
 		model.addAttribute("resultVO", resultVO);
 		
 		return "resultPage";
@@ -94,6 +112,8 @@ public class SurveyController {
 	public void H_SurveySaveButton(@RequestBody SurveyVO surveyResult) throws Exception
 	{
 		logger.info("saveHospitalSurvey");
+		
+		System.out.println("////saveHospital name"+name);
 		
 		List<Map<String,Object>> surveyMap = surveyResult.getSurveyMap(); // 설문결과 모두 가져옴 
 		//System.out.println("////////////"+surveyResult.getpNum());
@@ -136,6 +156,9 @@ public class SurveyController {
 	{
 		logger.info("saveGeneralSurvey");
 		int sum =0;
+		
+		name = surveyResult.getName();
+		
 		for(Integer val : surveyResult.generalSurvey) 
 		{
 			// receive the value from 0 index sequentially in the array (0 ~ 21)
