@@ -68,8 +68,8 @@ public class SurveyController {
 	{
 		logger.info("resultPage");
 		
-		GeneralSurveyVO resultVO = ruleService.getTypeRule(typeNum);
-		model.addAttribute("resultVO", resultVO);
+		//GeneralSurveyVO resultVO = ruleService.getTypeRule(typeNum);
+		//model.addAttribute("resultVO", resultVO);
 		return "resultPage";
 	}
 	/**
