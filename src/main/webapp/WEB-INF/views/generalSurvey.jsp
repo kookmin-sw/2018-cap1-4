@@ -22,6 +22,14 @@
   <br>
 </div>
 <br>
+<br>
+<form class="form-inline">
+	<form class="navbar-form pull-right">
+		<input class="form-control" type="text" placeholder="환자이름" aria-label="환자이름">
+		<button type="submit" class="btn btn-primary">입력</button>
+	</form>
+</form>
+<br>
  <br><h4>1. 당신의 눈은 다음 중 어느 것에 가깝습니까?</h4>
    &nbsp; <td><input type=radio name = "aq1" value=1></td>
     ① 눈빛이 강하다 눈자위가 맑다 눈초리가 올라갔다 눈꺼풀이 얇다, 눈매가 날카롭다.
