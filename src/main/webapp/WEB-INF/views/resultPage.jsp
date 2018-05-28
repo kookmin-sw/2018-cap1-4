@@ -25,7 +25,7 @@
         
              <div class="row">
                <div class="col-md-6 mx-auto">
-                 <img src="img/소양인.PNG" style="width:50%; height:100%;" alt="소양인">
+                 <img src="<c:out value='${resultVO.typePicture}' default='s' />" style="width:50%; height:100%;" alt="소양인">
                </div>
                <div class="col-md-6 mx-auto">
                  <img src="img/소양인_수지침.PNG" style="width:50%; height:100%;" alt="소양인_수지침">

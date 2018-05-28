@@ -8,6 +8,10 @@ public class GeneralSurveyVO {
 	public String badfood;
 	public String summary;
 	public String recommandfood;
+	public String handPicture;
+	public String typePicture;
+	public String name;
+	
 	public int getTypenumber() {
 		return typenumber;
 	}
@@ -49,6 +53,24 @@ public class GeneralSurveyVO {
 	}
 	public void setRecommandfood(String recommandfood) {
 		this.recommandfood = recommandfood;
+	}
+	public String getHandPicture() {
+		return handPicture;
+	}
+	public void setHandPicture(String handPicture) {
+		this.handPicture = handPicture;
+	}
+	public String getTypePicture() {
+		return typePicture;
+	}
+	public void setTypePicture(String typePicture) {
+		this.typePicture = typePicture;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	
 }

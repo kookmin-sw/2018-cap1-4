@@ -10,6 +10,9 @@ public class PatientDiagnosisVO  implements Cloneable{
 	private int score;
 	private String visitDate;
 	
+	private int age; // 세부사항 더 추가 예정
+	private String sex;
+	
 	public ArrayList<String> simplePrescr; // 환자에 증상에 매칭 되는 단순처방
 	public ArrayList<String> complexPrescr; // 환자에 증상에 매칭 되는 복합처방
 	public ArrayList<String> diagnosisArr; // 환자가 받은 진단명 리스트
@@ -113,4 +116,17 @@ public class PatientDiagnosisVO  implements Cloneable{
 	public void setVisitDate(String visitDate) {
 		this.visitDate = visitDate;
 	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+	
 }

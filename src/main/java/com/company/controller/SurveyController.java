@@ -69,18 +69,9 @@ public class SurveyController {
 		logger.info("resultPage");
 		
 		GeneralSurveyVO resultVO = ruleService.getTypeRule(typeNum);
+		resultVO.setTypePicture("img/소양인.PNG");
 		model.addAttribute("resultVO", resultVO);
 		return "resultPage";
-	}
-	
-	/**
-	 * HospitalResultPage 의사페이지의 결과 페이지 view
-	 */
-	@RequestMapping(value="/hospitalResultPage")
-	public String hospitalResultPage(Model model) throws Exception
-	{
-		logger.info("hospitalResultPage");
-		return "hospitalResultPage";
 	}
 	
 	/**
