@@ -24,9 +24,9 @@
 <br>
 <br>
 <form class="form-inline">
-	<form class="navbar-form pull-right">
-		<input class="form-control" type="text" placeholder="환자이름" aria-label="환자이름">
-		<button type="submit" class="btn btn-primary">입력</button>
+	<form class = "navbar-form pull-right">
+		<input class="form-control" type="text" placeholder="이름" aria-label="이름">
+		<button type="button" class="btn btn-primary" id = "gName">입력</button>
 	</form>
 </form>
 <br>

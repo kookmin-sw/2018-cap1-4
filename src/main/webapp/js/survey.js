@@ -62,12 +62,13 @@ $(document).ready(function() {
 	$("#G_SurveySaveButton").click(function() {
 		
 		var	resultArr = [];
+		var name = $("#gName").val();
 		for(var i=0 ; i<22; i++){
 			var num = Number(i) + Number(1);
 			var curNum = "aq"+num;
 			resultArr[i] = $('input:radio[name="'+curNum+'"]:checked').val(); // put arr in a value of checked radio button
 		}
-		var form = {generalSurvey : resultArr};
+		var form = {name: name ,generalSurvey : resultArr};
 		$.ajax({
 			method:"POST",
 			url:"saveGeneralSurvey",

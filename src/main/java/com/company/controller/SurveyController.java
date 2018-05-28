@@ -71,7 +71,7 @@ public class SurveyController {
 		GeneralSurveyVO resultVO = ruleService.getTypeRule(typeNum);
 		resultVO.setTypePicture("img/소양인.PNG");
 		model.addAttribute("resultVO", resultVO);
-
+		
 		return "resultPage";
 	}
 	
