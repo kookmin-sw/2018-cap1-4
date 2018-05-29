@@ -374,7 +374,7 @@
     	<c:forEach items="${waitList}" var="member">
     		<tr>
     			<td>${member.pNumber}</td>
-    			<td><a href ="defaultPage?pNum=${meber.pNumber}" id="waitRefresh">${member.pName}</a></td>
+    			<td><a href ="#" id="waitRefresh" value="${meber.pNumber}">${member.pName}</a></td>
     			<td>${member.age}</td>
     			<td>${member.sex}</td>
     		</tr>
@@ -465,7 +465,7 @@
 	<script type="text/javascript" src="js/resultPage.js?ver=1.512"></script>
     <script src="js/star.js"></script>
 	<script type="text/javascript" src="js/evalRule.js?ver=2.1"></script>
-	<script type="text/javascript" src="js/search.js?ver=2.452559"></script>
+	<script type="text/javascript" src="js/search.js?ver=2.4525529"></script>
 	
 </body>
 </html>

@@ -56,7 +56,13 @@
                                 <td> 방문날짜 : <c:out value="${patient.visitDate}" default="홍 길동 " /></td>
                               </tr>
                               <tr>
-                                <td>알레르기: 사과</td>
+                                <td> 주소 : </td>
+                              </tr>
+                              <tr>
+                                <td> 기타 : </td>
+                              </tr>
+                              <tr>
+                                <td> 특이사항 : </td>
                               </tr>
                           </tbody>
                       </table>
@@ -104,16 +110,15 @@
                  <div class="row">
                    <div class="col-md-4 mx-auto">
                      <h5 style="border: 10px solid #F2C46A; background-color:#F2C46A;"><strong>수지침1</strong></h5>
-                    <img src="img/오장육부.png" style="width:102%; height:418px; "alt="오장육부">
+                    <img src="<c:out value='${patient.handspot1}' default='img/default1.jpg' />" style="width:102%; height:418px; "alt="오장육부">
                    </div>
-
                    <div class="col-md-4 mx-auto">
                      <h5 style="border: 10px solid #F2C46A; background-color:#F2C46A;"><strong>수지침2</strong></h5>
-                    <img src="img/오장육부.png" style="width:102%; height:418px; "alt="오장육부">
+                    <img src="<c:out value='${patient.handspot2}' default='img/default2.jpg' />" style="width:102%; height:418px; "alt="오장육부">
                    </div>
                    <div class="col-md-4 mx-auto">
                      <h5 style="border: 10px solid #F2C46A; background-color:#F2C46A;"><strong>수지침3</strong></h5>
-                    <img src="img/오장육부.png" style="width:102%; height:418px; "alt="오장육부">
+                    <img src="<c:out value='${patient.handspot3}' default='img/default3.jpg' />" style="width:102%; height:418px; "alt="오장육부">
                    </div>
                  </div>
 <br>
@@ -122,16 +127,16 @@
                  <div class="row">
                    <div class="col-md-4 mx-auto">
                      <h5 style="border: 10px solid #F2C46A; background-color:#F2C46A;"><strong>수지침4</strong></h5>
-                    <img src="img/오장육부.png" style="width:102%; height:418px; "alt="오장육부">
+                    <img src="<c:out value='${patient.handspot4}' default='img/default4.jpg' />" style="width:102%; height:418px; "alt="오장육부">
                    </div>
 
                    <div class="col-md-4 mx-auto">
                      <h5 style="border: 10px solid #F2C46A; background-color:#F2C46A;"><strong>수지침5</strong></h5>
-                    <img src="img/오장육부.png" style="width:102%; height:418px; "alt="오장육부">
+                    <img src="<c:out value='${patient.handspot5}' default='img/default5.jpg' />" style="width:102%; height:418px; "alt="오장육부">
                    </div>
                    <div class="col-md-4 mx-auto">
                      <h5 style="border: 10px solid #F2C46A; background-color:#F2C46A;"><strong>수지침6</strong></h5>
-                    <img src="img/오장육부.png" style="width:102%; height:418px; "alt="오장육부">
+                    <img src="<c:out value='${patient.handspot6}' default='img/default6.jpg' />" style="width:102%; height:418px; "alt="오장육부">
                    </div>
                  </div>
                </div>
