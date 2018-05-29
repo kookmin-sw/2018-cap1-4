@@ -11,6 +11,7 @@ public class GeneralSurveyVO {
 	public String handPicture;
 	public String typePicture;
 	public String name;
+	public String oneOfFoods;
 	
 	public int getTypenumber() {
 		return typenumber;
@@ -71,6 +72,12 @@ public class GeneralSurveyVO {
 	}
 	public void setName(String name) {
 		this.name = name;
+	}
+	public String getOneOfFoods() {
+		return oneOfFoods;
+	}
+	public void setOneOfFoods(String oneOfFoods) {
+		this.oneOfFoods = oneOfFoods;
 	}
 	
 }

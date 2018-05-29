@@ -67,8 +67,8 @@
                         <div class="col-md-12 mx-auto" style="margin-left: 30px; margin-top: 20px; margin-right: 30px;margin-bottom: 20px;  font-size:20px">
                           '<strong><c:out value='${resultVO.name}' default='홍 길동 ' /></strong>' 님은 '<strong><c:out value="${resultVO.weakRegion}" default="홍 길동 " /></strong>'가(이) 취약하므로 위 혈자리에서 해당된 자리를 자주 지압 해주시면 좋은 효과를 볼 수 있습니다.
                           <br>'<strong><c:out value='${resultVO.name}' default='홍 길동 ' /></strong>' 님과 잘 맞는 음식은 '<strong><c:out value="${resultVO.goodfood}" default="홍 길동 " /></strong>' 등이 있으며 잘 맞지 않는 음식으로는 <strong>'<c:out value="${resultVO.badfood}" default="홍 길동 " />'</strong> 등이 있습니다.
-                          <br>종합적으로 '<strong><c:out value='${resultVO.type}' default='홍 길동 ' /></strong>' 은 '<strong><c:out value="${resultVO.summary}" default="홍 길동 " /></strong>' 입니다.
-                          <br>오늘 저녁은 '<strong><c:out value="${resultVO.recommandfood}" default="홍 길동 " /></strong>' 이 어떠신가요?^^
+                          <br>종합적으로 '<strong><c:out value="${resultVO.summary}" default="홍 길동 " /></strong>'
+                          <br>오늘 저녁은 '<strong><c:out value="${resultVO.oneOfFoods}" default="홍 길동 " /></strong>' 이 어떠신가요?^^
                         </div>
                     </div>
                     </div>

@@ -3,6 +3,7 @@ package com.company.controller;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import javax.inject.Inject;
 
@@ -70,6 +71,15 @@ public class SurveyController {
 		logger.info("resultPage");
 		
 		GeneralSurveyVO resultVO = ruleService.getTypeRule(typeNum);
+		
+		Random random = new Random(); // create random function
+		String totalFood = resultVO.getRecommandfood();
+		String[] input = totalFood.trim().split(",");  // split by ','
+		
+		int randomInt = random.nextInt(input.length); // 0 ~ n-1
+		
+		resultVO.setOneOfFoods(input[randomInt]);
+		
 		if( typeNum == 1 ) // 1 태양인  
 		{
 			resultVO.setTypePicture("img/태양인 특징.jpg");
