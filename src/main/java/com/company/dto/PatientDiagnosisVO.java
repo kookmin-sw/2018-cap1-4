@@ -13,6 +13,13 @@ public class PatientDiagnosisVO  implements Cloneable{
 	private int age; // 세부사항 더 추가 예정
 	private String sex;
 	
+	public String handspot1;
+	public String handspot2;
+	public String handspot3;
+	public String handspot4;
+	public String handspot5;
+	public String handspot6;
+	
 	public ArrayList<String> simplePrescr; // 환자에 증상에 매칭 되는 단순처방
 	public ArrayList<String> complexPrescr; // 환자에 증상에 매칭 되는 복합처방
 	public ArrayList<String> diagnosisArr; // 환자가 받은 진단명 리스트
@@ -131,6 +138,42 @@ public class PatientDiagnosisVO  implements Cloneable{
 	}
 	public void setSex(String sex) {
 		this.sex = sex;
+	}
+	public String getHandspot1() {
+		return handspot1;
+	}
+	public void setHandspot1(String handspot1) {
+		this.handspot1 = handspot1;
+	}
+	public String getHandspot2() {
+		return handspot2;
+	}
+	public void setHandspot2(String handspot2) {
+		this.handspot2 = handspot2;
+	}
+	public String getHandspot3() {
+		return handspot3;
+	}
+	public void setHandspot3(String handspot3) {
+		this.handspot3 = handspot3;
+	}
+	public String getHandspot4() {
+		return handspot4;
+	}
+	public void setHandspot4(String handspot4) {
+		this.handspot4 = handspot4;
+	}
+	public String getHandspot5() {
+		return handspot5;
+	}
+	public void setHandspot5(String handspot5) {
+		this.handspot5 = handspot5;
+	}
+	public String getHandspot6() {
+		return handspot6;
+	}
+	public void setHandspot6(String handspot6) {
+		this.handspot6 = handspot6;
 	}
 	
 }

@@ -45,8 +45,8 @@ public class HomeController {
 	@RequestMapping(value = "/")
 	public String home(Locale locale, Model model) throws Exception{
 
-		logger.info("defaultPage");
-
+		logger.info("homePage");
+		  	
 		return "home";
 	}
 	/**
@@ -178,7 +178,8 @@ public class HomeController {
 	public String doctorPage(Model model) throws Exception
 	{
 		logger.info("doctorPage");
-		List<WaitlistVO> list = memberService.selectWaitList(); // 대기자 명단 불러옴  		
+		List<WaitlistVO> list = memberService.selectWaitList(); // 대기자 명단 불러옴  	
+		System.out.println("////////////////"+list.size());
 		model.addAttribute("waitList", list);
 		return "defaultPage";
 	}

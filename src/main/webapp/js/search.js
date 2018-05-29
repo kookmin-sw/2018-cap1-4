@@ -72,10 +72,10 @@ $("#searchPatient").keypress(function(event){
  */
 $(document).ready(function() {
 	$("#waitRefresh").click(function() {
-		var url = location.href;
-		var tr = $(this).children();
-		var temp = $(this).val()
-		alert(url+ " "+tr.eq(0).text()+" "+temp);
+		
+		var temp = $(this).attr('value');
+		alert(temp);
+		
 		$.ajax({
 			method:"GET",	
 			dataType: "json",

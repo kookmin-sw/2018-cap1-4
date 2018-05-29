@@ -189,14 +189,20 @@ public class RuleController {
 		patient.diagnosis.setpNumber(patient.getpNumber());
 		patient.diagnosis.setSex(patient.getSex());
 		patient.diagnosis.setVisitDate(patient.getVisitDate());
-		
+		int num =0;
 		for(String str : patient.diagnosis.getSimplePrescr())
 		{
 			MedicineVO result = null;
 			try {
 				result = ruleService.getImageDirectory(str);
 				if(result.handspot != null) {
-					patient.diagnosis.setHandSpot(result.handspot);
+					if( num == 0 ) patient.diagnosis.setHandspot1(result.handspot);
+					else if( num == 1 ) patient.diagnosis.setHandspot2(result.handspot);
+					else if( num == 2 ) patient.diagnosis.setHandspot3(result.handspot);
+					else if( num == 3 ) patient.diagnosis.setHandspot4(result.handspot);
+					else if( num == 4 ) patient.diagnosis.setHandspot5(result.handspot);
+					else if( num == 5 ) patient.diagnosis.setHandspot6(result.handspot);
+					num ++;
 				}
 			} catch(NullPointerException e) {
 				//e.printStackTrace();

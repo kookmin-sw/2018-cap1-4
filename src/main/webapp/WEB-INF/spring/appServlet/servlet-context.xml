@@ -35,7 +35,10 @@
 	 
 	<interceptors>
 		<interceptor>
-			<mapping path="/tempPage"/>
+			<mapping path="/defaultPage"/>
+			<mapping path="/evalTablePage"/>
+			<mapping path="/receptionPage"/>
+			
 			<beans:bean class = "com.company.interceptor.LoginInterceptor"/>
 		</interceptor>
 	</interceptors>
