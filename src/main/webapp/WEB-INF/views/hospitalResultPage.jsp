@@ -75,7 +75,6 @@
 					    			<td>${arr}</td>
 					    		</tr>
 					    	</c:forEach>
-                             
                          </tbody>
                      </table>
                    </div>
@@ -92,24 +91,6 @@
 					    			<td>${arr}</td>
 					    		</tr>
 					    	</c:forEach>
-                             <tr>
-                                 <td><strong>상체 비만 스타일 소양인</strong></td>
-                             </tr>
-                             <tr>
-                                 <td><strong>소양인 참고사항</strong></td>
-                             </tr>
-                             <tr>
-                                 <td>판단력이 빠르지만 계획성이 적어 일을 시작하기는 잘하나 하는 일이 잘 안될때는 쉽게 체념하는 면이 있음</td>
-                             </tr>
-                             <tr>
-                                 <td>열이 많고 성질이 급함 / 급한 마음을 절제하도록 노력</td>
-                             </tr>
-                             <tr>
-                                 <td><strong>소양인의 이로운 음식</strong></td>
-                             </tr>
-                             <tr>
-                                 <td>음식</td>
-                             </tr>
                          </tbody>
                      </table>
                    </div>

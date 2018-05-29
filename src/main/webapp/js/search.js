@@ -66,6 +66,40 @@ $("#searchPatient").keypress(function(event){
     }
 });
 
+/**
+ * 
+ * 대기자 명단에서 해당 환자를 클릭했을때 환자 세부사항을 보여줌  
+ */
+$(document).ready(function() {
+	$("#waitRefresh").click(function() {
+		var url = location.href;
+		var tr = $(this).children();
+		var temp = $(this).val()
+		alert(url+ " "+tr.eq(0).text()+" "+temp);
+		$.ajax({
+			method:"GET",	
+			dataType: "json",
+			url:"getPatientSymptoms",	
+			data : {"pNumber" : sendPatientNum},
+			success:function(data) {
+				var symptomList ="";
+				var patientInfo ="";
+				patientInfo += "<h5 style='background-color:#EBEBEB; border: solid 5px #EBEBEB'>"+
+								resultData.visitDate +"| "+resultData.pName+"("+resultData.pNumber+") 900111-10*****(F. 20세 0개월 24일) | [국민공단] | 010-5111-**** | 서울특별시 성북구 화도읍 명품하우스</h5>";
+				
+				$.each(resultData.symptomArr ,function(index,item){
+					symptomList += "<tr><td>"+item.symptom+"</td><td><button onclick='deleteLine(this);' style='float: right;'>삭제</button></td></tr>";
+				});
+				
+				$("#showPsymptoms > tbody").empty();
+				$("#showPsymptoms").append(symptomList);
+				$("#patientInfoView").empty();
+				$("#patientInfoView").append(patientInfo);
+			}
+		});
+	});
+});
+
 
 
 /**

@@ -95,5 +95,11 @@
 		FROM fourTypeRule
 		WHERE typenumber = #{typenumber}
 	</select>
+	
+	<select id="getImageDirectory" parameterType="String" resultType="MedicineVO">
+		SELECT DISTINCT handspot
+		FROM prescription
+		WHERE medicine = #{medicine}
+	</select>
 
 </mapper>

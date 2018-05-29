@@ -371,66 +371,15 @@
         </tr>
     </thead> -->
     <tbody>
-      <tr>
-        <th>번호</th>
-        <th>이름</th>
-        <th>나이</th>
-        <th>성별</th>
-      </tr>
-        <tr>
-            <td>18-20125</td>
-            <td>장원용</td>
-            <td>20</td>
-            <td>남자</td>
-        </tr>
-        <tr>
-            <td>18-20552</td>
-            <td>김태우</td>
-            <td>20</td>
-            <td>남자</td>
-        </tr>
-        <tr>
-            <td>18-20321</td>
-            <td>류준영</td>
-            <td>20</td>
-            <td>남자</td>
-        </tr>
-        <tr>
-            <td>18-20114</td>
-            <td>차은채</td>
-            <td>20</td>
-            <td>여자</td>
-        </tr>
-        <tr>
-          <td>18-20115</td>
-          <td>박인수</td>
-          <td>20</td>
-          <td>남자</td>
-        </tr>
-        <tr>
-          <td>18-20116</td>
-          <td>유상현</td>
-          <td>26</td>
-          <td>여자</td>
-        </tr>
-        <tr>
-          <td>18-20117</td>
-          <td>장진석</td>
-          <td>21</td>
-          <td>여자</td>
-        </tr>
-        <tr>
-          <td>18-20118</td>
-          <td>박승아</td>
-          <td>30</td>
-          <td>남자</td>
-        </tr>
-        <tr>
-          <td>18-20119</td>
-          <td>제지환</td>
-          <td>35</td>
-          <td>여자</td>
-        </tr>
+    	<c:forEach items="${waitList}" var="member">
+    		<tr>
+    			<td>${member.pNumber}</td>
+    			<td><a href ="defaultPage?pNum=${meber.pNumber}" id="waitRefresh">${member.pName}</a></td>
+    			<td>${member.age}</td>
+    			<td>${member.sex}</td>
+    		</tr>
+    	</c:forEach>
+      
     </tbody>
 </table>
 </div>
@@ -516,7 +465,7 @@
 	<script type="text/javascript" src="js/resultPage.js?ver=1.512"></script>
     <script src="js/star.js"></script>
 	<script type="text/javascript" src="js/evalRule.js?ver=2.1"></script>
-	<script type="text/javascript" src="js/search.js?ver=2.3912281221259"></script>
+	<script type="text/javascript" src="js/search.js?ver=2.452559"></script>
 	
 </body>
 </html>

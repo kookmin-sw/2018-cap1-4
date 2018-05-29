@@ -78,7 +78,7 @@ public class SurveyController {
 		
 		int randomInt = random.nextInt(input.length); // 0 ~ n-1
 		
-		resultVO.setOneOfFoods(input[randomInt]);
+		resultVO.setOneOfFoods(input[randomInt]); // set one of foods
 		
 		if( typeNum == 1 ) // 1 태양인  
 		{

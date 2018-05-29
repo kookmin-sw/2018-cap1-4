@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.company.drools.DroolsSpringTest;
 import com.company.dto.DomainRuleVO;
+import com.company.dto.MedicineVO;
 import com.company.dto.MemberVO;
 import com.company.dto.PatientDiagnosisVO;
 import com.company.dto.PatientSymptomVO;
@@ -188,6 +189,26 @@ public class RuleController {
 		patient.diagnosis.setpNumber(patient.getpNumber());
 		patient.diagnosis.setSex(patient.getSex());
 		patient.diagnosis.setVisitDate(patient.getVisitDate());
+		
+		for(String str : patient.diagnosis.getSimplePrescr())
+		{
+			MedicineVO result = null;
+			try {
+				result = ruleService.getImageDirectory(str);
+				if(result.handspot != null) {
+					patient.diagnosis.setHandSpot(result.handspot);
+				}
+			} catch(NullPointerException e) {
+				//e.printStackTrace();
+				continue;
+			}
+			
+		}
+		
+		for(String str : patient.diagnosis.handspotArr)
+		{
+			System.out.println("//////////"+str);
+		}
 		model.addAttribute("patient", patient.getDiagnosis());
 		return "hospitalResultPage";
 	}
