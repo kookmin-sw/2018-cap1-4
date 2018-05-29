@@ -24,9 +24,9 @@
 <br>
 <br>
 <form class="form-inline">
-	<form class="navbar-form pull-right">
-		<input class="form-control" type="text" placeholder="환자이름" aria-label="환자이름">
-		<button type="submit" class="btn btn-primary">입력</button>
+	<form class = "navbar-form pull-right">
+		<input class="form-control" type="text" id ="gName" placeholder="이름" aria-label="이름">
+		<button type="button" class="btn btn-primary" >입력</button>
 	</form>
 </form>
 <br>
@@ -222,6 +222,6 @@
     <button type="button" class="btn btn-warning" id="G_SurveySaveButton">다음</button>
   </div>
 </div>
-    <script type="text/javascript" src="js/survey.js?ver=2.3122322215312151221"></script>
+    <script type="text/javascript" src="js/survey.js?ver=2.31223222215312151221"></script>
     </body>
 </html>

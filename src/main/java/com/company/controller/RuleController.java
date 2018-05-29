@@ -183,6 +183,11 @@ public class RuleController {
 	public String hospitalResultPage(Model model) throws Exception
 	{
 		logger.info("hospitalResultPage");
+		patient.diagnosis.setpName(patient.getpName());
+		patient.diagnosis.setAge(patient.getAge());
+		patient.diagnosis.setpNumber(patient.getpNumber());
+		patient.diagnosis.setSex(patient.getSex());
+		patient.diagnosis.setVisitDate(patient.getVisitDate());
 		model.addAttribute("patient", patient.getDiagnosis());
 		return "hospitalResultPage";
 	}

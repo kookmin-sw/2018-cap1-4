@@ -22,5 +22,4 @@ public class MedicineVO {
 	public void setDefaultValue(int defaultValue) {
 		this.defaultValue = defaultValue;
 	}
-	
 }
