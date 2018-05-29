@@ -19,6 +19,7 @@ public class SurveyVO {
 	public List<Integer> generalSurvey; // generalSurvey 에서 받아 
 	public List<Integer> generalSurvey_B;
 	public List<Integer> generalSurvey_C;
+	public String name;
 	
 	public SurveyVO()
 	{
@@ -33,6 +34,14 @@ public class SurveyVO {
 		visitDate = dateFormat.format(cal.getTime()); // 현재 날짜로 survey 작성날짜 생성
 	}
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public ArrayList<PatientSymptomVO> getSymptomArr() {
 		return symptomArr;
 	}

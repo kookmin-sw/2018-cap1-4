@@ -5,7 +5,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta charset="utf-8">
     <link rel="stylesheet" href="css/bootstrap2.css">
 
     <title>hospital결과지</title>
@@ -27,7 +26,7 @@
   <body>
             <div class="row-fluid">
               <div class="span1" style="margin-top: 20px; ">
-                <span style="width:100%; text-align: center; "><h2>'홍길동'님의 결과페이지</h2></span>
+                <span style="width:100%; text-align: center; "><h2>'<c:out value="${patient.pName}" default="홍 길동 " />'님의 결과페이지</h2></span>
                 <hr>
               </div>
               <div class="span11">
@@ -41,17 +40,20 @@
                       <div style="width:102%; height:482px; overflow:auto;background-color:white">
                        <table class="table table-striped" style='line-height:90%'>
                           <tbody>
-                              <tr>
-                                  <td>이름: 홍길동</td>
+                         	 <tr>
+                                  <td>환자번호 : <c:out value="${patient.pNumber}" default="홍 길동 " /></td>
                               </tr>
                               <tr>
-                                  <td>성별: 남자</td>
+                                  <td>이름: <c:out value="${patient.pName}" default="홍 길동 " /></td>
                               </tr>
                               <tr>
-                                  <td>나이: 56세</td>
+                                  <td>성별: <c:out value="${patient.sex}" default="홍 길동 " /></td>
                               </tr>
                               <tr>
-                                <td>과거력: 맹장 수술</td>
+                                  <td>나이: <c:out value="${patient.age}" default="홍 길동 " /></td>
+                              </tr>
+                              <tr>
+                                <td> 방문날짜 : <c:out value="${patient.visitDate}" default="홍 길동 " /></td>
                               </tr>
                               <tr>
                                 <td>알레르기: 사과</td>
@@ -68,39 +70,12 @@
                      <div style="width:102%; height:416px; background-color:white">
                       <table class="table table-striped" style='line-height:90%'>
                          <tbody>
-                             <tr>
-                                 <td>소화불량</td>
-                             </tr>
-                             <tr>
-                                 <td>명치답답</td>
-                             </tr>
-                             <tr>
-                                 <td>명치부위 압통</td>
-                             </tr>
-                             <tr>
-                                 <td>담적 상복부</td>
-                             </tr>
-                             <tr>
-                                 <td>담적 하복부</td>
-                             </tr>
-                             <tr>
-                                 <td>명치통증</td>
-                             </tr>
-                             <tr>
-                                 <td>불안함</td>
-                             </tr>
-                             <tr>
-                                 <td>추위 탐</td>
-                             </tr>
-                             <tr>
-                                 <td>건망증</td>
-                             </tr>
-                             <tr>
-                                 <td>설진1</td>
-                             </tr>
-                             <tr>
-                                 <td>설진2</td>
-                             </tr>
+                         	<c:forEach items="${patient.diagnosisArr}" var="arr">
+					    		<tr>
+					    			<td>${arr}</td>
+					    		</tr>
+					    	</c:forEach>
+                             
                          </tbody>
                      </table>
                    </div>
@@ -112,6 +87,11 @@
                      <div style="width:102%; height:416px; overflow:auto;background-color:white">
                       <table class="table table-striped" style='line-height:90%'>
                          <tbody>
+                         	<c:forEach items="${patient.simplePrescr}" var="arr">
+					    		<tr>
+					    			<td>${arr}</td>
+					    		</tr>
+					    	</c:forEach>
                              <tr>
                                  <td><strong>상체 비만 스타일 소양인</strong></td>
                              </tr>
