@@ -178,7 +178,8 @@ public class HomeController {
 	public String doctorPage(Model model) throws Exception
 	{
 		logger.info("doctorPage");
-		
+		List<WaitlistVO> list = memberService.selectWaitList(); // 대기자 명단 불러옴  		
+		model.addAttribute("waitList", list);
 		return "defaultPage";
 	}
 }	

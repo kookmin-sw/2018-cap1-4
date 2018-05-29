@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.company.dto.DomainRuleVO;
 import com.company.dto.GeneralSurveyVO;
+import com.company.dto.MedicineVO;
 import com.company.dto.PatientSymptomVO;
 import com.company.dto.PatientVO;
 import com.company.dto.SymptomVO;
@@ -54,4 +55,10 @@ public class RuleServiceImpl implements RuleService{
 		// TODO Auto-generated method stub
 		return mapper.getTypeRule(typenumber);
 	}
+	@Override
+	public MedicineVO getImageDirectory(String medicine) throws Exception {
+		// TODO Auto-generated method stub
+		return mapper.getImageDirectory(medicine);
+	}
+
 }

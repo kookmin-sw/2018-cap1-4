@@ -3,7 +3,8 @@ package com.company.dto;
 public class MedicineVO {
 	public String ruleID; // ruleID == 진단명
 	public String medicine;   // 처방약
-	public int defaultValue; // 약 용량 기본 값
+	public int defaultValue; // 약 용량 기본 값 
+	public String handspot;
 	public String getRuleID() {
 		return ruleID;
 	}
@@ -21,5 +22,11 @@ public class MedicineVO {
 	}
 	public void setDefaultValue(int defaultValue) {
 		this.defaultValue = defaultValue;
+	}
+	public String getHandspot() {
+		return handspot;
+	}
+	public void setHandspot(String handspot) {
+		this.handspot = handspot;
 	}
 }

@@ -16,21 +16,21 @@ public class PatientDiagnosisVO  implements Cloneable{
 	public ArrayList<String> simplePrescr; // 환자에 증상에 매칭 되는 단순처방
 	public ArrayList<String> complexPrescr; // 환자에 증상에 매칭 되는 복합처방
 	public ArrayList<String> diagnosisArr; // 환자가 받은 진단명 리스트
+	public ArrayList<String> handspotArr;
 	
 	public static final int NODIAGNOSISED   = 0;//진료 받은적 없다.
     public static final int DIAGNOSISED = 1; //진료 받은적 있다. 
     
     public int state;
  // public int ruleCheckCnt; // 모든 룰을 다 체크했는지 확인하기 위함
-  
+    
 	public PatientDiagnosisVO(String visitDate) {
 		this.state = NODIAGNOSISED;
 		simplePrescr = new ArrayList<String>();
 		complexPrescr = new ArrayList<String>();
 		diagnosisArr = new ArrayList<String>();
+		handspotArr = new ArrayList<String>();
 		this.visitDate = visitDate;
-		
-		
 	}
 	public Object clone() {
 		try {
@@ -52,8 +52,12 @@ public class PatientDiagnosisVO  implements Cloneable{
 	{
 		for(MedicineVO obj : medicines)
 		{
-			simplePrescr.add(obj.getMedicine()+" "+obj.getDefaultValue());
+			if(simplePrescr.contains(obj.getMedicine())) continue;
+			simplePrescr.add(obj.getMedicine());
 		}
+	}
+	public void setHandSpot(String str) {
+		handspotArr.add(str);
 	}
 	
 	public ArrayList<String> getDiagnosisArr() {

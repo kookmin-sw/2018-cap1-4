@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.company.dto.DomainRuleVO;
 import com.company.dto.GeneralSurveyVO;
+import com.company.dto.MedicineVO;
 import com.company.dto.PatientSymptomVO;
 import com.company.dto.PatientVO;
 import com.company.dto.SymptomVO;
@@ -27,4 +28,7 @@ public interface RuleService {
 	
 	// 사상체질 룰 결과 select 타입 번호를 통해서 검색  
 	public GeneralSurveyVO getTypeRule(int typenumber) throws Exception;
+	
+	// 처방약을 기준으로 환자에게 보여줄 사진 경로를 가져온다. 
+	public MedicineVO getImageDirectory(String medicine) throws Exception;
 }

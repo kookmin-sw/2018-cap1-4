@@ -7,6 +7,7 @@ public class DomainRuleVO {
 	public int andSymptom; 
 	public ArrayList<SymptomVO> symptoms; 
 	public ArrayList<MedicineVO> medicines;
+	
 	public DomainRuleVO() {}
 	
 	public void countAndSymptom() 
