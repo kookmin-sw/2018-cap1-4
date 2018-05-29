@@ -18,7 +18,7 @@
 
 </head>
 <body>
-    <div style="margin-left: 400px; margin-top: 50px; margin-right: 400px;">
+    <div style="margin-left: 40px; margin-top: 50px; margin-right: 40px;">
       <div style="border: 1px solid; background-color: #EBEBEB;">
         <br>
       <h3 style="text-align: center;">해당 증상을 선택해주세요.</h3>
@@ -727,7 +727,7 @@
         </tr>
     </table><br>
 </div>
-
+<!-- 
 <div class="col-md-6 mx-auto" align = "right">
     <table border="1" >
         <tr>
@@ -792,6 +792,7 @@
     </table>
   </div>
   </div>
+  -->
 <div style="float:right;">
     <button type="button" class="btn btn-primary" id="H_SurveySaveButton">저장</button>
 </div>
