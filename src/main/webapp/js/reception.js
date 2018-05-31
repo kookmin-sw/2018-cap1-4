@@ -17,7 +17,7 @@ $(document).ready(function() {
 			data : JSON.stringify(form),
 			complete:function(response) {
 				alert("환자 세부사항 저장 완료");
-				window.location.href = response.responseText;
+				//window.location.href = response.responseText;
 			}
 		});
 	});

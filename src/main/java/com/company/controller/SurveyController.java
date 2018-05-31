@@ -42,6 +42,13 @@ public class SurveyController {
 		
 		return "generalSurvey";
 	}
+	@RequestMapping(value="/generalSurveyAajx")
+	public @ResponseBody String generalSurveyAjax(Model model) throws Exception
+	{
+		logger.info("generalSurvey");
+		
+		return "/home/generalSurvey";
+	}
 	/**
 	 * GeneralPage B 일반사용자 설문 페이지
 	 */
@@ -282,7 +289,6 @@ public class SurveyController {
 		
 		return "/home/resultPage"; //결과 페이지 이동 
 	}
-
 }
 
 

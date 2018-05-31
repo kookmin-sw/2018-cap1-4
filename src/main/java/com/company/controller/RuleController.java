@@ -80,13 +80,18 @@ public class RuleController {
 	 @RequestMapping(value ="/getPatientSymptoms", method = RequestMethod.GET)
 	 public @ResponseBody PatientVO getPatientSymptoms(@RequestParam("pNumber") String pNumber) throws Exception
 	 {
-		System.out.println("/////////////////////"+pNumber);
-		patient = ruleService.getPatientSymptoms(pNumber); // 환자 번호로 증상 검색
 		
-		logger.info("환자 검색확인: "+ patient.getpName()+" "+patient.getAge()+" "+patient.symptomArr.size());
-		for(int i=0; i< patient.symptomArr.size(); i++) {
+		try {
+			System.out.println("///////////////////"+pNumber);
+			patient = ruleService.getPatientSymptoms(pNumber); // 환자 번호로 증상 검색
+			service.delWaitingList(pNumber);
 			
-			System.out.println(patient.symptomArr.get(i).getSymptom());
+			logger.info("환자 검색확인: "+ patient.getpName()+" "+patient.getAge()+" "+patient.symptomArr.size());
+			for(int i=0; i< patient.symptomArr.size(); i++) 
+			{	
+				System.out.println(patient.symptomArr.get(i).getSymptom());
+			}
+		} catch(NullPointerException e) {
 		}
 		return patient;
 	 }

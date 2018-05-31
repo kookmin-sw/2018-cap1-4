@@ -47,7 +47,7 @@ $(document).ready(function() {
 			contentType: "application/json",
 			data : JSON.stringify(form), // Array 를 JSON string 형태로 변환
 			complete:function() {
-				console.log("save");
+				alert("설문 작성 완료! ");
 			}
 		});
 	});
@@ -60,26 +60,51 @@ $(document).ready(function() {
  */
 $(document).ready(function() {
 	$("#G_SurveySaveButton").click(function() {
-		
+		var notChecked =[];
+		var sum=0;
 		var	resultArr = [];
+		var flag =0;
 		var name = $("#gName").val();
+		if(!$("#gName").val())
+		{
+			flag = 1;
+		}
 		for(var i=0 ; i<22; i++){
 			var num = Number(i) + Number(1);
 			var curNum = "aq"+num;
+			if(!$('input:radio[name="'+curNum+'"]:checked').val()) {
+				notChecked[sum++] = num;
+			}
 			resultArr[i] = $('input:radio[name="'+curNum+'"]:checked').val(); // put arr in a value of checked radio button
 		}
 		var form = {name: name ,generalSurvey : resultArr};
-		$.ajax({
-			method:"POST",
-			url:"saveGeneralSurvey",
-			dataType: "json",
-			contentType: "application/json",
-			data : JSON.stringify(form), // Array 를 JSON string 형태로 변환
-			complete:function(response) {
-				alert(response.responseText);
-				window.location.href = response.responseText; //
+		if(sum == 0 && flag ==0 ) {
+			$.ajax({
+				method:"POST",
+				url:"saveGeneralSurvey",
+				dataType: "json",
+				contentType: "application/json",
+				data : JSON.stringify(form), // Array 를 JSON string 형태로 변환
+				complete:function(response) {
+					var temp = response.responseText.charAt(response.responseText.length-1);
+					if(temp == 'B') {
+						alert("음인이시네요! 다음설문을 계속 진행해 주세요!");
+					}
+					else {
+						alert("양인이시네요! 다음설문을 계속 진행해 주세요!");
+					}
+					window.location.href = response.responseText; //
+				}
+			});
+		}else {
+			var str ="";
+			for(var i=0; i<notChecked.length; i++)
+			{
+				str += notChecked[i]+" ";
 			}
-		});
+			alert(str + "\n해당 번호 설문 작성을 완료해 주세요!");
+			if(flag == 1) alert("이름을 작성해주세요!");
+		}
 	});
 });
 
@@ -89,26 +114,39 @@ $(document).ready(function() {
  */
 $(document).ready(function() {
 	$("#G_SurveyBsaveButton").click(function() {
-		
+		var notChecked =[];
+		var sum=0;
 		var	resultArr = [];
 		for(var i=0 ; i<18; i++){
 			var num = Number(i) + Number(1);
 			var curNum = "bq"+num;
+			if(!$('input:radio[name="'+curNum+'"]:checked').val()) {
+				notChecked[sum++] = num;
+			}
 			resultArr[i] = $('input:radio[name="'+curNum+'"]:checked').val(); // put arr in a value of checked radio button
 		}
 		var form = {generalSurvey_B : resultArr};
-		$.ajax({
-			method:"POST",
-			url:"saveGeneralSurvey_B",
-			dataType: "json",
-			contentType: "application/json",
-			data : JSON.stringify(form), // Array 를 JSON string 형태로 변환
-			complete:function(response) {
-				
-				alert(response.responseText);
-				window.location.href = response.responseText; //
+		if(sum ==0 ) {
+			$.ajax({
+				method:"POST",
+				url:"saveGeneralSurvey_B",
+				dataType: "json",
+				contentType: "application/json",
+				data : JSON.stringify(form), // Array 를 JSON string 형태로 변환
+				complete:function(response) {
+					
+					alert(response.responseText);
+					window.location.href = response.responseText; //
+				}
+			});
+		} else {
+			var str ="";
+			for(var i=0; i<notChecked.length; i++)
+			{
+				str += notChecked[i]+" ";
 			}
-		});
+			alert(str + "\n해당 번호 설문 작성을 완료해 주세요!");
+		}
 	});
 });
 
@@ -118,26 +156,56 @@ $(document).ready(function() {
  */
 $(document).ready(function() {
 	$("#G_SurveyCsaveButton").click(function() {
-		
+		var notChecked =[];
+		var sum=0;
 		var	resultArr = [];
 		for(var i=0 ; i<10; i++){
 			var num = Number(i) + Number(1);
 			var curNum = "cq"+num;
+			if(!$('input:radio[name="'+curNum+'"]:checked').val()) {
+				notChecked[sum++] = num;
+			}
 			resultArr[i] = $('input:radio[name="'+curNum+'"]:checked').val(); // put arr in a value of checked radio button
 		}
 		var form = {generalSurvey_C : resultArr};
+		if(sum == 0 ) {
+			$.ajax({
+				method:"POST",
+				url:"saveGeneralSurvey_C",
+				dataType: "json",
+				contentType: "application/json",
+				data : JSON.stringify(form), // Array 를 JSON string 형태로 변환
+				complete:function(response) {
+					
+					alert(response.responseText);
+					window.location.href = response.responseText; //
+				}
+			});
+		} else {
+			var str ="";
+			for(var i=0; i<notChecked.length; i++)
+			{
+				str += notChecked[i]+" ";
+			}
+			alert(str + "\n해당 번호 설문 작성을 완료해 주세요!");
+		}
+	});
+});
+
+
+
+/**
+ *  G survey 뒤로 가기 버튼 클릭
+ */
+$(document).ready(function() {
+	$("#backG_SurveyButton").click(function() {
+		
 		$.ajax({
-			method:"POST",
-			url:"saveGeneralSurvey_C",
-			dataType: "json",
-			contentType: "application/json",
-			data : JSON.stringify(form), // Array 를 JSON string 형태로 변환
+			method:"GET",
+			url:"generalSurveyAajx",
 			complete:function(response) {
-				
-				alert(response.responseText);
-				window.location.href = response.responseText; //
+				window.location.href = response.responseText;
 			}
 		});
 	});
 });
-

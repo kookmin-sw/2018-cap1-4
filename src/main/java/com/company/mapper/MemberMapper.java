@@ -23,6 +23,9 @@ public interface MemberMapper {
 	// 대기자 명단에 추가 ( DB : 대기자 명단 테이블)
 	public void addWaitingList(WaitlistVO patient) throws Exception;
 	
+	// 대기자 명단에서 환자 번호 삭제  
+	public void delWaitingList(String pNumber) throws Exception;
+	
 	// reception Page에서 저장버튼 클릭했을 경우 환자 저장 (기존의 데이터 없을경우 patient table 추가)
 	public void savePatient(PatientVO patient) throws Exception;
 	
