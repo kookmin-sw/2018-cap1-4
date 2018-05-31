@@ -77,7 +77,7 @@
     ② 아니요
 <br>
 <br>    
-    <h4>9. 일 정도 대변을 못보는 경우가 있으나 크게 불편하지 않다   </h4>
+    <h4>9. 3~4일 정도 대변을 못보는 경우가 있으나 크게 불편하지 않다   </h4>
     &nbsp; <td><input type=radio name = "cq9" value=1></td> 
     ① 예
      <br>&nbsp; <td><input type=radio name = "cq9" value=0></td> 
@@ -86,9 +86,9 @@
 <br>    
     <h4>10. 당신의 태도는 다음 중 어느 쪽에 가깝습니까?  </h4>   
      &nbsp; <td><input type=radio name = "cq10" value=1></td> 
-    ① 예
+    ① 거침없고 과단성이 있다
     &nbsp; <td><input type=radio name = "cq10" value=0></td> 
-    ② 아니요
+    ② 민첩하고 용감하다 
     <br>
 <br>
    <div style="float:right;">

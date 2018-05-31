@@ -160,7 +160,7 @@
      <br>&nbsp; <td><input type=radio name = "aq16" value=0></td>
     ③ 일을 시작하기 전에 일이 어찌될까 겁난다.
     <br>&nbsp; <td><input type=radio name = "aq16" value=1></td>
-    ④ 상 마음이 급해서 가만히 앉아 있을 수 없다.
+    ④ 항상 마음이 급해서 가만히 앉아 있을 수 없다.
     <br>
     <br>
     <h4>17. 당신은 어느 쪽에 가깝습니까?</h4>

@@ -185,25 +185,31 @@ public class SurveyController {
 			int a = surveyResult.generalSurvey.get(4); // 5번 문제  
 			int b = surveyResult.generalSurvey.get(14);
 			int c = surveyResult.generalSurvey.get(20);
-			System.out.println(a+" "+b+" "+c);
+			System.out.println("a5,b15,c21 값 : "+a+" "+b+" "+c);
 			// a,b,c 더한 값이 3점이면 양 판단 c 로 이동 //  0 이면 음 판단  b 로 이동
 			// 2점이면 => 11번 문항이 1점이면 c로 넘어가고 그렇지 않으면 에러 
 			// 1점일때 => 6번이 0점이면 b 로 그러허지 않으면 에러
 			{
 				if(a+b+c == 3) { // 양 판단  c로 이동  
+					System.out.println("룰  "+"1");
 				return "/home/generalSurvey_C";
+				
 				}
 				else if(a+b+c == 0) { // 더한 값이 0 점일 때 음 판단 b로 이
-				return "/home/generalSurvey_B";
+					System.out.println("룰  "+"2");
+					return "/home/generalSurvey_B";
+					
 				}
 				else if(a+b+c == 2 ) { // 2점 일때 
 					int tmpC  = surveyResult.generalSurvey.get(10); // 11번 문항  
-					if(tmpC == 1) return "/home/generalSurvey_C";
-				}
+					System.out.println("11번값"+tmpC);
+					if(tmpC == 1) {System.out.println("룰  "+"3"); return "/home/generalSurvey_C";
+					}}
 				else if(a+b+c == 1) {
 					int tmpB = surveyResult.generalSurvey.get(5); // 6번 문항 0 
-					if(tmpB == 0) return "/home/generalSurvey_B";
-				}
+					System.out.println("6번값 "+ tmpB);
+					if(tmpB == 0) {System.out.println("룰  "+"4"); return "/home/generalSurvey_B";
+				}}
 			}
 			return "/home/generalSurvey"; // 그렇지 않으면 에러처리  
 		}
