@@ -17,7 +17,7 @@
 <!-- Bootstrap core CSS -->
 <title>Oriental Medicine Expert System</title>
 <style>
-
+	
       .noresize {
         resize: none;
         background-color: #EBEBEB;
@@ -106,6 +106,12 @@
       aside{
         order: 2;
       } */
+	#receptionTalbe tr:first-child{
+		background-color: #F5F5DC;
+		
+	}
+
+	
 </style>
 </head>
 <body>
@@ -364,7 +370,7 @@
     							<div class="col-md-4 mx-auto">
                     <h5><strong>대기명단</strong></h5>
 <div style="width:100%; height:200px; overflow:auto">
- <table class="table table-striped" style='line-height:90%'>
+ <table class="table table-striped" style='line-height:90%' id="receptionTalbe">
     <!-- <thead>
         <tr>
             <th>설문결과</th>
@@ -465,7 +471,7 @@
 	<script type="text/javascript" src="js/resultPage.js?ver=1.512"></script>
     <script src="js/star.js"></script>
 	<script type="text/javascript" src="js/evalRule.js?ver=2.1"></script>
-	<script type="text/javascript" src="js/search.js?ver=2.45221151529"></script>
+	<script type="text/javascript" src="js/search.js?ver=2.9221"></script>
 	
 </body>
 </html>

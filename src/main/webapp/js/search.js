@@ -76,14 +76,14 @@ function deleteWaitList(obj) {
     var tr = $(obj).parent().parent();
     var td = tr.children();
     //var symptom =  tr.children().text().slice(0,-2);
-    alert(td.eq(0).text().trim());
-    var pName = td.eq(0).text().trim();
+    alert("문진을 시작합니다! ");
+    var pNumber = td.eq(0).text().trim();
     $.ajax({
 		method:"GET",	
 		dataType: "json",
 		url:"getPatientSymptoms",	
-		data : {"pNumber" : pName},
-		success:function(data) {
+		data : {"pNumber" : pNumber},
+		success:function(resultData) {
 			var symptomList ="";
 			var patientInfo ="";
 			patientInfo += "<h5 style='background-color:#EBEBEB; border: solid 5px #EBEBEB'>"+
@@ -97,6 +97,8 @@ function deleteWaitList(obj) {
 			$("#showPsymptoms").append(symptomList);
 			$("#patientInfoView").empty();
 			$("#patientInfoView").append(patientInfo);
+			
+			
 		}
 	});
 }

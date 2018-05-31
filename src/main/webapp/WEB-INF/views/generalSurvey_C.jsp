@@ -92,10 +92,10 @@
     <br>
 <br>
    <div style="float:right;">
-   <button type="button" class = "btn btn-warning" id = " ">이전</button>
+   <button type="button" class = "btn btn-warning" id = "backG_SurveyButton">이전</button>
    <button type="button" class = "btn btn-primary" id = "G_SurveyCsaveButton">저장</button>
    </div>
    </div>
-   <script type="text/javascript" src="js/survey.js?ver=2.312231"></script>
+   <script type="text/javascript" src="js/survey.js?ver=2.922222"></script>
 </body>
 </html>

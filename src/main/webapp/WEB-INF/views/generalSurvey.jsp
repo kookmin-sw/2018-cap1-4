@@ -222,6 +222,6 @@
     <button type="button" class="btn btn-warning" id="G_SurveySaveButton">다음</button>
   </div>
 </div>
-    <script type="text/javascript" src="js/survey.js?ver=2.31223222215312151221"></script>
+    <script type="text/javascript" src="js/survey.js?ver=2.422"></script>
     </body>
 </html>

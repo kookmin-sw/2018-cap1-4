@@ -76,4 +76,10 @@ public class MemberServiceImpl implements MemberService{
 		// TODO Auto-generated method stub
 		return mapper.getWaitPatient(patient);
 	}
+
+	@Override
+	public void delWaitingList(String pNumber) throws Exception {
+		// TODO Auto-generated method stub
+		mapper.delWaitingList(pNumber);
+	}
 }

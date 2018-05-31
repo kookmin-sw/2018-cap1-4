@@ -15,7 +15,14 @@
 
 <link rel="stylesheet" href="css/bootstrap.min2.css">
 <title>Insert title here</title>
+	<style>
+	#receptionTalbe tr:first-child{
+		background-color: #FAFAFA;
+		color: #333333;
+   		background: #596778;
+	}
 
+	</style>
 </head>
 <body>
 	<div class="ui_container">
@@ -95,7 +102,7 @@
                  <h5><strong>환자 대기자 명단</strong></h5>
               
                     <div style="width:100%; height:418px; overflow:auto; background-color:white">
-                      <table class="table table-striped table-hover" style='line-height:90%' >
+                      <table class="table table-striped table-hover" style='line-height:90%'>
                         <tbody>
                         <c:forEach items="${waitList}" var="member">
     						<tr>
@@ -124,8 +131,8 @@
 	</script>
 	<script type="text/javascript" src="js/diagnosis.js?ver=5"></script>
 	<script type="text/javascript" src="js/evalRule.js?ver=2"></script>
-	<script type="text/javascript" src="js/search.js?ver=3.219111127629"></script>
-	<script type="text/javascript" src="js/reception.js?ver=1.2121529222111"></script>
-	<script type="text/javascript" src="js/survey.js?ver=1.1"></script>
+	<script type="text/javascript" src="js/search.js?ver=3.2129111127629"></script>
+	<script type="text/javascript" src="js/reception.js?ver=1.21212529222111"></script>
+	<script type="text/javascript" src="js/survey.js?ver=1.12"></script>
 </body>
 </html>

@@ -83,4 +83,8 @@
 		WHERE pNumber = #{pNumber} 	
 	</select>
 	
+	<delete id="delWaitingList" parameterType="String">
+		DELETE FROM waitingList WHERE pNumber = #{pNumber}
+	</delete>
+	
 </mapper>
