@@ -44,8 +44,8 @@ public class RuleController {
 	private PatientSymptomVO symptomVO;
 
 	@PostConstruct // 생성자 annotation
-	public void initialize(){ 
-		
+	public void initialize()
+	{ 
 		patient = new PatientVO(); // 추후 빈객체로 사용할 예정
 		symptomVO = new PatientSymptomVO();
 		//patient = (PatientVO) BeanUtils.getBean("patientVO");
@@ -54,12 +54,12 @@ public class RuleController {
 		
 		try {
 			ruleList = ruleService.selectDomain();
-			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		Map<String,Object>ruleMap = new HashMap<String,Object>();
+		
 		for(DomainRuleVO obj : ruleList) // hashmap 
 		{
 			ruleMap.put(obj.getRuleID(), obj);
