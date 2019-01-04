@@ -27,7 +27,6 @@ public class RuleMap {
 		
 		int pLen = patient.symptomArr.size();
 		int dLen = domain.symptoms.size();
-		
 		int andCount =0, orFlagNum =0, andFlagNum= domain.andSymptom; // 
 		
 

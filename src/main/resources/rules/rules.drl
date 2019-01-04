@@ -43,6 +43,7 @@ rule "가스"
 			};		
 end
 
+
 rule "가스&장무력"
 	lock-on-active true
 	when
